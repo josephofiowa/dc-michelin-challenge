@@ -9,7 +9,7 @@ The [Michelin Guide](https://en.wikipedia.org/wiki/Michelin_Guide) is a hotel an
 
 Your goal is to use data science to produce a list of what restaurants you believe will be on the DC Michelin Guide, and how many stars each of your submitted restaurants earned. (See Submission guidelines below.) You are welcome to use any tools that you see fit: APIs, webscraping, previous city guides, other reviews, subject matter expertise, etc. Because the challenge is built to honor data scientists and developers, you will be asked to include the code and/or methods description that you utilized to generate your submission.
 
-## Submission: Due Tuesday, October 12 by 11:59 PM
+## Submission: Due Wednesday, October 12 by 11:59 PM
 
 You will need to submit a csv and code or methods description as a pull request by 10/12/16 at 11:59PM.
 
