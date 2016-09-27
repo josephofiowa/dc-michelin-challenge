@@ -21,7 +21,7 @@ In order to make a submission, please fork this repository to your own Github. C
 
 ### CSV:
 
-The csv should include two columns:
+The [csv](SampleSubmission.csv) should include two columns:
 
 - Restaurants (those you predict to make the list, as many as you like - see scoring below)
 - Stars (predicted number of stars for each, ranging from 1 to 3)
