@@ -73,7 +73,7 @@ The incentive of this scoring schema is clear: you want to first guess the corre
 
 ## Prize
 
-General Assembly DC has graciously agreed to sponsor the competition. The winner will earn $200. You're encouraged to spend this on a nice Michelin dinner! (Check out GA's part-time ga.co/2d5oiXu and full-time ga.co/2d5oiXu data science programs.)
+General Assembly DC has graciously agreed to sponsor the competition. The winner will earn $200. You're encouraged to spend this on a nice Michelin dinner! (Check out GA's part-time ga.co/2d5oiXu and full-time ga.co/2d5oiXu data science programs. Sorry those links aren't automatically clickable!)
 
 In addition, this competition will be promoted among press and tech meetups throughout DC. Performing well is an excellent way to gain recognition within the DC tech scene, as well as build a portfolio piece.
 
