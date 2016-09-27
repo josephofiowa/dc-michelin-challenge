@@ -7,11 +7,11 @@ The [Michelin Guide](https://en.wikipedia.org/wiki/Michelin_Guide) is a hotel an
 
 ## Goal
 
-Your goal is to use data science to produce a list of what restaurants you believe will be on the DC Michelin Guide, and how many stars each of your submitted restaurants earned. (See Submission guidelines below.) You are welcome to use any tools that you see fit: APIs, webscraping, previous city guides, other reviews, subject matter expertise, etc. Because the challenge is built to honor data scientists and developers, you will be asked to include the code and/or methods description that you utilized to generate your submission.
+Your goal is to use data science to produce a list of which restaurants you believe will be on the DC Michelin Guide, and how many stars each of your submitted restaurants earned. (See Submission guidelines below.) You are welcome to use any tools that you see fit: APIs, webscraping, previous city guides, other reviews, subject matter expertise, etc. Because the challenge is built to honor data scientists and developers, you will be asked to include the code and/or methods description that you utilized to generate your submission.
 
 ## Submission: Due Wednesday, October 12 by 11:59 PM
 
-You will need to submit a csv and code or methods description as a pull request by 10/12/16 at 11:59PM.
+Submit a csv and code or methods description as a pull request by 10/12/16 at 11:59PM.
 
 ### How to submit:
 
@@ -23,7 +23,7 @@ In order to make a submission, please fork this repository to your own Github. C
 
 The [csv](SampleSubmission.csv) should include two columns:
 
-- Restaurants (those you predict to make the list, as many as you like - see scoring below)
+- Restaurants (those predicted to make the list, no minimum/maximum - see scoring below)
 - Stars (predicted number of stars for each, ranging from 1 to 3)
 
 There is an example submission included.
@@ -32,7 +32,7 @@ NOTE: The guide will ONLY be covering restaurants within DC borders - not in the
 
 ### Code/Methods:
 
-Please submit well-commented code detailing your approach. Alternatively, you may submit a white paper (max 2 pages) detailing the methods you utilized. If you opt for the latter submission, please include at least a demonstration of your use of an API or model you may have built. Some level of technical skill is required to win the prize!
+Please submit well-commented code detailing your approach. Alternatively, submit a white paper (max 2 pages) detailing the methods utilized. If opting for the latter submission, please include at least a demonstration of API use or model you may have built. Some level of technical skill is required to win the prize!
 
 ## Scoring
 
