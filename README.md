@@ -1,5 +1,5 @@
 # DC Michelin Guide Challenge
-## ![logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Sponsored by [General Assembly DC](ga.co)
+## ![logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Sponsored by General Assembly DC
 
 The [Michelin Guide](https://en.wikipedia.org/wiki/Michelin_Guide) is a hotel and restaurant reference booklet documenting the world's most prestigious establishments. On October 13, 2016, Michelin will release a listing of restaurants in Washington, D.C. that have earned one, two, or three Michelin Stars ([Washington Post](https://www.washingtonpost.com/lifestyle/food/dcs-food-scene-gets-a-prestigious-boost-michelin-inspection-and-stars/2016/05/27/fc1db658-2132-11e6-8690-f14ca9de2972_story.html)). Michelin reviewers have been discretely sampling the DC food scene for over a year in anticipation for the release of the guide.
 
@@ -73,7 +73,7 @@ The incentive of this scoring schema is clear: you want to first guess the corre
 
 ## Prize
 
-General Assembly DC has graciously agreed to sponsor the competition. The winner will earn $200. You're encouraged to spend this on a nice Michelin dinner! (Check out GA's [part-time](ga.co/2d5oiXu) and [full-time](ga.co/2d5oiXu) data science programs.)
+General Assembly DC has graciously agreed to sponsor the competition. The winner will earn $200. You're encouraged to spend this on a nice Michelin dinner! (Check out GA's part-time ga.co/2d5oiXu and full-time ga.co/2d5oiXu data science programs.)
 
 In addition, this competition will be promoted among press and tech meetups throughout DC. Performing well is an excellent way to gain recognition within the DC tech scene, as well as build a portfolio piece.
 
