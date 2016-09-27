@@ -17,7 +17,7 @@ You will need to submit a csv and code or methods description as a pull request 
 
 In order to make a submission, please fork this repository to your own Github. Create a folder (within the submissions folder) that is your first and last name, e.g. `josephnelson`. Include your submission materials in this folder. Create a pull request before the deadline.
 
-(If you're not wholly comfortable with pull requests, check out this [resource](http://oss-watch.ac.uk/resources/pullrequest). Still no? Reach out to [me](joseph.nelson@generalassemb.ly).)
+(If you're not wholly comfortable with pull requests, check out this [resource](http://oss-watch.ac.uk/resources/pullrequest). Still no? Reach out to [me](https://twitter.com/josephofiowa).)
 
 ### CSV:
 
