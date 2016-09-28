@@ -1,7 +1,7 @@
 # DC Michelin Guide Challenge
 
 ## Sponsored by: General Assembly DC and The Michelin Guide
-## ![logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) ![logo](./images/Michelin_Logo2.jpg)
+## ![ga-logo](./images/ga-logo.png) ![michelin-logo](./images/Michelin_Logo2.jpg)
 
 The [Michelin Guide](https://en.wikipedia.org/wiki/Michelin_Guide) is a hotel and restaurant reference booklet documenting the world's most prestigious establishments. On October 13, 2016, Michelin will release a listing of restaurants in Washington, D.C. that have earned one, two, or three Michelin Stars ([Washington Post](https://www.washingtonpost.com/lifestyle/food/dcs-food-scene-gets-a-prestigious-boost-michelin-inspection-and-stars/2016/05/27/fc1db658-2132-11e6-8690-f14ca9de2972_story.html)). Michelin reviewers have been discretely sampling the DC food scene for over a year in anticipation for the release of the guide.
 
