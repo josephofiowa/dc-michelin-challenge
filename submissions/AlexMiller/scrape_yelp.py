@@ -1,0 +1,63 @@
+from selenium import webdriver
+import pdb
+from optparse import OptionParser
+import pandas as pd
+from urllib import quote
+import re
+
+parser = OptionParser()
+parser.add_option("-o", "--output", dest="output", default="D:\\Documents\\Data\\Yelp\\NYC\\",
+                        help="Output path. Default is wd",metavar="FOLDER")
+(options, args) = parser.parse_args()
+
+browser = webdriver.Chrome("C://chromedriver//chromedriver") # Create a session of Chrome
+browser.implicitly_wait(30) # Configure the WebDriver to wait up to 30 seconds for each page to load
+
+def get_valid_filename(s):
+    """
+    Returns the given string converted to a string that can be used for a clean
+    filename. Specifically, leading and trailing spaces are removed; other
+    spaces are converted to underscores; and anything that is not a unicode
+    alphanumeric, dash, underscore, or dot, is removed.
+    >>> get_valid_filename("john's portrait in 2004.jpg")
+    'johns_portrait_in_2004.jpg'
+    Adapted from Django
+    """
+    s = s.strip().replace(' ', '_')
+    return re.sub(r'(?u)[^-\w.]', '', s)
+
+def review(browser, description, location):
+    find_loc = quote(location,safe='').replace("%20","+") # Encode strings for URL
+    find_desc = quote(description,safe='').replace("%20","+")
+    search_url = "https://www.yelp.com/search?find_desc=%s&find_loc=%s" % (find_desc,find_loc)
+    browser.get(search_url) # Load page
+    first_span = browser.find_element_by_xpath("//*[contains(text(), '1.         ')]") #Find the first link
+    first_hit = first_span.find_elements_by_tag_name('a')[0]
+    first_hit_href = first_hit.get_attribute('href')
+    
+    browser.get(first_hit_href+"?sort_by=elites_desc") # Load first page. Sort by elites for better reviews
+    
+    # Find all the dates
+    dates = browser.find_elements_by_xpath('//*[@itemprop="datePublished"]')
+    date_array = [date.get_attribute('content') for date in dates]
+    
+    # Find all the scores
+    scores = browser.find_elements_by_xpath('//*[@itemprop="ratingValue"]')
+    score_array = [score.get_attribute('content') for score in scores]
+    average_score = score_array[0] #The first review is the average for the whole restaurant
+    review_score_array = score_array[1:]
+    
+    # Find all the reviews
+    reviews = browser.find_elements_by_xpath('//*[@itemprop="description"]')
+    review_array = [review.text for review in reviews]
+    
+    #Repetitive array of the restaurant name
+    
+    #Make a Pandas dataframe
+    df = pd.DataFrame({"restaurant":description,"date":date_array,"avg.score":average_score,"score":review_score_array,"review":review_array})
+    return df
+
+description = "Chef's Table at Brooklyn Fare"
+location = "New York, NY"
+df = review(browser, description, location)
+df.to_csv(options.output+get_valid_filename(description)+".csv",index=False,encoding="latin1")
