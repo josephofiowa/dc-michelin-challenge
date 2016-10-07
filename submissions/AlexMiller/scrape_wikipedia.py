@@ -80,6 +80,10 @@ for row in rows:
             else:
                 text = 0
         result.append(text)
+    #If the restaurant closed within the time period, the cell merging shortens the row length
+    #We can repeat the closed tag for the duration of the missing cells
+    while len(result)<8:
+        result.append(result[-1])
     results.append(result)
     
 with open(options.output+"chi_stars.csv","wb") as csvfile:

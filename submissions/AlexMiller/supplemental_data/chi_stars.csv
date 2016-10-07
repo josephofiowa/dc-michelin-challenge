@@ -2,20 +2,20 @@ Name,Neighborhood,2011,2012,2013,2014,2015,2016
 42 Grams,Uptown,0,0,0,0,2,2
 Acadia,South Loop,0,0,1,1,1,2
 Alinea,Lincoln Park,3,3,3,3,3,3
-Avenues,Magnificent Mile,2,Closed
+Avenues,Magnificent Mile,2,Closed,Closed,Closed,Closed,Closed
 Blackbird,West Loop,1,1,1,1,1,1
 Boka,Lincoln Park,1,1,1,1,1,1
-Bonsoirée,Logan Square,1,1,Closed
-Charlie Trotter's,Lincoln Park,2,2,Closed
-Crofton on Wells,River North,1,0,Closed
-Courtright's,Willow Springs,0,1,0,Closed
+Bonsoirée,Logan Square,1,1,Closed,Closed,Closed,Closed
+Charlie Trotter's,Lincoln Park,2,2,Closed,Closed,Closed,Closed
+Crofton on Wells,River North,1,0,Closed,Closed,Closed,Closed
+Courtright's,Willow Springs,0,1,0,Closed,Closed,Closed
 Dusek's,Pilsen,0,0,0,0,0,1
 El Ideas,Douglas Park,0,0,0,1,1,1
 Elizabeth,Ravenswood,0,0,0,1,1,1
 Everest,Loop,1,1,1,1,1,1
 Goosefoot,Ravenswood,0,0,1,1,1,1
 Grace,West Loop,0,0,0,2,3,3
-Graham Elliot,River North,1,1,2,2,Closed
+Graham Elliot,River North,1,1,2,2,Closed,Closed
 L2O,Lincoln Park,3,0,2,2,2,Closed
 Longman & Eagle,Logan Square,1,1,1,1,1,1
 Mexique,West Town,0,0,1,1,0,0
@@ -24,9 +24,9 @@ NAHA,River North,1,1,1,1,1,1
 NoMI,Magnificent Mile,1,0,0,0,0,0
 North Pond,Lincoln Park,0,0,0,1,1,1
 Parachute,Avondale,0,0,0,0,0,1
-RIA,Gold Coast,2,2,Closed
+RIA,Gold Coast,2,2,Closed,Closed,Closed,Closed
 Schwa,West Town,1,1,1,1,1,1
-Seasons,Magnificent Mile,1,1,Closed
+Seasons,Magnificent Mile,1,1,Closed,Closed,Closed,Closed
 Senza,Lakeview East,0,0,0,0,1,Closed
 Sepia,West Loop,1,1,1,1,1,1
 Sixteen,River North,1,0,1,2,2,2
