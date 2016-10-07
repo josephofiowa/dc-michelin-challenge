@@ -37,6 +37,12 @@ def review(browser, description, location):
     
     browser.get(first_hit_href+"?sort_by=elites_desc") # Load first page. Sort by elites for better reviews
     
+    #Price range
+    price_range = browser.find_element_by_xpath('//*[@class="business-attribute price-range"]').text
+    
+    #Review count
+    review_count = browser.find_element_by_xpath('//*[@itemprop="reviewCount"]').text
+    
     # Find all the dates
     dates = browser.find_elements_by_xpath('//*[@itemprop="datePublished"]')
     date_array = [date.get_attribute('content') for date in dates]
@@ -51,10 +57,8 @@ def review(browser, description, location):
     reviews = browser.find_elements_by_xpath('//*[@itemprop="description"]')
     review_array = [review.text for review in reviews]
     
-    #Repetitive array of the restaurant name
-    
     #Make a Pandas dataframe
-    df = pd.DataFrame({"restaurant":description,"date":date_array,"avg.score":average_score,"score":review_score_array,"review":review_array})
+    df = pd.DataFrame({"restaurant":description,"date":date_array,"avg.score":average_score,"price":price_range,"review.count":review_count,"score":review_score_array,"review":review_array})
     return df
 
 description = "Chef's Table at Brooklyn Fare"
