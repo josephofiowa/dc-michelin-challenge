@@ -4,8 +4,11 @@ from optparse import OptionParser
 import pandas as pd
 from urllib import quote
 import re
+import unicodecsv
 
 parser = OptionParser()
+parser.add_option("-i", "--input", dest="input", default="C:\\git\\dc-michelin-challenge\\submissions\\AlexMiller\\supplemental_data\\ny_stars.csv",
+                        help="Output path. Default is wd",metavar="FOLDER")
 parser.add_option("-o", "--output", dest="output", default="D:\\Documents\\Data\\Yelp\\NYC\\",
                         help="Output path. Default is wd",metavar="FOLDER")
 (options, args) = parser.parse_args()
@@ -61,7 +64,29 @@ def review(browser, description, location):
     df = pd.DataFrame({"restaurant":description,"date":date_array,"avg.score":average_score,"price":price_range,"review.count":review_count,"score":review_score_array,"review":review_array})
     return df
 
-description = "Chef's Table at Brooklyn Fare"
-location = "New York, NY"
-df = review(browser, description, location)
-df.to_csv(options.output+get_valid_filename(description)+".csv",index=False,encoding="latin1")
+#Read through our wiki-scraped restaurants and scrape some metadata and reviews
+#Some restaurants no longer exist...
+duds = [
+    "Adour"
+    ,"Alain Ducasse at the Essex House"
+    ,"Allen & Delancey"
+    ,"Alto"
+    ,""
+    ]
+with open(options.input,'rb') as csvfile:
+        reader = unicodecsv.reader(csvfile,delimiter=",",quotechar="\"",encoding="latin1")
+        header = False
+        for row in reader:
+            if not header:
+                header = row
+            else:
+                description = row[0]
+                location = "New York, NY"
+                star_year = row[2]
+                stars = row[3]
+                if int(star_year)==2016 and description not in duds:
+                    print(description)
+                    df = review(browser, description, location)
+                    df["stars"] = stars
+                    df["star.year"] = star_year
+                    df.to_csv(options.output+get_valid_filename(description)+".csv",index=False,encoding="latin1")
