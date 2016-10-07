@@ -1,136 +1,1486 @@
-Name,Borough,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016
-Adour,Manhattan,0,0,0,2,1,1,1,1,0,0,0
-Ai Fiori,Manhattan,0,0,0,0,0,0,1,1,1,1,1
-Alain Ducasse at the Essex House,Manhattan,3,0,0,0,0,0,0,0,0,0,0
-Aldea,Manhattan,0,0,0,0,0,1,1,1,1,1,1
-Allen & Delancey,Manhattan,0,0,0,1,0,0,0,0,0,0,0
-Alto,Manhattan,0,0,0,1,2,2,0,0,0,0,0
-Andanada,Manhattan,0,0,0,0,0,0,0,0,0,1,1
-Annisa,Manhattan,1,1,1,1,1,1,1,1,1,0,0
-Anthos,Manhattan,0,0,1,1,1,1,0,0,0,0,0
-Aquavit,Manhattan,0,0,0,0,0,0,0,1,1,2,2
-Aska,Brooklyn,0,0,0,0,0,0,0,0,1,0,0
-Aureole,Manhattan,1,1,1,1,1,1,1,1,1,1,1
-Atera,Manhattan,0,0,0,0,0,0,0,2,2,2,2
-A Voce Columbus,Manhattan,0,1,1,0,1,1,1,1,1,0,0
-A Voce Madison,Manhattan,0,0,0,0,0,1,1,1,1,0,0
-Babbo,Manhattan,1,1,1,0,0,0,0,0,1,1,1
-Bâtard,Manhattan,0,0,0,0,0,0,0,0,0,1,1
-Betony,Manhattan,0,0,0,0,0,0,0,0,0,1,1
-Blanca,Brooklyn,0,0,0,0,0,0,0,1,1,2,2
-BLT Fish,Manhattan,1,0,0,0,0,0,0,0,0,0,0
-Blue Hill,Manhattan,0,0,1,1,1,1,1,1,1,1,1
-Bouley,Manhattan,2,2,2,0,1,1,1,1,1,1,1
-The Breslin,Manhattan,0,0,0,0,0,1,1,1,1,1,1
-Brushstroke,Manhattan,0,0,0,0,0,0,1,1,1,1,1
-Café Boulud,Manhattan,1,1,1,1,1,1,1,1,1,1,1
-Café China,Manhattan,0,0,0,0,0,0,0,1,1,1,1
-Café Gray,Manhattan,1,1,1,0,0,0,0,0,0,0,0
-Cagen,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Carbone,Manhattan,0,0,0,0,0,0,0,0,1,1,1
-Casa Enrique,Queens,0,0,0,0,0,0,0,0,0,1,1
-Casa Mono,Manhattan,0,0,0,0,1,1,1,1,1,1,1
-Caviar Russe,Manhattan,0,0,0,0,0,0,0,0,1,1,1
-Chef's Table at Brooklyn Fare,Brooklyn,0,0,0,0,0,2,3,3,3,3,3
-Convivio,Manhattan,0,0,0,0,1,1,0,0,0,0,0
-Corton,Manhattan,0,0,0,0,2,2,2,2,0,0,0
-Country,Manhattan,0,1,1,0,0,0,0,0,0,0,0
-Craft,Manhattan,1,1,0,0,0,0,0,0,0,0,0
-Cru,Manhattan,1,1,1,1,0,0,0,0,0,0,0
-Daniel,Manhattan,2,2,2,2,3,3,3,3,3,2,2
-Danji,Manhattan,0,0,0,0,0,0,1,1,1,0,0
-Danny Brown Wine Bar & Kitchen,Queens,0,0,0,0,0,1,1,1,1,1,0
-Danube,Manhattan,2,1,1,0,0,0,0,0,0,0,0
-Delaware & Hudson,Brooklyn,0,0,0,0,0,0,0,0,0,1,1
-Del Posto,Manhattan,0,2,2,2,1,1,1,1,1,1,1
-Devi,Manhattan,0,1,1,0,0,0,0,0,0,0,0
-Dovetail,Manhattan,0,0,0,0,0,1,1,1,1,1,1
-Dressler,Brooklyn,0,0,1,1,1,1,1,1,0,0,0
-Eighty-One,Manhattan,0,0,0,1,1,0,0,0,0,0,0
-Eleven Madison Park,Manhattan,0,0,0,0,1,1,3,3,3,3,3
-Etats-Unis,Manhattan,1,1,1,1,1,0,0,0,0,0,0
-Fiamma Osteria,Manhattan,1,1,0,1,0,0,0,0,0,0,0
-15 East,Manhattan,0,0,0,0,0,0,0,1,1,1,0
-The Finch,Brooklyn,0,0,0,0,0,0,0,0,0,0,1
-Fleur de Sel,Manhattan,1,1,1,1,0,0,0,0,0,0,0
-Gabriel Kreuther,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Gilt,Manhattan,0,0,1,2,2,2,2,2,0,0,0
-Gordon Ramsay at The London,Manhattan,0,0,2,2,2,2,2,2,0,0,0
-Gotham Bar and Grill,Manhattan,1,1,1,1,1,1,1,1,1,1,1
-Gramercy Tavern,Manhattan,1,1,1,1,1,1,1,1,1,1,1
-Hakkasan,Manhattan,0,0,0,0,0,0,0,1,1,1,0
-Hirohisa,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Heartbreak,Manhattan,0,0,0,0,0,0,1,1,0,0,0
-Ichimura at Brushstroke,Manhattan,0,0,0,0,0,0,0,0,1,2,2
-Insieme,Manhattan,0,0,0,1,1,0,0,0,0,0,0
-Jean-Georges,Manhattan,3,3,3,3,3,3,3,3,3,3,3
-Jewel Bako,Manhattan,1,1,1,1,1,1,1,1,1,1,1
-JoJo,Manhattan,1,0,1,1,0,0,0,0,0,0,0
-Jungsik,Manhattan,0,0,0,0,0,0,0,1,2,2,2
-Juni,Manhattan,0,0,0,0,0,0,0,0,0,1,1
-Junoon,Manhattan,0,0,0,0,0,0,1,1,1,1,1
-Kajitsu,Manhattan,0,0,0,0,1,2,2,1,1,1,1
-Kurumazushi,Manhattan,0,1,1,0,0,0,0,0,0,0,0
-Kyo Ya,Manhattan,0,0,0,1,1,1,1,1,1,1,1
-L'Atelier de Joël Robuchon,Manhattan,0,0,1,1,1,1,2,0,0,0,0
-La Goulue,Manhattan,1,1,0,0,0,0,0,0,0,0,0
-Lan Sheng,Manhattan,0,0,0,0,0,0,0,1,1,0,0
-Laut,Manhattan,0,0,0,0,0,1,1,0,0,0,0
-La Vara,Brooklyn,0,0,0,0,0,0,0,0,0,1,1
-Le Bernardin,Manhattan,3,3,3,3,3,3,3,3,3,3,3
-Le Restaurant,Manhattan,0,0,0,0,0,0,0,0,1,0,0
-Lever House,Manhattan,1,1,0,0,0,0,0,0,0,0,0
-Lincoln,Manhattan,0,0,0,0,0,0,0,0,1,1,0
-Lo Scalco,Manhattan,1,0,0,0,0,0,0,0,0,0,0
-Luksus at Torst,Brooklyn,0,0,0,0,0,0,0,0,0,1,1
-Marc Forgione,Manhattan,0,0,0,0,1,1,1,0,0,0,0
-March,Manhattan,1,0,0,0,0,0,0,0,0,0,0
-Meadowsweet,Brooklyn,0,0,0,0,0,0,0,0,0,1,1
-Marea,Manhattan,0,0,0,0,1,2,2,2,2,2,2
-Masa,Manhattan,2,2,2,3,3,3,3,3,3,3,3
-Minetta Tavern,Manhattan,0,0,0,0,1,1,1,1,1,1,1
-The Modern,Manhattan,1,1,1,1,1,1,1,1,1,1,2
-Momofuku Ko,Manhattan,0,0,0,2,2,2,2,2,2,2,2
-The Musket Room,Manhattan,0,0,0,0,0,0,0,0,1,1,1
-M. Wells Steakhouse,Queens,0,0,0,0,0,0,0,0,0,1,1
-Nobu,Manhattan,1,0,0,0,0,0,0,0,0,0,0
-The NoMad,Manhattan,0,0,0,0,0,0,0,1,1,1,1
-Oceana,Manhattan,1,1,1,1,1,1,1,1,1,0,0
-Per Se,Manhattan,3,3,3,3,3,3,3,3,3,3,3
-Perry Street,Manhattan,0,1,1,1,1,0,0,0,0,0,0
-Peter Luger Steak House,Brooklyn,1,1,1,1,1,1,1,1,1,1,1
-Picholine,Manhattan,1,1,2,2,2,2,1,1,0,1,1
-Piora,Manhattan,0,0,0,0,0,0,0,0,0,1,1
-Pok Pok NY,Brooklyn,0,0,0,0,0,0,0,0,0,1,1
-Public,Manhattan,0,0,0,1,1,1,1,1,1,1,1
-Rebelle,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Rhong-Tiam,Manhattan,0,0,0,0,1,0,0,0,0,0,0
-The River Café,Brooklyn,0,0,0,0,1,1,1,1,0,1,1
-Rosanjin,Manhattan,0,0,0,0,0,0,1,1,1,1,1
-Rouge Tomate,Manhattan,0,0,0,0,1,1,1,1,1,0,0
-Saul,Brooklyn,1,1,1,1,1,1,1,1,0,0,0
-Scalini Fedeli,Manhattan,1,0,0,0,0,0,0,0,0,0,0
-Seäsonal,Manhattan,0,0,0,0,1,1,1,1,1,1,0
-Semilla,Brooklyn,0,0,0,0,0,0,0,0,0,0,1
-Shalezeh,Manhattan,0,0,0,0,1,1,0,0,0,0,0
-SHO Shaun Hergatt,Manhattan,0,0,0,0,1,1,2,0,0,0,0
-Somtum Der,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Soto,Manhattan,0,0,0,0,1,2,2,2,2,2,2
-The Spotted Pig,Manhattan,1,1,1,1,1,1,1,1,1,1,1
-Sushi Azabu,Manhattan,0,0,0,0,1,1,1,1,1,1,1
-Sushi of Gari,Manhattan,0,1,1,1,1,1,1,1,1,1,1
-Sushi Yasuda,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Take Root,Brooklyn,0,0,0,0,0,0,0,0,0,1,1
-Tamarind Tribeca,Manhattan,0,0,0,0,0,0,1,1,1,0,0
-Telepan,Manhattan,0,0,0,0,0,0,0,0,1,1,1
-Tempura Matsui,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Tori Shin,Manhattan,0,0,0,0,0,0,1,1,1,1,1
-Torrisi Italian Specialities,Manhattan,0,0,0,0,0,0,0,1,1,1,0
-Tulsi,Manhattan,0,0,0,0,0,0,1,1,1,1,1
-Uncle Boons,Manhattan,0,0,0,0,0,0,0,0,0,0,1
-Veritas,Manhattan,1,1,1,1,1,1,1,0,0,0,0
-Vong,Manhattan,1,1,1,0,0,0,0,0,0,0,0
-Wallsé,Manhattan,1,1,1,1,1,1,1,1,1,1,1
-wd~50,Manhattan,1,1,1,1,1,1,1,1,1,0,0
-Zabb Elee,Queens,0,0,0,0,0,0,0,0,0,1,0
-ZZ's Clam Bar,Manhattan,0,0,0,0,0,0,0,0,0,1,1
+name,neighborhood,year,stars
+Adour,Manhattan,2006,0
+Ai Fiori,Manhattan,2006,0
+Alain Ducasse at the Essex House,Manhattan,2006,3
+Aldea,Manhattan,2006,0
+Allen & Delancey,Manhattan,2006,0
+Alto,Manhattan,2006,0
+Andanada,Manhattan,2006,0
+Annisa,Manhattan,2006,1
+Anthos,Manhattan,2006,0
+Aquavit,Manhattan,2006,0
+Aska,Brooklyn,2006,0
+Aureole,Manhattan,2006,1
+Atera,Manhattan,2006,0
+A Voce Columbus,Manhattan,2006,0
+A Voce Madison,Manhattan,2006,0
+Babbo,Manhattan,2006,1
+Bâtard,Manhattan,2006,0
+Betony,Manhattan,2006,0
+Blanca,Brooklyn,2006,0
+BLT Fish,Manhattan,2006,1
+Blue Hill,Manhattan,2006,0
+Bouley,Manhattan,2006,2
+The Breslin,Manhattan,2006,0
+Brushstroke,Manhattan,2006,0
+Café Boulud,Manhattan,2006,1
+Café China,Manhattan,2006,0
+Café Gray,Manhattan,2006,1
+Cagen,Manhattan,2006,0
+Carbone,Manhattan,2006,0
+Casa Enrique,Queens,2006,0
+Casa Mono,Manhattan,2006,0
+Caviar Russe,Manhattan,2006,0
+Chef's Table at Brooklyn Fare,Brooklyn,2006,0
+Convivio,Manhattan,2006,0
+Corton,Manhattan,2006,0
+Country,Manhattan,2006,0
+Craft,Manhattan,2006,1
+Cru,Manhattan,2006,1
+Daniel,Manhattan,2006,2
+Danji,Manhattan,2006,0
+Danny Brown Wine Bar & Kitchen,Queens,2006,0
+Danube,Manhattan,2006,2
+Delaware & Hudson,Brooklyn,2006,0
+Del Posto,Manhattan,2006,0
+Devi,Manhattan,2006,0
+Dovetail,Manhattan,2006,0
+Dressler,Brooklyn,2006,0
+Eighty-One,Manhattan,2006,0
+Eleven Madison Park,Manhattan,2006,0
+Etats-Unis,Manhattan,2006,1
+Fiamma Osteria,Manhattan,2006,1
+15 East,Manhattan,2006,0
+The Finch,Brooklyn,2006,0
+Fleur de Sel,Manhattan,2006,1
+Gabriel Kreuther,Manhattan,2006,0
+Gilt,Manhattan,2006,0
+Gordon Ramsay at The London,Manhattan,2006,0
+Gotham Bar and Grill,Manhattan,2006,1
+Gramercy Tavern,Manhattan,2006,1
+Hakkasan,Manhattan,2006,0
+Hirohisa,Manhattan,2006,0
+Heartbreak,Manhattan,2006,0
+Ichimura at Brushstroke,Manhattan,2006,0
+Insieme,Manhattan,2006,0
+Jean-Georges,Manhattan,2006,3
+Jewel Bako,Manhattan,2006,1
+JoJo,Manhattan,2006,1
+Jungsik,Manhattan,2006,0
+Juni,Manhattan,2006,0
+Junoon,Manhattan,2006,0
+Kajitsu,Manhattan,2006,0
+Kurumazushi,Manhattan,2006,0
+Kyo Ya,Manhattan,2006,0
+L'Atelier de Joël Robuchon,Manhattan,2006,0
+La Goulue,Manhattan,2006,1
+Lan Sheng,Manhattan,2006,0
+Laut,Manhattan,2006,0
+La Vara,Brooklyn,2006,0
+Le Bernardin,Manhattan,2006,3
+Le Restaurant,Manhattan,2006,0
+Lever House,Manhattan,2006,1
+Lincoln,Manhattan,2006,0
+Lo Scalco,Manhattan,2006,1
+Luksus at Torst,Brooklyn,2006,0
+Marc Forgione,Manhattan,2006,0
+March,Manhattan,2006,1
+Meadowsweet,Brooklyn,2006,0
+Marea,Manhattan,2006,0
+Masa,Manhattan,2006,2
+Minetta Tavern,Manhattan,2006,0
+The Modern,Manhattan,2006,1
+Momofuku Ko,Manhattan,2006,0
+The Musket Room,Manhattan,2006,0
+M. Wells Steakhouse,Queens,2006,0
+Nobu,Manhattan,2006,1
+The NoMad,Manhattan,2006,0
+Oceana,Manhattan,2006,1
+Per Se,Manhattan,2006,3
+Perry Street,Manhattan,2006,0
+Peter Luger Steak House,Brooklyn,2006,1
+Picholine,Manhattan,2006,1
+Piora,Manhattan,2006,0
+Pok Pok NY,Brooklyn,2006,0
+Public,Manhattan,2006,0
+Rebelle,Manhattan,2006,0
+Rhong-Tiam,Manhattan,2006,0
+The River Café,Brooklyn,2006,0
+Rosanjin,Manhattan,2006,0
+Rouge Tomate,Manhattan,2006,0
+Saul,Brooklyn,2006,1
+Scalini Fedeli,Manhattan,2006,1
+Seäsonal,Manhattan,2006,0
+Semilla,Brooklyn,2006,0
+Shalezeh,Manhattan,2006,0
+SHO Shaun Hergatt,Manhattan,2006,0
+Somtum Der,Manhattan,2006,0
+Soto,Manhattan,2006,0
+The Spotted Pig,Manhattan,2006,1
+Sushi Azabu,Manhattan,2006,0
+Sushi of Gari,Manhattan,2006,0
+Sushi Yasuda,Manhattan,2006,0
+Take Root,Brooklyn,2006,0
+Tamarind Tribeca,Manhattan,2006,0
+Telepan,Manhattan,2006,0
+Tempura Matsui,Manhattan,2006,0
+Tori Shin,Manhattan,2006,0
+Torrisi Italian Specialities,Manhattan,2006,0
+Tulsi,Manhattan,2006,0
+Uncle Boons,Manhattan,2006,0
+Veritas,Manhattan,2006,1
+Vong,Manhattan,2006,1
+Wallsé,Manhattan,2006,1
+wd~50,Manhattan,2006,1
+Zabb Elee,Queens,2006,0
+ZZ's Clam Bar,Manhattan,2006,0
+Adour,Manhattan,2007,0
+Ai Fiori,Manhattan,2007,0
+Alain Ducasse at the Essex House,Manhattan,2007,0
+Aldea,Manhattan,2007,0
+Allen & Delancey,Manhattan,2007,0
+Alto,Manhattan,2007,0
+Andanada,Manhattan,2007,0
+Annisa,Manhattan,2007,1
+Anthos,Manhattan,2007,0
+Aquavit,Manhattan,2007,0
+Aska,Brooklyn,2007,0
+Aureole,Manhattan,2007,1
+Atera,Manhattan,2007,0
+A Voce Columbus,Manhattan,2007,1
+A Voce Madison,Manhattan,2007,0
+Babbo,Manhattan,2007,1
+Bâtard,Manhattan,2007,0
+Betony,Manhattan,2007,0
+Blanca,Brooklyn,2007,0
+BLT Fish,Manhattan,2007,0
+Blue Hill,Manhattan,2007,0
+Bouley,Manhattan,2007,2
+The Breslin,Manhattan,2007,0
+Brushstroke,Manhattan,2007,0
+Café Boulud,Manhattan,2007,1
+Café China,Manhattan,2007,0
+Café Gray,Manhattan,2007,1
+Cagen,Manhattan,2007,0
+Carbone,Manhattan,2007,0
+Casa Enrique,Queens,2007,0
+Casa Mono,Manhattan,2007,0
+Caviar Russe,Manhattan,2007,0
+Chef's Table at Brooklyn Fare,Brooklyn,2007,0
+Convivio,Manhattan,2007,0
+Corton,Manhattan,2007,0
+Country,Manhattan,2007,1
+Craft,Manhattan,2007,1
+Cru,Manhattan,2007,1
+Daniel,Manhattan,2007,2
+Danji,Manhattan,2007,0
+Danny Brown Wine Bar & Kitchen,Queens,2007,0
+Danube,Manhattan,2007,1
+Delaware & Hudson,Brooklyn,2007,0
+Del Posto,Manhattan,2007,2
+Devi,Manhattan,2007,1
+Dovetail,Manhattan,2007,0
+Dressler,Brooklyn,2007,0
+Eighty-One,Manhattan,2007,0
+Eleven Madison Park,Manhattan,2007,0
+Etats-Unis,Manhattan,2007,1
+Fiamma Osteria,Manhattan,2007,1
+15 East,Manhattan,2007,0
+The Finch,Brooklyn,2007,0
+Fleur de Sel,Manhattan,2007,1
+Gabriel Kreuther,Manhattan,2007,0
+Gilt,Manhattan,2007,0
+Gordon Ramsay at The London,Manhattan,2007,0
+Gotham Bar and Grill,Manhattan,2007,1
+Gramercy Tavern,Manhattan,2007,1
+Hakkasan,Manhattan,2007,0
+Hirohisa,Manhattan,2007,0
+Heartbreak,Manhattan,2007,0
+Ichimura at Brushstroke,Manhattan,2007,0
+Insieme,Manhattan,2007,0
+Jean-Georges,Manhattan,2007,3
+Jewel Bako,Manhattan,2007,1
+JoJo,Manhattan,2007,0
+Jungsik,Manhattan,2007,0
+Juni,Manhattan,2007,0
+Junoon,Manhattan,2007,0
+Kajitsu,Manhattan,2007,0
+Kurumazushi,Manhattan,2007,1
+Kyo Ya,Manhattan,2007,0
+L'Atelier de Joël Robuchon,Manhattan,2007,0
+La Goulue,Manhattan,2007,1
+Lan Sheng,Manhattan,2007,0
+Laut,Manhattan,2007,0
+La Vara,Brooklyn,2007,0
+Le Bernardin,Manhattan,2007,3
+Le Restaurant,Manhattan,2007,0
+Lever House,Manhattan,2007,1
+Lincoln,Manhattan,2007,0
+Lo Scalco,Manhattan,2007,0
+Luksus at Torst,Brooklyn,2007,0
+Marc Forgione,Manhattan,2007,0
+March,Manhattan,2007,0
+Meadowsweet,Brooklyn,2007,0
+Marea,Manhattan,2007,0
+Masa,Manhattan,2007,2
+Minetta Tavern,Manhattan,2007,0
+The Modern,Manhattan,2007,1
+Momofuku Ko,Manhattan,2007,0
+The Musket Room,Manhattan,2007,0
+M. Wells Steakhouse,Queens,2007,0
+Nobu,Manhattan,2007,0
+The NoMad,Manhattan,2007,0
+Oceana,Manhattan,2007,1
+Per Se,Manhattan,2007,3
+Perry Street,Manhattan,2007,1
+Peter Luger Steak House,Brooklyn,2007,1
+Picholine,Manhattan,2007,1
+Piora,Manhattan,2007,0
+Pok Pok NY,Brooklyn,2007,0
+Public,Manhattan,2007,0
+Rebelle,Manhattan,2007,0
+Rhong-Tiam,Manhattan,2007,0
+The River Café,Brooklyn,2007,0
+Rosanjin,Manhattan,2007,0
+Rouge Tomate,Manhattan,2007,0
+Saul,Brooklyn,2007,1
+Scalini Fedeli,Manhattan,2007,0
+Seäsonal,Manhattan,2007,0
+Semilla,Brooklyn,2007,0
+Shalezeh,Manhattan,2007,0
+SHO Shaun Hergatt,Manhattan,2007,0
+Somtum Der,Manhattan,2007,0
+Soto,Manhattan,2007,0
+The Spotted Pig,Manhattan,2007,1
+Sushi Azabu,Manhattan,2007,0
+Sushi of Gari,Manhattan,2007,1
+Sushi Yasuda,Manhattan,2007,0
+Take Root,Brooklyn,2007,0
+Tamarind Tribeca,Manhattan,2007,0
+Telepan,Manhattan,2007,0
+Tempura Matsui,Manhattan,2007,0
+Tori Shin,Manhattan,2007,0
+Torrisi Italian Specialities,Manhattan,2007,0
+Tulsi,Manhattan,2007,0
+Uncle Boons,Manhattan,2007,0
+Veritas,Manhattan,2007,1
+Vong,Manhattan,2007,1
+Wallsé,Manhattan,2007,1
+wd~50,Manhattan,2007,1
+Zabb Elee,Queens,2007,0
+ZZ's Clam Bar,Manhattan,2007,0
+Adour,Manhattan,2008,0
+Ai Fiori,Manhattan,2008,0
+Alain Ducasse at the Essex House,Manhattan,2008,0
+Aldea,Manhattan,2008,0
+Allen & Delancey,Manhattan,2008,0
+Alto,Manhattan,2008,0
+Andanada,Manhattan,2008,0
+Annisa,Manhattan,2008,1
+Anthos,Manhattan,2008,1
+Aquavit,Manhattan,2008,0
+Aska,Brooklyn,2008,0
+Aureole,Manhattan,2008,1
+Atera,Manhattan,2008,0
+A Voce Columbus,Manhattan,2008,1
+A Voce Madison,Manhattan,2008,0
+Babbo,Manhattan,2008,1
+Bâtard,Manhattan,2008,0
+Betony,Manhattan,2008,0
+Blanca,Brooklyn,2008,0
+BLT Fish,Manhattan,2008,0
+Blue Hill,Manhattan,2008,1
+Bouley,Manhattan,2008,2
+The Breslin,Manhattan,2008,0
+Brushstroke,Manhattan,2008,0
+Café Boulud,Manhattan,2008,1
+Café China,Manhattan,2008,0
+Café Gray,Manhattan,2008,1
+Cagen,Manhattan,2008,0
+Carbone,Manhattan,2008,0
+Casa Enrique,Queens,2008,0
+Casa Mono,Manhattan,2008,0
+Caviar Russe,Manhattan,2008,0
+Chef's Table at Brooklyn Fare,Brooklyn,2008,0
+Convivio,Manhattan,2008,0
+Corton,Manhattan,2008,0
+Country,Manhattan,2008,1
+Craft,Manhattan,2008,0
+Cru,Manhattan,2008,1
+Daniel,Manhattan,2008,2
+Danji,Manhattan,2008,0
+Danny Brown Wine Bar & Kitchen,Queens,2008,0
+Danube,Manhattan,2008,1
+Delaware & Hudson,Brooklyn,2008,0
+Del Posto,Manhattan,2008,2
+Devi,Manhattan,2008,1
+Dovetail,Manhattan,2008,0
+Dressler,Brooklyn,2008,1
+Eighty-One,Manhattan,2008,0
+Eleven Madison Park,Manhattan,2008,0
+Etats-Unis,Manhattan,2008,1
+Fiamma Osteria,Manhattan,2008,0
+15 East,Manhattan,2008,0
+The Finch,Brooklyn,2008,0
+Fleur de Sel,Manhattan,2008,1
+Gabriel Kreuther,Manhattan,2008,0
+Gilt,Manhattan,2008,1
+Gordon Ramsay at The London,Manhattan,2008,2
+Gotham Bar and Grill,Manhattan,2008,1
+Gramercy Tavern,Manhattan,2008,1
+Hakkasan,Manhattan,2008,0
+Hirohisa,Manhattan,2008,0
+Heartbreak,Manhattan,2008,0
+Ichimura at Brushstroke,Manhattan,2008,0
+Insieme,Manhattan,2008,0
+Jean-Georges,Manhattan,2008,3
+Jewel Bako,Manhattan,2008,1
+JoJo,Manhattan,2008,1
+Jungsik,Manhattan,2008,0
+Juni,Manhattan,2008,0
+Junoon,Manhattan,2008,0
+Kajitsu,Manhattan,2008,0
+Kurumazushi,Manhattan,2008,1
+Kyo Ya,Manhattan,2008,0
+L'Atelier de Joël Robuchon,Manhattan,2008,1
+La Goulue,Manhattan,2008,0
+Lan Sheng,Manhattan,2008,0
+Laut,Manhattan,2008,0
+La Vara,Brooklyn,2008,0
+Le Bernardin,Manhattan,2008,3
+Le Restaurant,Manhattan,2008,0
+Lever House,Manhattan,2008,0
+Lincoln,Manhattan,2008,0
+Lo Scalco,Manhattan,2008,0
+Luksus at Torst,Brooklyn,2008,0
+Marc Forgione,Manhattan,2008,0
+March,Manhattan,2008,0
+Meadowsweet,Brooklyn,2008,0
+Marea,Manhattan,2008,0
+Masa,Manhattan,2008,2
+Minetta Tavern,Manhattan,2008,0
+The Modern,Manhattan,2008,1
+Momofuku Ko,Manhattan,2008,0
+The Musket Room,Manhattan,2008,0
+M. Wells Steakhouse,Queens,2008,0
+Nobu,Manhattan,2008,0
+The NoMad,Manhattan,2008,0
+Oceana,Manhattan,2008,1
+Per Se,Manhattan,2008,3
+Perry Street,Manhattan,2008,1
+Peter Luger Steak House,Brooklyn,2008,1
+Picholine,Manhattan,2008,2
+Piora,Manhattan,2008,0
+Pok Pok NY,Brooklyn,2008,0
+Public,Manhattan,2008,0
+Rebelle,Manhattan,2008,0
+Rhong-Tiam,Manhattan,2008,0
+The River Café,Brooklyn,2008,0
+Rosanjin,Manhattan,2008,0
+Rouge Tomate,Manhattan,2008,0
+Saul,Brooklyn,2008,1
+Scalini Fedeli,Manhattan,2008,0
+Seäsonal,Manhattan,2008,0
+Semilla,Brooklyn,2008,0
+Shalezeh,Manhattan,2008,0
+SHO Shaun Hergatt,Manhattan,2008,0
+Somtum Der,Manhattan,2008,0
+Soto,Manhattan,2008,0
+The Spotted Pig,Manhattan,2008,1
+Sushi Azabu,Manhattan,2008,0
+Sushi of Gari,Manhattan,2008,1
+Sushi Yasuda,Manhattan,2008,0
+Take Root,Brooklyn,2008,0
+Tamarind Tribeca,Manhattan,2008,0
+Telepan,Manhattan,2008,0
+Tempura Matsui,Manhattan,2008,0
+Tori Shin,Manhattan,2008,0
+Torrisi Italian Specialities,Manhattan,2008,0
+Tulsi,Manhattan,2008,0
+Uncle Boons,Manhattan,2008,0
+Veritas,Manhattan,2008,1
+Vong,Manhattan,2008,1
+Wallsé,Manhattan,2008,1
+wd~50,Manhattan,2008,1
+Zabb Elee,Queens,2008,0
+ZZ's Clam Bar,Manhattan,2008,0
+Adour,Manhattan,2009,2
+Ai Fiori,Manhattan,2009,0
+Alain Ducasse at the Essex House,Manhattan,2009,0
+Aldea,Manhattan,2009,0
+Allen & Delancey,Manhattan,2009,1
+Alto,Manhattan,2009,1
+Andanada,Manhattan,2009,0
+Annisa,Manhattan,2009,1
+Anthos,Manhattan,2009,1
+Aquavit,Manhattan,2009,0
+Aska,Brooklyn,2009,0
+Aureole,Manhattan,2009,1
+Atera,Manhattan,2009,0
+A Voce Columbus,Manhattan,2009,0
+A Voce Madison,Manhattan,2009,0
+Babbo,Manhattan,2009,0
+Bâtard,Manhattan,2009,0
+Betony,Manhattan,2009,0
+Blanca,Brooklyn,2009,0
+BLT Fish,Manhattan,2009,0
+Blue Hill,Manhattan,2009,1
+Bouley,Manhattan,2009,0
+The Breslin,Manhattan,2009,0
+Brushstroke,Manhattan,2009,0
+Café Boulud,Manhattan,2009,1
+Café China,Manhattan,2009,0
+Café Gray,Manhattan,2009,0
+Cagen,Manhattan,2009,0
+Carbone,Manhattan,2009,0
+Casa Enrique,Queens,2009,0
+Casa Mono,Manhattan,2009,0
+Caviar Russe,Manhattan,2009,0
+Chef's Table at Brooklyn Fare,Brooklyn,2009,0
+Convivio,Manhattan,2009,0
+Corton,Manhattan,2009,0
+Country,Manhattan,2009,0
+Craft,Manhattan,2009,0
+Cru,Manhattan,2009,1
+Daniel,Manhattan,2009,2
+Danji,Manhattan,2009,0
+Danny Brown Wine Bar & Kitchen,Queens,2009,0
+Danube,Manhattan,2009,0
+Delaware & Hudson,Brooklyn,2009,0
+Del Posto,Manhattan,2009,2
+Devi,Manhattan,2009,0
+Dovetail,Manhattan,2009,0
+Dressler,Brooklyn,2009,1
+Eighty-One,Manhattan,2009,1
+Eleven Madison Park,Manhattan,2009,0
+Etats-Unis,Manhattan,2009,1
+Fiamma Osteria,Manhattan,2009,1
+15 East,Manhattan,2009,0
+The Finch,Brooklyn,2009,0
+Fleur de Sel,Manhattan,2009,1
+Gabriel Kreuther,Manhattan,2009,0
+Gilt,Manhattan,2009,2
+Gordon Ramsay at The London,Manhattan,2009,2
+Gotham Bar and Grill,Manhattan,2009,1
+Gramercy Tavern,Manhattan,2009,1
+Hakkasan,Manhattan,2009,0
+Hirohisa,Manhattan,2009,0
+Heartbreak,Manhattan,2009,0
+Ichimura at Brushstroke,Manhattan,2009,0
+Insieme,Manhattan,2009,1
+Jean-Georges,Manhattan,2009,3
+Jewel Bako,Manhattan,2009,1
+JoJo,Manhattan,2009,1
+Jungsik,Manhattan,2009,0
+Juni,Manhattan,2009,0
+Junoon,Manhattan,2009,0
+Kajitsu,Manhattan,2009,0
+Kurumazushi,Manhattan,2009,0
+Kyo Ya,Manhattan,2009,1
+L'Atelier de Joël Robuchon,Manhattan,2009,1
+La Goulue,Manhattan,2009,0
+Lan Sheng,Manhattan,2009,0
+Laut,Manhattan,2009,0
+La Vara,Brooklyn,2009,0
+Le Bernardin,Manhattan,2009,3
+Le Restaurant,Manhattan,2009,0
+Lever House,Manhattan,2009,0
+Lincoln,Manhattan,2009,0
+Lo Scalco,Manhattan,2009,0
+Luksus at Torst,Brooklyn,2009,0
+Marc Forgione,Manhattan,2009,0
+March,Manhattan,2009,0
+Meadowsweet,Brooklyn,2009,0
+Marea,Manhattan,2009,0
+Masa,Manhattan,2009,3
+Minetta Tavern,Manhattan,2009,0
+The Modern,Manhattan,2009,1
+Momofuku Ko,Manhattan,2009,2
+The Musket Room,Manhattan,2009,0
+M. Wells Steakhouse,Queens,2009,0
+Nobu,Manhattan,2009,0
+The NoMad,Manhattan,2009,0
+Oceana,Manhattan,2009,1
+Per Se,Manhattan,2009,3
+Perry Street,Manhattan,2009,1
+Peter Luger Steak House,Brooklyn,2009,1
+Picholine,Manhattan,2009,2
+Piora,Manhattan,2009,0
+Pok Pok NY,Brooklyn,2009,0
+Public,Manhattan,2009,1
+Rebelle,Manhattan,2009,0
+Rhong-Tiam,Manhattan,2009,0
+The River Café,Brooklyn,2009,0
+Rosanjin,Manhattan,2009,0
+Rouge Tomate,Manhattan,2009,0
+Saul,Brooklyn,2009,1
+Scalini Fedeli,Manhattan,2009,0
+Seäsonal,Manhattan,2009,0
+Semilla,Brooklyn,2009,0
+Shalezeh,Manhattan,2009,0
+SHO Shaun Hergatt,Manhattan,2009,0
+Somtum Der,Manhattan,2009,0
+Soto,Manhattan,2009,0
+The Spotted Pig,Manhattan,2009,1
+Sushi Azabu,Manhattan,2009,0
+Sushi of Gari,Manhattan,2009,1
+Sushi Yasuda,Manhattan,2009,0
+Take Root,Brooklyn,2009,0
+Tamarind Tribeca,Manhattan,2009,0
+Telepan,Manhattan,2009,0
+Tempura Matsui,Manhattan,2009,0
+Tori Shin,Manhattan,2009,0
+Torrisi Italian Specialities,Manhattan,2009,0
+Tulsi,Manhattan,2009,0
+Uncle Boons,Manhattan,2009,0
+Veritas,Manhattan,2009,1
+Vong,Manhattan,2009,0
+Wallsé,Manhattan,2009,1
+wd~50,Manhattan,2009,1
+Zabb Elee,Queens,2009,0
+ZZ's Clam Bar,Manhattan,2009,0
+Adour,Manhattan,2010,1
+Ai Fiori,Manhattan,2010,0
+Alain Ducasse at the Essex House,Manhattan,2010,0
+Aldea,Manhattan,2010,0
+Allen & Delancey,Manhattan,2010,0
+Alto,Manhattan,2010,2
+Andanada,Manhattan,2010,0
+Annisa,Manhattan,2010,1
+Anthos,Manhattan,2010,1
+Aquavit,Manhattan,2010,0
+Aska,Brooklyn,2010,0
+Aureole,Manhattan,2010,1
+Atera,Manhattan,2010,0
+A Voce Columbus,Manhattan,2010,1
+A Voce Madison,Manhattan,2010,0
+Babbo,Manhattan,2010,0
+Bâtard,Manhattan,2010,0
+Betony,Manhattan,2010,0
+Blanca,Brooklyn,2010,0
+BLT Fish,Manhattan,2010,0
+Blue Hill,Manhattan,2010,1
+Bouley,Manhattan,2010,1
+The Breslin,Manhattan,2010,0
+Brushstroke,Manhattan,2010,0
+Café Boulud,Manhattan,2010,1
+Café China,Manhattan,2010,0
+Café Gray,Manhattan,2010,0
+Cagen,Manhattan,2010,0
+Carbone,Manhattan,2010,0
+Casa Enrique,Queens,2010,0
+Casa Mono,Manhattan,2010,1
+Caviar Russe,Manhattan,2010,0
+Chef's Table at Brooklyn Fare,Brooklyn,2010,0
+Convivio,Manhattan,2010,1
+Corton,Manhattan,2010,2
+Country,Manhattan,2010,0
+Craft,Manhattan,2010,0
+Cru,Manhattan,2010,0
+Daniel,Manhattan,2010,3
+Danji,Manhattan,2010,0
+Danny Brown Wine Bar & Kitchen,Queens,2010,0
+Danube,Manhattan,2010,0
+Delaware & Hudson,Brooklyn,2010,0
+Del Posto,Manhattan,2010,1
+Devi,Manhattan,2010,0
+Dovetail,Manhattan,2010,0
+Dressler,Brooklyn,2010,1
+Eighty-One,Manhattan,2010,1
+Eleven Madison Park,Manhattan,2010,1
+Etats-Unis,Manhattan,2010,1
+Fiamma Osteria,Manhattan,2010,0
+15 East,Manhattan,2010,0
+The Finch,Brooklyn,2010,0
+Fleur de Sel,Manhattan,2010,0
+Gabriel Kreuther,Manhattan,2010,0
+Gilt,Manhattan,2010,2
+Gordon Ramsay at The London,Manhattan,2010,2
+Gotham Bar and Grill,Manhattan,2010,1
+Gramercy Tavern,Manhattan,2010,1
+Hakkasan,Manhattan,2010,0
+Hirohisa,Manhattan,2010,0
+Heartbreak,Manhattan,2010,0
+Ichimura at Brushstroke,Manhattan,2010,0
+Insieme,Manhattan,2010,1
+Jean-Georges,Manhattan,2010,3
+Jewel Bako,Manhattan,2010,1
+JoJo,Manhattan,2010,0
+Jungsik,Manhattan,2010,0
+Juni,Manhattan,2010,0
+Junoon,Manhattan,2010,0
+Kajitsu,Manhattan,2010,1
+Kurumazushi,Manhattan,2010,0
+Kyo Ya,Manhattan,2010,1
+L'Atelier de Joël Robuchon,Manhattan,2010,1
+La Goulue,Manhattan,2010,0
+Lan Sheng,Manhattan,2010,0
+Laut,Manhattan,2010,0
+La Vara,Brooklyn,2010,0
+Le Bernardin,Manhattan,2010,3
+Le Restaurant,Manhattan,2010,0
+Lever House,Manhattan,2010,0
+Lincoln,Manhattan,2010,0
+Lo Scalco,Manhattan,2010,0
+Luksus at Torst,Brooklyn,2010,0
+Marc Forgione,Manhattan,2010,1
+March,Manhattan,2010,0
+Meadowsweet,Brooklyn,2010,0
+Marea,Manhattan,2010,1
+Masa,Manhattan,2010,3
+Minetta Tavern,Manhattan,2010,1
+The Modern,Manhattan,2010,1
+Momofuku Ko,Manhattan,2010,2
+The Musket Room,Manhattan,2010,0
+M. Wells Steakhouse,Queens,2010,0
+Nobu,Manhattan,2010,0
+The NoMad,Manhattan,2010,0
+Oceana,Manhattan,2010,1
+Per Se,Manhattan,2010,3
+Perry Street,Manhattan,2010,1
+Peter Luger Steak House,Brooklyn,2010,1
+Picholine,Manhattan,2010,2
+Piora,Manhattan,2010,0
+Pok Pok NY,Brooklyn,2010,0
+Public,Manhattan,2010,1
+Rebelle,Manhattan,2010,0
+Rhong-Tiam,Manhattan,2010,1
+The River Café,Brooklyn,2010,1
+Rosanjin,Manhattan,2010,0
+Rouge Tomate,Manhattan,2010,1
+Saul,Brooklyn,2010,1
+Scalini Fedeli,Manhattan,2010,0
+Seäsonal,Manhattan,2010,1
+Semilla,Brooklyn,2010,0
+Shalezeh,Manhattan,2010,1
+SHO Shaun Hergatt,Manhattan,2010,1
+Somtum Der,Manhattan,2010,0
+Soto,Manhattan,2010,1
+The Spotted Pig,Manhattan,2010,1
+Sushi Azabu,Manhattan,2010,1
+Sushi of Gari,Manhattan,2010,1
+Sushi Yasuda,Manhattan,2010,0
+Take Root,Brooklyn,2010,0
+Tamarind Tribeca,Manhattan,2010,0
+Telepan,Manhattan,2010,0
+Tempura Matsui,Manhattan,2010,0
+Tori Shin,Manhattan,2010,0
+Torrisi Italian Specialities,Manhattan,2010,0
+Tulsi,Manhattan,2010,0
+Uncle Boons,Manhattan,2010,0
+Veritas,Manhattan,2010,1
+Vong,Manhattan,2010,0
+Wallsé,Manhattan,2010,1
+wd~50,Manhattan,2010,1
+Zabb Elee,Queens,2010,0
+ZZ's Clam Bar,Manhattan,2010,0
+Adour,Manhattan,2011,1
+Ai Fiori,Manhattan,2011,0
+Alain Ducasse at the Essex House,Manhattan,2011,0
+Aldea,Manhattan,2011,1
+Allen & Delancey,Manhattan,2011,0
+Alto,Manhattan,2011,2
+Andanada,Manhattan,2011,0
+Annisa,Manhattan,2011,1
+Anthos,Manhattan,2011,1
+Aquavit,Manhattan,2011,0
+Aska,Brooklyn,2011,0
+Aureole,Manhattan,2011,1
+Atera,Manhattan,2011,0
+A Voce Columbus,Manhattan,2011,1
+A Voce Madison,Manhattan,2011,1
+Babbo,Manhattan,2011,0
+Bâtard,Manhattan,2011,0
+Betony,Manhattan,2011,0
+Blanca,Brooklyn,2011,0
+BLT Fish,Manhattan,2011,0
+Blue Hill,Manhattan,2011,1
+Bouley,Manhattan,2011,1
+The Breslin,Manhattan,2011,1
+Brushstroke,Manhattan,2011,0
+Café Boulud,Manhattan,2011,1
+Café China,Manhattan,2011,0
+Café Gray,Manhattan,2011,0
+Cagen,Manhattan,2011,0
+Carbone,Manhattan,2011,0
+Casa Enrique,Queens,2011,0
+Casa Mono,Manhattan,2011,1
+Caviar Russe,Manhattan,2011,0
+Chef's Table at Brooklyn Fare,Brooklyn,2011,2
+Convivio,Manhattan,2011,1
+Corton,Manhattan,2011,2
+Country,Manhattan,2011,0
+Craft,Manhattan,2011,0
+Cru,Manhattan,2011,0
+Daniel,Manhattan,2011,3
+Danji,Manhattan,2011,0
+Danny Brown Wine Bar & Kitchen,Queens,2011,1
+Danube,Manhattan,2011,0
+Delaware & Hudson,Brooklyn,2011,0
+Del Posto,Manhattan,2011,1
+Devi,Manhattan,2011,0
+Dovetail,Manhattan,2011,1
+Dressler,Brooklyn,2011,1
+Eighty-One,Manhattan,2011,0
+Eleven Madison Park,Manhattan,2011,1
+Etats-Unis,Manhattan,2011,0
+Fiamma Osteria,Manhattan,2011,0
+15 East,Manhattan,2011,0
+The Finch,Brooklyn,2011,0
+Fleur de Sel,Manhattan,2011,0
+Gabriel Kreuther,Manhattan,2011,0
+Gilt,Manhattan,2011,2
+Gordon Ramsay at The London,Manhattan,2011,2
+Gotham Bar and Grill,Manhattan,2011,1
+Gramercy Tavern,Manhattan,2011,1
+Hakkasan,Manhattan,2011,0
+Hirohisa,Manhattan,2011,0
+Heartbreak,Manhattan,2011,0
+Ichimura at Brushstroke,Manhattan,2011,0
+Insieme,Manhattan,2011,0
+Jean-Georges,Manhattan,2011,3
+Jewel Bako,Manhattan,2011,1
+JoJo,Manhattan,2011,0
+Jungsik,Manhattan,2011,0
+Juni,Manhattan,2011,0
+Junoon,Manhattan,2011,0
+Kajitsu,Manhattan,2011,2
+Kurumazushi,Manhattan,2011,0
+Kyo Ya,Manhattan,2011,1
+L'Atelier de Joël Robuchon,Manhattan,2011,1
+La Goulue,Manhattan,2011,0
+Lan Sheng,Manhattan,2011,0
+Laut,Manhattan,2011,1
+La Vara,Brooklyn,2011,0
+Le Bernardin,Manhattan,2011,3
+Le Restaurant,Manhattan,2011,0
+Lever House,Manhattan,2011,0
+Lincoln,Manhattan,2011,0
+Lo Scalco,Manhattan,2011,0
+Luksus at Torst,Brooklyn,2011,0
+Marc Forgione,Manhattan,2011,1
+March,Manhattan,2011,0
+Meadowsweet,Brooklyn,2011,0
+Marea,Manhattan,2011,2
+Masa,Manhattan,2011,3
+Minetta Tavern,Manhattan,2011,1
+The Modern,Manhattan,2011,1
+Momofuku Ko,Manhattan,2011,2
+The Musket Room,Manhattan,2011,0
+M. Wells Steakhouse,Queens,2011,0
+Nobu,Manhattan,2011,0
+The NoMad,Manhattan,2011,0
+Oceana,Manhattan,2011,1
+Per Se,Manhattan,2011,3
+Perry Street,Manhattan,2011,0
+Peter Luger Steak House,Brooklyn,2011,1
+Picholine,Manhattan,2011,2
+Piora,Manhattan,2011,0
+Pok Pok NY,Brooklyn,2011,0
+Public,Manhattan,2011,1
+Rebelle,Manhattan,2011,0
+Rhong-Tiam,Manhattan,2011,0
+The River Café,Brooklyn,2011,1
+Rosanjin,Manhattan,2011,0
+Rouge Tomate,Manhattan,2011,1
+Saul,Brooklyn,2011,1
+Scalini Fedeli,Manhattan,2011,0
+Seäsonal,Manhattan,2011,1
+Semilla,Brooklyn,2011,0
+Shalezeh,Manhattan,2011,1
+SHO Shaun Hergatt,Manhattan,2011,1
+Somtum Der,Manhattan,2011,0
+Soto,Manhattan,2011,2
+The Spotted Pig,Manhattan,2011,1
+Sushi Azabu,Manhattan,2011,1
+Sushi of Gari,Manhattan,2011,1
+Sushi Yasuda,Manhattan,2011,0
+Take Root,Brooklyn,2011,0
+Tamarind Tribeca,Manhattan,2011,0
+Telepan,Manhattan,2011,0
+Tempura Matsui,Manhattan,2011,0
+Tori Shin,Manhattan,2011,0
+Torrisi Italian Specialities,Manhattan,2011,0
+Tulsi,Manhattan,2011,0
+Uncle Boons,Manhattan,2011,0
+Veritas,Manhattan,2011,1
+Vong,Manhattan,2011,0
+Wallsé,Manhattan,2011,1
+wd~50,Manhattan,2011,1
+Zabb Elee,Queens,2011,0
+ZZ's Clam Bar,Manhattan,2011,0
+Adour,Manhattan,2012,1
+Ai Fiori,Manhattan,2012,1
+Alain Ducasse at the Essex House,Manhattan,2012,0
+Aldea,Manhattan,2012,1
+Allen & Delancey,Manhattan,2012,0
+Alto,Manhattan,2012,0
+Andanada,Manhattan,2012,0
+Annisa,Manhattan,2012,1
+Anthos,Manhattan,2012,0
+Aquavit,Manhattan,2012,0
+Aska,Brooklyn,2012,0
+Aureole,Manhattan,2012,1
+Atera,Manhattan,2012,0
+A Voce Columbus,Manhattan,2012,1
+A Voce Madison,Manhattan,2012,1
+Babbo,Manhattan,2012,0
+Bâtard,Manhattan,2012,0
+Betony,Manhattan,2012,0
+Blanca,Brooklyn,2012,0
+BLT Fish,Manhattan,2012,0
+Blue Hill,Manhattan,2012,1
+Bouley,Manhattan,2012,1
+The Breslin,Manhattan,2012,1
+Brushstroke,Manhattan,2012,1
+Café Boulud,Manhattan,2012,1
+Café China,Manhattan,2012,0
+Café Gray,Manhattan,2012,0
+Cagen,Manhattan,2012,0
+Carbone,Manhattan,2012,0
+Casa Enrique,Queens,2012,0
+Casa Mono,Manhattan,2012,1
+Caviar Russe,Manhattan,2012,0
+Chef's Table at Brooklyn Fare,Brooklyn,2012,3
+Convivio,Manhattan,2012,0
+Corton,Manhattan,2012,2
+Country,Manhattan,2012,0
+Craft,Manhattan,2012,0
+Cru,Manhattan,2012,0
+Daniel,Manhattan,2012,3
+Danji,Manhattan,2012,1
+Danny Brown Wine Bar & Kitchen,Queens,2012,1
+Danube,Manhattan,2012,0
+Delaware & Hudson,Brooklyn,2012,0
+Del Posto,Manhattan,2012,1
+Devi,Manhattan,2012,0
+Dovetail,Manhattan,2012,1
+Dressler,Brooklyn,2012,1
+Eighty-One,Manhattan,2012,0
+Eleven Madison Park,Manhattan,2012,3
+Etats-Unis,Manhattan,2012,0
+Fiamma Osteria,Manhattan,2012,0
+15 East,Manhattan,2012,0
+The Finch,Brooklyn,2012,0
+Fleur de Sel,Manhattan,2012,0
+Gabriel Kreuther,Manhattan,2012,0
+Gilt,Manhattan,2012,2
+Gordon Ramsay at The London,Manhattan,2012,2
+Gotham Bar and Grill,Manhattan,2012,1
+Gramercy Tavern,Manhattan,2012,1
+Hakkasan,Manhattan,2012,0
+Hirohisa,Manhattan,2012,0
+Heartbreak,Manhattan,2012,1
+Ichimura at Brushstroke,Manhattan,2012,0
+Insieme,Manhattan,2012,0
+Jean-Georges,Manhattan,2012,3
+Jewel Bako,Manhattan,2012,1
+JoJo,Manhattan,2012,0
+Jungsik,Manhattan,2012,0
+Juni,Manhattan,2012,0
+Junoon,Manhattan,2012,1
+Kajitsu,Manhattan,2012,2
+Kurumazushi,Manhattan,2012,0
+Kyo Ya,Manhattan,2012,1
+L'Atelier de Joël Robuchon,Manhattan,2012,2
+La Goulue,Manhattan,2012,0
+Lan Sheng,Manhattan,2012,0
+Laut,Manhattan,2012,1
+La Vara,Brooklyn,2012,0
+Le Bernardin,Manhattan,2012,3
+Le Restaurant,Manhattan,2012,0
+Lever House,Manhattan,2012,0
+Lincoln,Manhattan,2012,0
+Lo Scalco,Manhattan,2012,0
+Luksus at Torst,Brooklyn,2012,0
+Marc Forgione,Manhattan,2012,1
+March,Manhattan,2012,0
+Meadowsweet,Brooklyn,2012,0
+Marea,Manhattan,2012,2
+Masa,Manhattan,2012,3
+Minetta Tavern,Manhattan,2012,1
+The Modern,Manhattan,2012,1
+Momofuku Ko,Manhattan,2012,2
+The Musket Room,Manhattan,2012,0
+M. Wells Steakhouse,Queens,2012,0
+Nobu,Manhattan,2012,0
+The NoMad,Manhattan,2012,0
+Oceana,Manhattan,2012,1
+Per Se,Manhattan,2012,3
+Perry Street,Manhattan,2012,0
+Peter Luger Steak House,Brooklyn,2012,1
+Picholine,Manhattan,2012,1
+Piora,Manhattan,2012,0
+Pok Pok NY,Brooklyn,2012,0
+Public,Manhattan,2012,1
+Rebelle,Manhattan,2012,0
+Rhong-Tiam,Manhattan,2012,0
+The River Café,Brooklyn,2012,1
+Rosanjin,Manhattan,2012,1
+Rouge Tomate,Manhattan,2012,1
+Saul,Brooklyn,2012,1
+Scalini Fedeli,Manhattan,2012,0
+Seäsonal,Manhattan,2012,1
+Semilla,Brooklyn,2012,0
+Shalezeh,Manhattan,2012,0
+SHO Shaun Hergatt,Manhattan,2012,2
+Somtum Der,Manhattan,2012,0
+Soto,Manhattan,2012,2
+The Spotted Pig,Manhattan,2012,1
+Sushi Azabu,Manhattan,2012,1
+Sushi of Gari,Manhattan,2012,1
+Sushi Yasuda,Manhattan,2012,0
+Take Root,Brooklyn,2012,0
+Tamarind Tribeca,Manhattan,2012,1
+Telepan,Manhattan,2012,0
+Tempura Matsui,Manhattan,2012,0
+Tori Shin,Manhattan,2012,1
+Torrisi Italian Specialities,Manhattan,2012,0
+Tulsi,Manhattan,2012,1
+Uncle Boons,Manhattan,2012,0
+Veritas,Manhattan,2012,1
+Vong,Manhattan,2012,0
+Wallsé,Manhattan,2012,1
+wd~50,Manhattan,2012,1
+Zabb Elee,Queens,2012,0
+ZZ's Clam Bar,Manhattan,2012,0
+Adour,Manhattan,2013,1
+Ai Fiori,Manhattan,2013,1
+Alain Ducasse at the Essex House,Manhattan,2013,0
+Aldea,Manhattan,2013,1
+Allen & Delancey,Manhattan,2013,0
+Alto,Manhattan,2013,0
+Andanada,Manhattan,2013,0
+Annisa,Manhattan,2013,1
+Anthos,Manhattan,2013,0
+Aquavit,Manhattan,2013,1
+Aska,Brooklyn,2013,0
+Aureole,Manhattan,2013,1
+Atera,Manhattan,2013,2
+A Voce Columbus,Manhattan,2013,1
+A Voce Madison,Manhattan,2013,1
+Babbo,Manhattan,2013,0
+Bâtard,Manhattan,2013,0
+Betony,Manhattan,2013,0
+Blanca,Brooklyn,2013,1
+BLT Fish,Manhattan,2013,0
+Blue Hill,Manhattan,2013,1
+Bouley,Manhattan,2013,1
+The Breslin,Manhattan,2013,1
+Brushstroke,Manhattan,2013,1
+Café Boulud,Manhattan,2013,1
+Café China,Manhattan,2013,1
+Café Gray,Manhattan,2013,0
+Cagen,Manhattan,2013,0
+Carbone,Manhattan,2013,0
+Casa Enrique,Queens,2013,0
+Casa Mono,Manhattan,2013,1
+Caviar Russe,Manhattan,2013,0
+Chef's Table at Brooklyn Fare,Brooklyn,2013,3
+Convivio,Manhattan,2013,0
+Corton,Manhattan,2013,2
+Country,Manhattan,2013,0
+Craft,Manhattan,2013,0
+Cru,Manhattan,2013,0
+Daniel,Manhattan,2013,3
+Danji,Manhattan,2013,1
+Danny Brown Wine Bar & Kitchen,Queens,2013,1
+Danube,Manhattan,2013,0
+Delaware & Hudson,Brooklyn,2013,0
+Del Posto,Manhattan,2013,1
+Devi,Manhattan,2013,0
+Dovetail,Manhattan,2013,1
+Dressler,Brooklyn,2013,1
+Eighty-One,Manhattan,2013,0
+Eleven Madison Park,Manhattan,2013,3
+Etats-Unis,Manhattan,2013,0
+Fiamma Osteria,Manhattan,2013,0
+15 East,Manhattan,2013,1
+The Finch,Brooklyn,2013,0
+Fleur de Sel,Manhattan,2013,0
+Gabriel Kreuther,Manhattan,2013,0
+Gilt,Manhattan,2013,2
+Gordon Ramsay at The London,Manhattan,2013,2
+Gotham Bar and Grill,Manhattan,2013,1
+Gramercy Tavern,Manhattan,2013,1
+Hakkasan,Manhattan,2013,1
+Hirohisa,Manhattan,2013,0
+Heartbreak,Manhattan,2013,1
+Ichimura at Brushstroke,Manhattan,2013,0
+Insieme,Manhattan,2013,0
+Jean-Georges,Manhattan,2013,3
+Jewel Bako,Manhattan,2013,1
+JoJo,Manhattan,2013,0
+Jungsik,Manhattan,2013,1
+Juni,Manhattan,2013,0
+Junoon,Manhattan,2013,1
+Kajitsu,Manhattan,2013,1
+Kurumazushi,Manhattan,2013,0
+Kyo Ya,Manhattan,2013,1
+L'Atelier de Joël Robuchon,Manhattan,2013,0
+La Goulue,Manhattan,2013,0
+Lan Sheng,Manhattan,2013,1
+Laut,Manhattan,2013,0
+La Vara,Brooklyn,2013,0
+Le Bernardin,Manhattan,2013,3
+Le Restaurant,Manhattan,2013,0
+Lever House,Manhattan,2013,0
+Lincoln,Manhattan,2013,0
+Lo Scalco,Manhattan,2013,0
+Luksus at Torst,Brooklyn,2013,0
+Marc Forgione,Manhattan,2013,0
+March,Manhattan,2013,0
+Meadowsweet,Brooklyn,2013,0
+Marea,Manhattan,2013,2
+Masa,Manhattan,2013,3
+Minetta Tavern,Manhattan,2013,1
+The Modern,Manhattan,2013,1
+Momofuku Ko,Manhattan,2013,2
+The Musket Room,Manhattan,2013,0
+M. Wells Steakhouse,Queens,2013,0
+Nobu,Manhattan,2013,0
+The NoMad,Manhattan,2013,1
+Oceana,Manhattan,2013,1
+Per Se,Manhattan,2013,3
+Perry Street,Manhattan,2013,0
+Peter Luger Steak House,Brooklyn,2013,1
+Picholine,Manhattan,2013,1
+Piora,Manhattan,2013,0
+Pok Pok NY,Brooklyn,2013,0
+Public,Manhattan,2013,1
+Rebelle,Manhattan,2013,0
+Rhong-Tiam,Manhattan,2013,0
+The River Café,Brooklyn,2013,1
+Rosanjin,Manhattan,2013,1
+Rouge Tomate,Manhattan,2013,1
+Saul,Brooklyn,2013,1
+Scalini Fedeli,Manhattan,2013,0
+Seäsonal,Manhattan,2013,1
+Semilla,Brooklyn,2013,0
+Shalezeh,Manhattan,2013,0
+SHO Shaun Hergatt,Manhattan,2013,0
+Somtum Der,Manhattan,2013,0
+Soto,Manhattan,2013,2
+The Spotted Pig,Manhattan,2013,1
+Sushi Azabu,Manhattan,2013,1
+Sushi of Gari,Manhattan,2013,1
+Sushi Yasuda,Manhattan,2013,0
+Take Root,Brooklyn,2013,0
+Tamarind Tribeca,Manhattan,2013,1
+Telepan,Manhattan,2013,0
+Tempura Matsui,Manhattan,2013,0
+Tori Shin,Manhattan,2013,1
+Torrisi Italian Specialities,Manhattan,2013,1
+Tulsi,Manhattan,2013,1
+Uncle Boons,Manhattan,2013,0
+Veritas,Manhattan,2013,0
+Vong,Manhattan,2013,0
+Wallsé,Manhattan,2013,1
+wd~50,Manhattan,2013,1
+Zabb Elee,Queens,2013,0
+ZZ's Clam Bar,Manhattan,2013,0
+Adour,Manhattan,2014,0
+Ai Fiori,Manhattan,2014,1
+Alain Ducasse at the Essex House,Manhattan,2014,0
+Aldea,Manhattan,2014,1
+Allen & Delancey,Manhattan,2014,0
+Alto,Manhattan,2014,0
+Andanada,Manhattan,2014,0
+Annisa,Manhattan,2014,1
+Anthos,Manhattan,2014,0
+Aquavit,Manhattan,2014,1
+Aska,Brooklyn,2014,1
+Aureole,Manhattan,2014,1
+Atera,Manhattan,2014,2
+A Voce Columbus,Manhattan,2014,1
+A Voce Madison,Manhattan,2014,1
+Babbo,Manhattan,2014,1
+Bâtard,Manhattan,2014,0
+Betony,Manhattan,2014,0
+Blanca,Brooklyn,2014,1
+BLT Fish,Manhattan,2014,0
+Blue Hill,Manhattan,2014,1
+Bouley,Manhattan,2014,1
+The Breslin,Manhattan,2014,1
+Brushstroke,Manhattan,2014,1
+Café Boulud,Manhattan,2014,1
+Café China,Manhattan,2014,1
+Café Gray,Manhattan,2014,0
+Cagen,Manhattan,2014,0
+Carbone,Manhattan,2014,1
+Casa Enrique,Queens,2014,0
+Casa Mono,Manhattan,2014,1
+Caviar Russe,Manhattan,2014,1
+Chef's Table at Brooklyn Fare,Brooklyn,2014,3
+Convivio,Manhattan,2014,0
+Corton,Manhattan,2014,0
+Country,Manhattan,2014,0
+Craft,Manhattan,2014,0
+Cru,Manhattan,2014,0
+Daniel,Manhattan,2014,3
+Danji,Manhattan,2014,1
+Danny Brown Wine Bar & Kitchen,Queens,2014,1
+Danube,Manhattan,2014,0
+Delaware & Hudson,Brooklyn,2014,0
+Del Posto,Manhattan,2014,1
+Devi,Manhattan,2014,0
+Dovetail,Manhattan,2014,1
+Dressler,Brooklyn,2014,0
+Eighty-One,Manhattan,2014,0
+Eleven Madison Park,Manhattan,2014,3
+Etats-Unis,Manhattan,2014,0
+Fiamma Osteria,Manhattan,2014,0
+15 East,Manhattan,2014,1
+The Finch,Brooklyn,2014,0
+Fleur de Sel,Manhattan,2014,0
+Gabriel Kreuther,Manhattan,2014,0
+Gilt,Manhattan,2014,0
+Gordon Ramsay at The London,Manhattan,2014,0
+Gotham Bar and Grill,Manhattan,2014,1
+Gramercy Tavern,Manhattan,2014,1
+Hakkasan,Manhattan,2014,1
+Hirohisa,Manhattan,2014,0
+Heartbreak,Manhattan,2014,0
+Ichimura at Brushstroke,Manhattan,2014,1
+Insieme,Manhattan,2014,0
+Jean-Georges,Manhattan,2014,3
+Jewel Bako,Manhattan,2014,1
+JoJo,Manhattan,2014,0
+Jungsik,Manhattan,2014,2
+Juni,Manhattan,2014,0
+Junoon,Manhattan,2014,1
+Kajitsu,Manhattan,2014,1
+Kurumazushi,Manhattan,2014,0
+Kyo Ya,Manhattan,2014,1
+L'Atelier de Joël Robuchon,Manhattan,2014,0
+La Goulue,Manhattan,2014,0
+Lan Sheng,Manhattan,2014,1
+Laut,Manhattan,2014,0
+La Vara,Brooklyn,2014,0
+Le Bernardin,Manhattan,2014,3
+Le Restaurant,Manhattan,2014,1
+Lever House,Manhattan,2014,0
+Lincoln,Manhattan,2014,1
+Lo Scalco,Manhattan,2014,0
+Luksus at Torst,Brooklyn,2014,0
+Marc Forgione,Manhattan,2014,0
+March,Manhattan,2014,0
+Meadowsweet,Brooklyn,2014,0
+Marea,Manhattan,2014,2
+Masa,Manhattan,2014,3
+Minetta Tavern,Manhattan,2014,1
+The Modern,Manhattan,2014,1
+Momofuku Ko,Manhattan,2014,2
+The Musket Room,Manhattan,2014,1
+M. Wells Steakhouse,Queens,2014,0
+Nobu,Manhattan,2014,0
+The NoMad,Manhattan,2014,1
+Oceana,Manhattan,2014,1
+Per Se,Manhattan,2014,3
+Perry Street,Manhattan,2014,0
+Peter Luger Steak House,Brooklyn,2014,1
+Picholine,Manhattan,2014,0
+Piora,Manhattan,2014,0
+Pok Pok NY,Brooklyn,2014,0
+Public,Manhattan,2014,1
+Rebelle,Manhattan,2014,0
+Rhong-Tiam,Manhattan,2014,0
+The River Café,Brooklyn,2014,0
+Rosanjin,Manhattan,2014,1
+Rouge Tomate,Manhattan,2014,1
+Saul,Brooklyn,2014,0
+Scalini Fedeli,Manhattan,2014,0
+Seäsonal,Manhattan,2014,1
+Semilla,Brooklyn,2014,0
+Shalezeh,Manhattan,2014,0
+SHO Shaun Hergatt,Manhattan,2014,0
+Somtum Der,Manhattan,2014,0
+Soto,Manhattan,2014,2
+The Spotted Pig,Manhattan,2014,1
+Sushi Azabu,Manhattan,2014,1
+Sushi of Gari,Manhattan,2014,1
+Sushi Yasuda,Manhattan,2014,0
+Take Root,Brooklyn,2014,0
+Tamarind Tribeca,Manhattan,2014,1
+Telepan,Manhattan,2014,1
+Tempura Matsui,Manhattan,2014,0
+Tori Shin,Manhattan,2014,1
+Torrisi Italian Specialities,Manhattan,2014,1
+Tulsi,Manhattan,2014,1
+Uncle Boons,Manhattan,2014,0
+Veritas,Manhattan,2014,0
+Vong,Manhattan,2014,0
+Wallsé,Manhattan,2014,1
+wd~50,Manhattan,2014,1
+Zabb Elee,Queens,2014,0
+ZZ's Clam Bar,Manhattan,2014,0
+Adour,Manhattan,2015,0
+Ai Fiori,Manhattan,2015,1
+Alain Ducasse at the Essex House,Manhattan,2015,0
+Aldea,Manhattan,2015,1
+Allen & Delancey,Manhattan,2015,0
+Alto,Manhattan,2015,0
+Andanada,Manhattan,2015,1
+Annisa,Manhattan,2015,0
+Anthos,Manhattan,2015,0
+Aquavit,Manhattan,2015,2
+Aska,Brooklyn,2015,0
+Aureole,Manhattan,2015,1
+Atera,Manhattan,2015,2
+A Voce Columbus,Manhattan,2015,0
+A Voce Madison,Manhattan,2015,0
+Babbo,Manhattan,2015,1
+Bâtard,Manhattan,2015,1
+Betony,Manhattan,2015,1
+Blanca,Brooklyn,2015,2
+BLT Fish,Manhattan,2015,0
+Blue Hill,Manhattan,2015,1
+Bouley,Manhattan,2015,1
+The Breslin,Manhattan,2015,1
+Brushstroke,Manhattan,2015,1
+Café Boulud,Manhattan,2015,1
+Café China,Manhattan,2015,1
+Café Gray,Manhattan,2015,0
+Cagen,Manhattan,2015,0
+Carbone,Manhattan,2015,1
+Casa Enrique,Queens,2015,1
+Casa Mono,Manhattan,2015,1
+Caviar Russe,Manhattan,2015,1
+Chef's Table at Brooklyn Fare,Brooklyn,2015,3
+Convivio,Manhattan,2015,0
+Corton,Manhattan,2015,0
+Country,Manhattan,2015,0
+Craft,Manhattan,2015,0
+Cru,Manhattan,2015,0
+Daniel,Manhattan,2015,2
+Danji,Manhattan,2015,0
+Danny Brown Wine Bar & Kitchen,Queens,2015,1
+Danube,Manhattan,2015,0
+Delaware & Hudson,Brooklyn,2015,1
+Del Posto,Manhattan,2015,1
+Devi,Manhattan,2015,0
+Dovetail,Manhattan,2015,1
+Dressler,Brooklyn,2015,0
+Eighty-One,Manhattan,2015,0
+Eleven Madison Park,Manhattan,2015,3
+Etats-Unis,Manhattan,2015,0
+Fiamma Osteria,Manhattan,2015,0
+15 East,Manhattan,2015,1
+The Finch,Brooklyn,2015,0
+Fleur de Sel,Manhattan,2015,0
+Gabriel Kreuther,Manhattan,2015,0
+Gilt,Manhattan,2015,0
+Gordon Ramsay at The London,Manhattan,2015,0
+Gotham Bar and Grill,Manhattan,2015,1
+Gramercy Tavern,Manhattan,2015,1
+Hakkasan,Manhattan,2015,1
+Hirohisa,Manhattan,2015,0
+Heartbreak,Manhattan,2015,0
+Ichimura at Brushstroke,Manhattan,2015,2
+Insieme,Manhattan,2015,0
+Jean-Georges,Manhattan,2015,3
+Jewel Bako,Manhattan,2015,1
+JoJo,Manhattan,2015,0
+Jungsik,Manhattan,2015,2
+Juni,Manhattan,2015,1
+Junoon,Manhattan,2015,1
+Kajitsu,Manhattan,2015,1
+Kurumazushi,Manhattan,2015,0
+Kyo Ya,Manhattan,2015,1
+L'Atelier de Joël Robuchon,Manhattan,2015,0
+La Goulue,Manhattan,2015,0
+Lan Sheng,Manhattan,2015,0
+Laut,Manhattan,2015,0
+La Vara,Brooklyn,2015,1
+Le Bernardin,Manhattan,2015,3
+Le Restaurant,Manhattan,2015,0
+Lever House,Manhattan,2015,0
+Lincoln,Manhattan,2015,1
+Lo Scalco,Manhattan,2015,0
+Luksus at Torst,Brooklyn,2015,1
+Marc Forgione,Manhattan,2015,0
+March,Manhattan,2015,0
+Meadowsweet,Brooklyn,2015,1
+Marea,Manhattan,2015,2
+Masa,Manhattan,2015,3
+Minetta Tavern,Manhattan,2015,1
+The Modern,Manhattan,2015,1
+Momofuku Ko,Manhattan,2015,2
+The Musket Room,Manhattan,2015,1
+M. Wells Steakhouse,Queens,2015,1
+Nobu,Manhattan,2015,0
+The NoMad,Manhattan,2015,1
+Oceana,Manhattan,2015,0
+Per Se,Manhattan,2015,3
+Perry Street,Manhattan,2015,0
+Peter Luger Steak House,Brooklyn,2015,1
+Picholine,Manhattan,2015,1
+Piora,Manhattan,2015,1
+Pok Pok NY,Brooklyn,2015,1
+Public,Manhattan,2015,1
+Rebelle,Manhattan,2015,0
+Rhong-Tiam,Manhattan,2015,0
+The River Café,Brooklyn,2015,1
+Rosanjin,Manhattan,2015,1
+Rouge Tomate,Manhattan,2015,0
+Saul,Brooklyn,2015,0
+Scalini Fedeli,Manhattan,2015,0
+Seäsonal,Manhattan,2015,1
+Semilla,Brooklyn,2015,0
+Shalezeh,Manhattan,2015,0
+SHO Shaun Hergatt,Manhattan,2015,0
+Somtum Der,Manhattan,2015,0
+Soto,Manhattan,2015,2
+The Spotted Pig,Manhattan,2015,1
+Sushi Azabu,Manhattan,2015,1
+Sushi of Gari,Manhattan,2015,1
+Sushi Yasuda,Manhattan,2015,0
+Take Root,Brooklyn,2015,1
+Tamarind Tribeca,Manhattan,2015,0
+Telepan,Manhattan,2015,1
+Tempura Matsui,Manhattan,2015,0
+Tori Shin,Manhattan,2015,1
+Torrisi Italian Specialities,Manhattan,2015,1
+Tulsi,Manhattan,2015,1
+Uncle Boons,Manhattan,2015,0
+Veritas,Manhattan,2015,0
+Vong,Manhattan,2015,0
+Wallsé,Manhattan,2015,1
+wd~50,Manhattan,2015,0
+Zabb Elee,Queens,2015,1
+ZZ's Clam Bar,Manhattan,2015,1
+Adour,Manhattan,2016,0
+Ai Fiori,Manhattan,2016,1
+Alain Ducasse at the Essex House,Manhattan,2016,0
+Aldea,Manhattan,2016,1
+Allen & Delancey,Manhattan,2016,0
+Alto,Manhattan,2016,0
+Andanada,Manhattan,2016,1
+Annisa,Manhattan,2016,0
+Anthos,Manhattan,2016,0
+Aquavit,Manhattan,2016,2
+Aska,Brooklyn,2016,0
+Aureole,Manhattan,2016,1
+Atera,Manhattan,2016,2
+A Voce Columbus,Manhattan,2016,0
+A Voce Madison,Manhattan,2016,0
+Babbo,Manhattan,2016,1
+Bâtard,Manhattan,2016,1
+Betony,Manhattan,2016,1
+Blanca,Brooklyn,2016,2
+BLT Fish,Manhattan,2016,0
+Blue Hill,Manhattan,2016,1
+Bouley,Manhattan,2016,1
+The Breslin,Manhattan,2016,1
+Brushstroke,Manhattan,2016,1
+Café Boulud,Manhattan,2016,1
+Café China,Manhattan,2016,1
+Café Gray,Manhattan,2016,0
+Cagen,Manhattan,2016,1
+Carbone,Manhattan,2016,1
+Casa Enrique,Queens,2016,1
+Casa Mono,Manhattan,2016,1
+Caviar Russe,Manhattan,2016,1
+Chef's Table at Brooklyn Fare,Brooklyn,2016,3
+Convivio,Manhattan,2016,0
+Corton,Manhattan,2016,0
+Country,Manhattan,2016,0
+Craft,Manhattan,2016,0
+Cru,Manhattan,2016,0
+Daniel,Manhattan,2016,2
+Danji,Manhattan,2016,0
+Danny Brown Wine Bar & Kitchen,Queens,2016,0
+Danube,Manhattan,2016,0
+Delaware & Hudson,Brooklyn,2016,1
+Del Posto,Manhattan,2016,1
+Devi,Manhattan,2016,0
+Dovetail,Manhattan,2016,1
+Dressler,Brooklyn,2016,0
+Eighty-One,Manhattan,2016,0
+Eleven Madison Park,Manhattan,2016,3
+Etats-Unis,Manhattan,2016,0
+Fiamma Osteria,Manhattan,2016,0
+15 East,Manhattan,2016,0
+The Finch,Brooklyn,2016,1
+Fleur de Sel,Manhattan,2016,0
+Gabriel Kreuther,Manhattan,2016,1
+Gilt,Manhattan,2016,0
+Gordon Ramsay at The London,Manhattan,2016,0
+Gotham Bar and Grill,Manhattan,2016,1
+Gramercy Tavern,Manhattan,2016,1
+Hakkasan,Manhattan,2016,0
+Hirohisa,Manhattan,2016,1
+Heartbreak,Manhattan,2016,0
+Ichimura at Brushstroke,Manhattan,2016,2
+Insieme,Manhattan,2016,0
+Jean-Georges,Manhattan,2016,3
+Jewel Bako,Manhattan,2016,1
+JoJo,Manhattan,2016,0
+Jungsik,Manhattan,2016,2
+Juni,Manhattan,2016,1
+Junoon,Manhattan,2016,1
+Kajitsu,Manhattan,2016,1
+Kurumazushi,Manhattan,2016,0
+Kyo Ya,Manhattan,2016,1
+L'Atelier de Joël Robuchon,Manhattan,2016,0
+La Goulue,Manhattan,2016,0
+Lan Sheng,Manhattan,2016,0
+Laut,Manhattan,2016,0
+La Vara,Brooklyn,2016,1
+Le Bernardin,Manhattan,2016,3
+Le Restaurant,Manhattan,2016,0
+Lever House,Manhattan,2016,0
+Lincoln,Manhattan,2016,0
+Lo Scalco,Manhattan,2016,0
+Luksus at Torst,Brooklyn,2016,1
+Marc Forgione,Manhattan,2016,0
+March,Manhattan,2016,0
+Meadowsweet,Brooklyn,2016,1
+Marea,Manhattan,2016,2
+Masa,Manhattan,2016,3
+Minetta Tavern,Manhattan,2016,1
+The Modern,Manhattan,2016,2
+Momofuku Ko,Manhattan,2016,2
+The Musket Room,Manhattan,2016,1
+M. Wells Steakhouse,Queens,2016,1
+Nobu,Manhattan,2016,0
+The NoMad,Manhattan,2016,1
+Oceana,Manhattan,2016,0
+Per Se,Manhattan,2016,3
+Perry Street,Manhattan,2016,0
+Peter Luger Steak House,Brooklyn,2016,1
+Picholine,Manhattan,2016,1
+Piora,Manhattan,2016,1
+Pok Pok NY,Brooklyn,2016,1
+Public,Manhattan,2016,1
+Rebelle,Manhattan,2016,1
+Rhong-Tiam,Manhattan,2016,0
+The River Café,Brooklyn,2016,1
+Rosanjin,Manhattan,2016,1
+Rouge Tomate,Manhattan,2016,0
+Saul,Brooklyn,2016,0
+Scalini Fedeli,Manhattan,2016,0
+Seäsonal,Manhattan,2016,0
+Semilla,Brooklyn,2016,1
+Shalezeh,Manhattan,2016,0
+SHO Shaun Hergatt,Manhattan,2016,0
+Somtum Der,Manhattan,2016,1
+Soto,Manhattan,2016,2
+The Spotted Pig,Manhattan,2016,1
+Sushi Azabu,Manhattan,2016,1
+Sushi of Gari,Manhattan,2016,1
+Sushi Yasuda,Manhattan,2016,1
+Take Root,Brooklyn,2016,1
+Tamarind Tribeca,Manhattan,2016,0
+Telepan,Manhattan,2016,1
+Tempura Matsui,Manhattan,2016,1
+Tori Shin,Manhattan,2016,1
+Torrisi Italian Specialities,Manhattan,2016,0
+Tulsi,Manhattan,2016,1
+Uncle Boons,Manhattan,2016,1
+Veritas,Manhattan,2016,0
+Vong,Manhattan,2016,0
+Wallsé,Manhattan,2016,1
+wd~50,Manhattan,2016,0
+Zabb Elee,Queens,2016,0
+ZZ's Clam Bar,Manhattan,2016,1

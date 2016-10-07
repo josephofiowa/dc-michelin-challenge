@@ -1,9 +1,8 @@
 from bs4 import BeautifulSoup as bs
-import unicodecsv as csv
 import urllib2
-import pdb
 from optparse import OptionParser
 import os
+import pandas as pd
 
 parser = OptionParser()
 parser.add_option("-o", "--output", dest="output", default="C:\\git\\dc-michelin-challenge\\submissions\\AlexMiller\\supplemental_data\\",
@@ -22,8 +21,9 @@ response.close()
 
 #Define header
 results = []
-header = ["Name","Borough","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016"]
-results.append(header)
+index = ["Name","Borough"]
+columns = ["2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016"]
+header = index+columns
 
 #Parse using beautiful soup
 page = bs(source,"html.parser")
@@ -45,11 +45,12 @@ for row in rows:
         result.append(text)
     results.append(result)
     
-with open(options.output+"ny_stars.csv","wb") as csvfile:
-    #Need latin1 encoding for accent marks!!
-    writer = csv.writer(csvfile,delimiter=",",encoding="latin1")
-    for row in results:
-        writer.writerow(row)
+#Reshape long
+df = pd.DataFrame(results,columns=header)
+dfLong = pd.melt(df,id_vars=index,value_vars=columns)
+dfLong.columns = ["name","neighborhood","year","stars"]
+
+dfLong.to_csv(options.output+"ny_stars.csv",index=False,encoding="latin1")
         
 #Request Chicago Michelin Star wikipedia page
 req = urllib2.Request('https://en.wikipedia.org/wiki/List_of_Michelin_starred_restaurants_in_Chicago', None, headers)
@@ -59,8 +60,9 @@ response.close()
 
 #Define header
 results = []
-header = ["Name","Neighborhood","2011","2012","2013","2014","2015","2016"]
-results.append(header)
+index = ["Name","Neighborhood"]
+columns = ["2011","2012","2013","2014","2015","2016"]
+header = index + columns
 
 #Parse using beautiful soup
 page = bs(source,"html.parser")
@@ -86,8 +88,9 @@ for row in rows:
         result.append(result[-1])
     results.append(result)
     
-with open(options.output+"chi_stars.csv","wb") as csvfile:
-    #Need latin1 encoding for accent marks!!
-    writer = csv.writer(csvfile,delimiter=",",encoding="latin1")
-    for row in results:
-        writer.writerow(row)
+#Reshape long
+df = pd.DataFrame(results,columns=header)
+dfLong = pd.melt(df,id_vars=index,value_vars=columns)
+dfLong.columns = ["name","neighborhood","year","stars"]
+
+dfLong.to_csv(options.output+"chi_stars.csv",index=False,encoding="latin1")
