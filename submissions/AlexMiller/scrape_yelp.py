@@ -77,8 +77,6 @@ def review(browser, description, location):
     return df
 
 #Read through our wiki-scraped restaurants and scrape some metadata and reviews
-#Some restaurants no longer exist...
-duds = []
 with open(options.input,'rb') as csvfile:
         reader = unicodecsv.reader(csvfile,delimiter=",",quotechar="\"",encoding="latin1")
         header = False
