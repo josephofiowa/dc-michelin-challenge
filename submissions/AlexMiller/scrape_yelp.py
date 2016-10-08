@@ -5,6 +5,8 @@ import pandas as pd
 from urllib import quote
 import re
 import unicodecsv
+import os
+import glob
 
 parser = OptionParser()
 parser.add_option("-i", "--input", dest="input", default="C:\\git\\dc-michelin-challenge\\submissions\\AlexMiller\\supplemental_data\\ny_stars.csv",
@@ -16,6 +18,7 @@ parser.add_option("-o", "--output", dest="output", default="D:\\Documents\\Data\
 browser = webdriver.Chrome("C://chromedriver//chromedriver") # Create a session of Chrome
 browser.implicitly_wait(30) # Configure the WebDriver to wait up to 30 seconds for each page to load
 
+#Function to make sure we're writing good filenames
 def get_valid_filename(s):
     """
     Returns the given string converted to a string that can be used for a clean
@@ -29,9 +32,15 @@ def get_valid_filename(s):
     s = s.strip().replace(' ', '_')
     return re.sub(r'(?u)[^-\w.]', '', s)
 
+#Function to clean messy text
+def clean_text(row):
+    # Remove characters that are giving us headaches
+    return [r.replace(u"\u2026","...").replace(u"\u2019","'").replace(u"\u015b","s") for r in row]
+
+#Function to lookup reviews
 def review(browser, description, location):
-    find_loc = quote(location,safe='').replace("%20","+") # Encode strings for URL
-    find_desc = quote(description,safe='').replace("%20","+")
+    find_loc = location.replace(" ","+").replace("'","%27").replace("&","%26") # Encode strings for URL
+    find_desc = description.replace(" ","+").replace("'","%27").replace("&","%26")
     search_url = "https://www.yelp.com/search?find_desc=%s&find_loc=%s" % (find_desc,find_loc)
     browser.get(search_url) # Load page
     first_span = browser.find_element_by_xpath("//*[contains(text(), '1.         ')]") #Find the first link
@@ -39,6 +48,9 @@ def review(browser, description, location):
     first_hit_href = first_hit.get_attribute('href')
     
     browser.get(first_hit_href+"?sort_by=elites_desc") # Load first page. Sort by elites for better reviews
+    
+    #Name
+    name = browser.find_element_by_class_name("biz-page-title").text
     
     #Price range
     price_range = browser.find_element_by_xpath('//*[@class="business-attribute price-range"]').text
@@ -54,25 +66,19 @@ def review(browser, description, location):
     scores = browser.find_elements_by_xpath('//*[@itemprop="ratingValue"]')
     score_array = [score.get_attribute('content') for score in scores]
     average_score = score_array[0] #The first review is the average for the whole restaurant
-    review_score_array = score_array[1:]
+    review_score_array = score_array[1:len(date_array)+1]
     
     # Find all the reviews
     reviews = browser.find_elements_by_xpath('//*[@itemprop="description"]')
     review_array = [review.text for review in reviews]
-    
     #Make a Pandas dataframe
-    df = pd.DataFrame({"restaurant":description,"date":date_array,"avg.score":average_score,"price":price_range,"review.count":review_count,"score":review_score_array,"review":review_array})
+    df = pd.DataFrame({"req.restaurant":description,"result.restaurant":name,"date":date_array,"avg.score":average_score,"price":price_range,"review.count":review_count,"score":review_score_array,"review":review_array})
+    df = df.apply(clean_text)
     return df
 
 #Read through our wiki-scraped restaurants and scrape some metadata and reviews
 #Some restaurants no longer exist...
-duds = [
-    "Adour"
-    ,"Alain Ducasse at the Essex House"
-    ,"Allen & Delancey"
-    ,"Alto"
-    ,""
-    ]
+duds = []
 with open(options.input,'rb') as csvfile:
         reader = unicodecsv.reader(csvfile,delimiter=",",quotechar="\"",encoding="latin1")
         header = False
@@ -81,12 +87,24 @@ with open(options.input,'rb') as csvfile:
                 header = row
             else:
                 description = row[0]
+                filename = options.output+get_valid_filename(description)+".csv"
                 location = "New York, NY"
-                star_year = row[2]
-                stars = row[3]
-                if int(star_year)==2016 and description not in duds:
+                star_year = int(row[2])
+                stars = int(row[3])
+                if star_year==2016 and stars>0 and description not in duds and not os.path.isfile(filename):
                     print(description)
                     df = review(browser, description, location)
                     df["stars"] = stars
                     df["star.year"] = star_year
-                    df.to_csv(options.output+get_valid_filename(description)+".csv",index=False,encoding="latin1")
+                    df.to_csv(filename,index=False,encoding="latin1")
+
+browser.close()
+                    
+#Find .csvs in folder and concat
+output = []
+paths = glob.glob(options.output+"*.csv")
+for csv_file in paths:
+    df = pd.read_csv(csv_file, header=0,encoding="latin1")
+    output.append(df)
+frame = pd.concat(output)
+frame.to_csv(options.output+"..\\nyc.csv",index=False,encoding="latin1")
