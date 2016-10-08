@@ -37,17 +37,20 @@ def clean_text(row):
     # Remove characters that are giving us headaches
     return [r.replace(u"\u2026","...").replace(u"\u2019","'").replace(u"\u015b","s") for r in row]
 
-#Function to lookup reviews
-def review(browser, description, location):
+#Function to search for a specific restaurant
+def search_yelp(browser, description, location):
     find_loc = location.replace(" ","+").replace("'","%27").replace("&","%26") # Encode strings for URL
     find_desc = description.replace(" ","+").replace("'","%27").replace("&","%26")
     search_url = "https://www.yelp.com/search?find_desc=%s&find_loc=%s" % (find_desc,find_loc)
     browser.get(search_url) # Load page
-    first_span = browser.find_element_by_xpath("//*[contains(text(), '1.         ')]") #Find the first link
-    first_hit = first_span.find_elements_by_tag_name('a')[0]
-    first_hit_href = first_hit.get_attribute('href')
+
+#Function to lookup reviews based on hit number
+def review(browser, description, hit):
+    hit_span = browser.find_element_by_xpath("//*[contains(text(), '%s.         ')]" % hit) #Find the first link
+    hit_link = hit_span.find_elements_by_tag_name('a')[0]
+    hit_link_href = hit_link.get_attribute('href')
     
-    browser.get(first_hit_href+"?sort_by=elites_desc") # Load first page. Sort by elites for better reviews
+    browser.get(hit_link_href+"?sort_by=elites_desc") # Load first page. Sort by elites for better reviews
     
     #Name
     name = browser.find_element_by_class_name("biz-page-title").text
@@ -89,12 +92,29 @@ with open(options.input,'rb') as csvfile:
                 location = "New York, NY"
                 star_year = int(row[2])
                 stars = int(row[3])
-                if star_year==2016 and stars>0 and description not in duds and not os.path.isfile(filename):
+                if star_year==2016 and stars>0 and not os.path.isfile(filename):
                     print(description)
-                    df = review(browser, description, location)
+                    search_yelp(browser, description, location)
+                    df = review(browser, description, 1)
                     df["stars"] = stars
                     df["star.year"] = star_year
                     df.to_csv(filename,index=False,encoding="latin1")
+
+#Scrape roughly the same number of unstarred restaurants
+browser.get("https://www.yelp.com/search?find_desc=Restaurants&find_loc=New+York,+NY&start=0&sortby=review_count&attrs=RestaurantsPriceRange2.4,RestaurantsPriceRange2.3")
+for i in range(1,51):
+    df = review(browser,"Unstarred",i)
+    df["stars"] = 0
+    df["star.year"] = 9999
+    description = df["result.restaurant"][0]
+    filename = options.output+get_valid_filename(description)+".csv"
+    if not os.path.isfile(filename):
+        df.to_csv(filename,index=False,encoding="latin1")
+    browser.back()
+    #Advance the page every 10
+    if i % 10 == 0:
+        next_url = "https://www.yelp.com/search?find_desc=Restaurants&find_loc=New+York,+NY&start=%s&sortby=review_count&attrs=RestaurantsPriceRange2.4,RestaurantsPriceRange2.3" % i
+        browser.get(next_url)
 
 browser.close()
                     
