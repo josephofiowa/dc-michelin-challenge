@@ -44,7 +44,7 @@ Submissions will be scored using a [normal distribution](http://www.stat.yale.ed
 
 The points for getting the correct number of stars for each correct restaurant follow a similar convention. You are awarded 0.5 times the height of the normal distribution at the same x-axis point determined above. In other words, a correct restaurant with a correct number of stars is 1.5 times the height of your given x-axis point.
 
-**UPDATE:** In the unlikely event a tie among scores, whichever submission was first entered is the victor.
+**UPDATE:** In the unlikely event of a tie among scores, whichever submission was first entered is the victor.
 
 ### Scoring Example
 
