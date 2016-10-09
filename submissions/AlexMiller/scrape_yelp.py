@@ -11,7 +11,9 @@ import glob
 parser = OptionParser()
 parser.add_option("-i", "--input", dest="input", default="C:\\git\\dc-michelin-challenge\\submissions\\AlexMiller\\supplemental_data\\ny_stars.csv",
                         help="Output path. Default is wd",metavar="FOLDER")
-parser.add_option("-o", "--output", dest="output", default="D:\\Documents\\Data\\Yelp\\NYC\\",
+parser.add_option("-d", "--dcinput", dest="dcinput", default="C:\\git\\dc-michelin-challenge\\submissions\\AlexMiller\\supplemental_data\\dc_possibilities.csv",
+                        help="Output path. Default is wd",metavar="FOLDER")
+parser.add_option("-o", "--output", dest="output", default="D:\\Documents\\Data\\Yelp\\",
                         help="Output path. Default is wd",metavar="FOLDER")
 (options, args) = parser.parse_args()
 
@@ -35,7 +37,7 @@ def get_valid_filename(s):
 #Function to clean messy text
 def clean_text(row):
     # Remove characters that are giving us headaches
-    return [r.replace(u"\u2026","...").replace(u"\u2019","'").replace(u"\u015b","s") for r in row]
+    return [r.replace(u"\u2026","...").replace(u"\u2019","'").replace(u"\u015b","s").replace(u"\u015f","s").replace(u"\u014d","o").replace(u"\u016b","u").replace(u"\u0113","e") for r in row]
 
 #Function to search for a specific restaurant
 def search_yelp(browser, description, location):
@@ -88,7 +90,7 @@ with open(options.input,'rb') as csvfile:
                 header = row
             else:
                 description = row[0]
-                filename = options.output+get_valid_filename(description)+".csv"
+                filename = options.output+"NYC\\"+get_valid_filename(description)+".csv"
                 location = "New York, NY"
                 star_year = int(row[2])
                 stars = int(row[3])
@@ -99,15 +101,34 @@ with open(options.input,'rb') as csvfile:
                     df["stars"] = stars
                     df["star.year"] = star_year
                     df.to_csv(filename,index=False,encoding="latin1")
+                    
+#Read through our DC picks and scrape some metadata and reviews
+with open(options.dcinput,'rb') as csvfile:
+        reader = unicodecsv.reader(csvfile,delimiter=",",quotechar="\"",encoding="latin1")
+        header = False
+        for row in reader:
+            if not header:
+                header = row
+            else:
+                description = row[0]
+                filename = options.output+"DC\\"+get_valid_filename(description)+".csv"
+                location = "Washington, DC"
+                if not os.path.isfile(filename):
+                    print(description)
+                    search_yelp(browser, description, location)
+                    df = review(browser, description, 1)
+                    df["stars"] = ""
+                    df["star.year"] = 9999
+                    df.to_csv(filename,index=False,encoding="latin1")
 
-#Scrape roughly the same number of unstarred restaurants
+#Scrape about 200 unstarred NYC restaurants
 browser.get("https://www.yelp.com/search?find_desc=Restaurants&find_loc=New+York,+NY&start=0&sortby=review_count&attrs=RestaurantsPriceRange2.4,RestaurantsPriceRange2.3")
-for i in range(1,101):
+for i in range(1,201):
     df = review(browser,"Unstarred",i)
     df["stars"] = 0
     df["star.year"] = 9999
     description = df["result.restaurant"][0]
-    filename = options.output+get_valid_filename(description)+".csv"
+    filename = options.output+"NYC\\"+get_valid_filename(description)+".csv"
     if not os.path.isfile(filename):
         df.to_csv(filename,index=False,encoding="latin1")
     browser.back()
@@ -118,11 +139,20 @@ for i in range(1,101):
 
 browser.close()
                     
-#Find .csvs in folder and concat
+#Find .csvs in NYC folder and concat
 output = []
-paths = glob.glob(options.output+"*.csv")
+paths = glob.glob(options.output+"NYC\\*.csv")
 for csv_file in paths:
     df = pd.read_csv(csv_file, header=0,encoding="latin1")
     output.append(df)
 frame = pd.concat(output)
-frame.to_csv(options.output+"..\\nyc.csv",index=False,encoding="latin1")
+frame.to_csv(options.output+"nyc.csv",index=False,encoding="latin1")
+
+#Find .csvs in DC folder and concat
+output = []
+paths = glob.glob(options.output+"DC\\*.csv")
+for csv_file in paths:
+    df = pd.read_csv(csv_file, header=0,encoding="latin1")
+    output.append(df)
+frame = pd.concat(output)
+frame.to_csv(options.output+"dc.csv",index=False,encoding="latin1")
