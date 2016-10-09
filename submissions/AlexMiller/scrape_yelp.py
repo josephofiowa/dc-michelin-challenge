@@ -102,7 +102,7 @@ with open(options.input,'rb') as csvfile:
 
 #Scrape roughly the same number of unstarred restaurants
 browser.get("https://www.yelp.com/search?find_desc=Restaurants&find_loc=New+York,+NY&start=0&sortby=review_count&attrs=RestaurantsPriceRange2.4,RestaurantsPriceRange2.3")
-for i in range(1,51):
+for i in range(1,101):
     df = review(browser,"Unstarred",i)
     df["stars"] = 0
     df["star.year"] = 9999
