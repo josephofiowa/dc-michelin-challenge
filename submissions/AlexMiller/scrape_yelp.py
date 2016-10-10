@@ -37,7 +37,11 @@ def get_valid_filename(s):
 #Function to clean messy text
 def clean_text(row):
     # Remove characters that are giving us headaches
-    return [r.replace(u"\u2026","...").replace(u"\u2019","'").replace(u"\u015b","s").replace(u"\u015f","s").replace(u"\u014d","o").replace(u"\u016b","u").replace(u"\u0113","e") for r in row]
+    try:
+        new_row = [r.replace(u"\u2015","-").replace(u"\u201C","'").replace(u"\uff01","!").replace(u"\u201D","'").replace(u"\u2026","...").replace(u"\u2019","'").replace(u"\u015b","s").replace(u"\u015f","s").replace(u"\u014d","o").replace(u"\u016b","u").replace(u"\u0113","e").replace(u"\uff0c",",") for r in row]
+    except:
+        new_row = [r.replace(u"\u2015","-").replace(u"\u201C","'").replace(u"\uff01","!").replace(u"\u201D","'").replace(u"\u2026","...").replace(u"\u2019","'").replace(u"\u015b","s").replace(u"\u015f","s").replace(u"\u014d","o").replace(u"\u016b","u").replace(u"\u0113","e").replace(u"\uff0c",",").decode("windows-1251",errors="ignore") for r in row]
+    return new_row
 
 #Function to search for a specific restaurant
 def search_yelp(browser, description, location):
@@ -45,14 +49,23 @@ def search_yelp(browser, description, location):
     find_desc = description.replace(" ","+").replace("'","%27").replace("&","%26")
     search_url = "https://www.yelp.com/search?find_desc=%s&find_loc=%s" % (find_desc,find_loc)
     browser.get(search_url) # Load page
-
-#Function to lookup reviews based on hit number
-def review(browser, description, hit):
+    
+#Function to click specific reviews
+def click_hit(browser, hit):
     hit_span = browser.find_element_by_xpath("//*[contains(text(), '%s.         ')]" % hit) #Find the first link
     hit_link = hit_span.find_elements_by_tag_name('a')[0]
     hit_link_href = hit_link.get_attribute('href')
     
-    browser.get(hit_link_href+"?sort_by=elites_desc") # Load first page. Sort by elites for better reviews
+    # browser.get(hit_link_href+"?sort_by=elites_desc") # Load first page. Sort by elites?
+    browser.get(hit_link_href) # Load first page.
+    
+    if "?" in hit_link_href:
+        hit_link_href = hit_link_href.split("?")[0]
+    
+    return hit_link_href
+
+#Function to lookup reviews based on hit number
+def review(browser, description):
     
     #Name
     name = browser.find_element_by_class_name("biz-page-title").text
@@ -84,23 +97,46 @@ def review(browser, description, hit):
 #Read through our wiki-scraped restaurants and scrape some metadata and reviews
 with open(options.input,'rb') as csvfile:
         reader = unicodecsv.reader(csvfile,delimiter=",",quotechar="\"",encoding="latin1")
-        header = False
+        header = False # Make sure we're not reading in the header
         for row in reader:
             if not header:
                 header = row
             else:
                 description = row[0]
-                filename = options.output+"NYC\\"+get_valid_filename(description)+".csv"
+                filename = options.output+"NYC\\"+get_valid_filename(description)+".csv" #Make a valid filename
                 location = "New York, NY"
                 star_year = int(row[2])
                 stars = int(row[3])
-                if star_year==2016 and stars>0 and not os.path.isfile(filename):
+                if star_year==2016 and stars>0 and not os.path.isfile(filename): #As long as it's from 2016 and has stars, and the file doesn't exist
                     print(description)
-                    search_yelp(browser, description, location)
-                    df = review(browser, description, 1)
+                    search_yelp(browser, description, location) #Search yelp for our restaurant
+                    hit_link = click_hit(browser, 1) #Click the first hit
+                    df = review(browser, description) #Grab the review
                     df["stars"] = stars
                     df["star.year"] = star_year
-                    df.to_csv(filename,index=False,encoding="latin1")
+                    df.to_csv(filename,index=False,encoding="latin1") #Write to file
+                    pagination_index = 1 # Here's where we start pagination to increase our review count
+                    while True and pagination_index<20: #Infinite loop, but break at a reasonable 2k reviews
+                        try:
+                            next_chev = browser.find_elements_by_xpath('//*[@class="icon icon--24-chevron-right icon--size-24 icon--currentColor"]') #Try and find the chevron icon for next
+                            if len(next_chev)==0: #Break if we can't find it
+                                break
+                            start = "?start=%s" % (pagination_index*20) #Add the pagination attribute to the URL
+                            browser.get(hit_link+start)
+                            filename = options.output+"NYC\\"+get_valid_filename(description)+"_"+str(pagination_index)+".csv"
+                            if not os.path.isfile(filename): #If the file doesn't already exist
+                                df = review(browser, description) #Grab the review on the new page
+                                if df.count(0)[0]==0: #If there are no reviews, break
+                                    break
+                                else:
+                                    df["stars"] = stars
+                                    df["star.year"] = star_year
+                                    df.to_csv(filename,index=False,encoding="latin1") #Write to file
+                            else:
+                                break
+                            pagination_index = pagination_index + 1
+                        except:
+                            break
                     
 #Read through our DC picks and scrape some metadata and reviews
 with open(options.dcinput,'rb') as csvfile:
@@ -116,15 +152,39 @@ with open(options.dcinput,'rb') as csvfile:
                 if not os.path.isfile(filename):
                     print(description)
                     search_yelp(browser, description, location)
-                    df = review(browser, description, 1)
+                    hit_link = click_hit(browser, 1)
+                    df = review(browser, description)
                     df["stars"] = ""
                     df["star.year"] = 9999
                     df.to_csv(filename,index=False,encoding="latin1")
+                    pagination_index = 1
+                    while True and pagination_index<20: #Infinite loop, but break at a reasonable 2k reviews
+                        try:
+                            next_chev = browser.find_elements_by_xpath('//*[@class="icon icon--24-chevron-right icon--size-24 icon--currentColor"]') #Try and find the chevron icon for next
+                            if len(next_chev)==0: #Break if we can't find it
+                                break
+                            start = "?start=%s" % (pagination_index*20) #Add the pagination attribute to the URL
+                            browser.get(hit_link+start)
+                            filename = options.output+"DC\\"+get_valid_filename(description)+"_"+str(pagination_index)+".csv"
+                            if not os.path.isfile(filename): #If the file doesn't already exist
+                                df = review(browser, description) #Grab the review on the new page
+                                if df.count(0)[0]==0: #If there are no reviews, break
+                                    break
+                                else:
+                                    df["stars"] = stars
+                                    df["star.year"] = star_year
+                                    df.to_csv(filename,index=False,encoding="latin1") #Write to file
+                            else:
+                                break
+                            pagination_index = pagination_index + 1
+                        except:
+                            break
 
 #Scrape about 200 unstarred NYC restaurants
 browser.get("https://www.yelp.com/search?find_desc=Restaurants&find_loc=New+York,+NY&start=0&sortby=review_count&attrs=RestaurantsPriceRange2.4,RestaurantsPriceRange2.3")
 for i in range(1,201):
-    df = review(browser,"Unstarred",i)
+    click_hit(browser,i)
+    df = review(browser,"Unstarred")
     df["stars"] = 0
     df["star.year"] = 9999
     description = df["result.restaurant"][0]
@@ -146,6 +206,7 @@ for csv_file in paths:
     df = pd.read_csv(csv_file, header=0,encoding="latin1")
     output.append(df)
 frame = pd.concat(output)
+frame.drop_duplicates()
 frame.to_csv(options.output+"nyc.csv",index=False,encoding="latin1")
 
 #Find .csvs in DC folder and concat
@@ -155,4 +216,5 @@ for csv_file in paths:
     df = pd.read_csv(csv_file, header=0,encoding="latin1")
     output.append(df)
 frame = pd.concat(output)
+frame.drop_duplicates()
 frame.to_csv(options.output+"dc.csv",index=False,encoding="latin1")

@@ -26,7 +26,7 @@ with open(prefix+'Documents/Data/Yelp/all.csv','r') as csvfile:
 
 random.shuffle(documents)
 all_words = nltk.FreqDist(w.lower() for w in all_words_raw)
-word_features = all_words.keys()[:2000] # [_document-classify-all-words]
+word_features = all_words.keys() # [_document-classify-all-words]
 
 def document_features(document): # [_document-classify-extractor]
     document_words = set(document) # [_document-classify-set]
@@ -36,7 +36,7 @@ def document_features(document): # [_document-classify-extractor]
     return features
 
 featuresets = [(document_features(d), c) for (d,c) in documents]
-set_size = int(len(documents)/2)
+set_size = int(len(documents)/5)
 print("Testing set size: "+str(set_size))
 train_set, test_set = featuresets[set_size:], featuresets[:set_size]
 classifier = nltk.NaiveBayesClassifier.train(train_set)
