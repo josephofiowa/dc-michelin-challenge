@@ -2,31 +2,26 @@ import nltk
 import random
 import pdb
 import unicodecsv
-from nltk.corpus import stopwords
-cachedStopWords = stopwords.words("english")
 
 # prefix = "/media/alex/HD/"
 prefix = "D:/"
 
-def splitStop(x):
-    return [word for word in x.split() if word not in cachedStopWords]
-
 documents = []
 all_words_raw = []
-with open(prefix+'Documents/Data/Yelp/all.csv','r') as csvfile:
+with open(prefix+'Documents/Data/Yelp/test.csv','r') as csvfile:
     reader = unicodecsv.reader(csvfile,delimiter=',',quotechar="\"",encoding="latin1")
     header = None
     for row in reader:
         if not header:
             header = row
         else:
-            splitList = splitStop(row[1])
+            splitList = row[1].split()
             documents.append((splitList,row[0]))
             all_words_raw+=splitList     
 
 random.shuffle(documents)
 all_words = nltk.FreqDist(w.lower() for w in all_words_raw)
-word_features = all_words.keys() # [_document-classify-all-words]
+word_features = all_words.keys()[200:] # [_document-classify-all-words]
 
 def document_features(document): # [_document-classify-extractor]
     document_words = set(document) # [_document-classify-set]

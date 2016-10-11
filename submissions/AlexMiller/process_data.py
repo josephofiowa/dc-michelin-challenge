@@ -3,9 +3,15 @@ from csv import QUOTE_NONE
 from csv import QUOTE_ALL
 import pdb
 import random
+from nltk.corpus import stopwords
+cachedStopWords = stopwords.words("english")
 
-# prefix = "/media/alex/HD/"
-prefix = "D:/"
+prefix = "/media/alex/HD/"
+# prefix = "D:/"
+
+#Function to remove stop words
+def removeStop(x):
+    return " ".join([word for word in x.split() if word.lower() not in cachedStopWords])
 
 #Process our NYC data for neural network
 df = pd.read_csv(prefix+"Documents/Data/Yelp/nyc.csv",header=0,encoding="latin1")
@@ -13,10 +19,10 @@ df = pd.read_csv(prefix+"Documents/Data/Yelp/nyc.csv",header=0,encoding="latin1"
 #Keep only stars and reviews
 df = df[["stars","review"]]
 
-#Let's remove the return characters and add spacing to common punctuation
+#Let's remove the return characters, add spacing to common punctuation, and remove stop words
 def clean_text(row):
     return row.replace("\r","").replace("\n"," ").replace(","," ").replace("."," . ").replace("/"," / ").replace('"',' " ').replace('!',' ! ').replace('?',' ? ').replace('$',' $ ').replace('-',' - ').replace(")"," ) ").replace("("," ( ")
-df["review"] = df["review"].apply(clean_text)
+df["review"] = df["review"].apply(clean_text).apply(removeStop)
 
 #And stringify scores
 def stringify(row):
@@ -69,11 +75,8 @@ test = test[["stars","review"]]
 
 # Write csvs
 train.to_csv(prefix+"Documents/Data/Yelp/train.csv",index=False,encoding="latin1")
-train.to_csv(prefix+"Documents/Data/Yelp/train_headless.csv",index=False,header=None,encoding="latin1")
 test.to_csv(prefix+"Documents/Data/Yelp/test.csv",index=False,encoding="latin1")
-test.to_csv(prefix+"Documents/Data/Yelp/test_headless.csv",index=False,header=None,encoding="latin1")
 df.to_csv(prefix+"Documents/Data/Yelp/all.csv",index=False,encoding="latin1")
-df.to_csv(prefix+"Documents/Data/Yelp/all_headless.csv",index=False,header=None,encoding="latin1")
 
 #Process our DC data for neural network
 df = pd.read_csv(prefix+"Documents/Data/Yelp/dc.csv",header=0,encoding="latin1")
@@ -102,11 +105,8 @@ df = pd.read_csv(prefix+"Documents/Data/Yelp/dc.csv",header=0,encoding="latin1")
 df = df[["review"]]
 
 #Let's remove the return characters and add spacing to common punctuation
-def clean_text(row):
-    return row.replace("\r","").replace("\n"," ").replace(","," ").replace("."," . ").replace("/"," / ").replace('"',' " ').replace('!',' ! ').replace('?',' ? ').replace('$',' $ ').replace('-',' - ').replace(")"," ) ").replace("("," ( ")
-df["review"] = df["review"].apply(clean_text)
+df["review"] = df["review"].apply(clean_text).apply(removeStop)
 
 # Write csv
 df.to_csv(prefix+"Documents/Data/Yelp/to_classify.csv",index=False,encoding="latin1")
-df.to_csv(prefix+"Documents/Data/Yelp/to_classify_headless.csv",index=False,header=None,encoding="latin1")
 
