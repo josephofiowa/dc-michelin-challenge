@@ -1,4 +1,4 @@
-Thought process:
+# Thought process:
 
 There are two major hurdles of predicting Michelin Stars that I tried to overcome with these scripts:
 
@@ -8,7 +8,7 @@ Secondly, it would be difficult to obtain enough samples of writing about a rest
 
 Once we've obtained estimation vectors for each review in the DC dataset, we can begin to estimate DC stars by either first predicting the star and then averaging over all the reviews, or averaging all of our output nodes and then predicting the outcome based on that average
 
-Technical process:
+# Technical process:
 
 1. scrape_wikipedia.py
 - Built to scrape Wikipedia for the NYC and Chicago 2016 Michelin star tables. Ultimately decided just to go with NYC
@@ -42,3 +42,17 @@ Technical process:
 
 7. Human intuition
 -Removing the 2 Bib Gourmand restaurants that received stars according to the model.
+
+## Aside:
+
+A toy NLTK model in the supplemental_scripts folder comes up with these as the most informative features:
+
+### Most Informative Features
+
+| Feature                 | Star ratio |   | Likelihood ratio |
+|-------------------------|------------|---|------------------|
+| contains(caviar) = True | 3 : 0      | = | 16.8 : 1.0       |
+| contains(brunch) = True | 0 : 3      | = | 16.4 : 1.0       |
+| contains(tapas) = True  | 1 : 2      | = | 13.0 : 1.0       |
+| contains(fries) = True  | 0 : 2      | = | 13.0 : 1.0       |
+| contains(juicy) = True  | 0 : 3      | = | 12.5 : 1.0       |
