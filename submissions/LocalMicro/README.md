@@ -78,13 +78,6 @@ Komi Star-base from Washingtonian</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -----</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.45 Total Star Rank</br>
                                    
-
-And coding style tests
-
-Explain what these tests test and why
-
-Give an example
-Deployment
 <h2>Assigning 1, 2, or 3 stars</h2>
 The 2016 Chicago Michelin star distribution served as a model for how to allocate stars to the 9 Washington DC finalists. However, no Washington DC restaurant was given 3 stars. My reasoning is that DC is new to the Michelin guides and the conservative Michelin reviewers will wait at least a year before awarding 3 stars to a restaurant.</br>
 
@@ -102,6 +95,12 @@ In 2016 Chicago had 2 restaurants that received 3 Michelin stars out of 22 resta
 
 
 <h2>Notes</h2>
+
+The Excel worksheets (as pdfs) are at the links given below. 
+FirstRound  <a href="https://drive.google.com/file/d/0B-I_uKYv_wJcNklWZmQxU2pMUlk/view?usp=sharing" target="_blank">https://drive.google.com/file/d/0B-I_uKYv_wJcNklWZmQxU2pMUlk/view?usp=sharing</a></br>
+Finalists  <a href="https://drive.google.com/file/d/0B-I_uKYv_wJccVppcDY5RnNzZTA/view?usp=sharing" target="_blank">https://drive.google.com/file/d/0B-I_uKYv_wJccVppcDY5RnNzZTA/view?usp=sharing</a></br>
+Predicted Winners  <a href="https://drive.google.com/file/d/0B-I_uKYv_wJcQjdUaHBhYkRUYkk/view?usp=sharing" target="_blank">https://drive.google.com/file/d/0B-I_uKYv_wJcQjdUaHBhYkRUYkk/view?usp=sharing</a>
+</br>
 
 
 
