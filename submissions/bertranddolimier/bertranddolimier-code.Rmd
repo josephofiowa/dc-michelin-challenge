@@ -8,9 +8,9 @@ output: pdf_document
 # Executive Summary
 **Objective:** Predict the result of the newly created Michelin guide for the Washington, DC area. The outcome will include a) the number of restaurants stared, the name of restaurants with their corresponding stars ( 1, 2 or 3)
 
-**Approach:** Collect data for Restaurants in the other US cities where a Michelin guide already exist, explore for each of them the publicy available information, select the most relevant dataset and come up with a predictive algorithm ( FYI no personal opimiom just data science ).
+**Approach:** Collect data for Restaurants in the other US cities where a Michelin guide already exist, explore for each of them the publicly available information, select the most relevant dataset and come up with a predictive algorithm ( FYI no personal opinion just data science ).
 
-**Tech stack** Used R, R studio and Knit Markdown ( Rmd extension) and base R libraries (httr, jsonlite & XML) to integrate documentation with code and generate the pdf doc.
+**Tech stack** Used R and Knit Markdown ( Rmd extension) with R libraries (httr, jsonlite & XML) to integrate documentation with code and generate the pdf doc.
 
 
 # The multi-step process is described below:
@@ -31,19 +31,22 @@ output: pdf_document
 **Polishing the DC dataset**
 
 1. Removing the bib gourmand from the test dataset. 
+2. Removing entries with no reviews
 
 **Analysing the Data**
 
 1. Use linear regression to determine a model based on the data collected above.
 2. Collect restaurants from the Washington area.
-3. Run the model selected on step 5 and order the restaurants.
+3. Run the model selected and order the restaurants.
 4. Using demographic information and number of restaurant in each collective area weight by the average customer rating estimate the number of 3,2 and 1 stars restaurant to be anticipated.
-5. Manually "hair-cut" the ranked list ( step 7 ) and determine the "winners"...
+5. Give an arbitrary value to the Restaurant type based on occurence in training dataset
+6. Assign a "novelty factor" to the Washington DC area as less restaurant can be expected the first year a guide is publish
+7. Ranked list and determine the "winners"...
 
 # Detail and code
 # Base Geo Dataset
-# The simple plot below, shows how the number of Pops in the 3 existing US Michelin guide areas have a strong correlation with the number of restaurants, however Washington has more restaurants per capita, we incorporate more quantitative demographics.
-
+# The simple plot below, shows the correlation between stared restaurants with the selected multiple criteria that are: City Population, Metro Population, Income and Number of "Quality" restaurants. San Francisco appears at an outlier in several ways ( not for this discussion )
+( code hidden )
 ```{r, eval=TRUE, echo=FALSE }
 library(httr)
 library(XML)
@@ -286,6 +289,7 @@ write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/o
 
 # Get Restaurant press review from the Washington Post.
 Populating the fields: dfusa$art2016, art2015, art2014, artBefore (older than 2014), dateUNKNOWN
+( code hidden )
 ```{r ,eval=FALSE, echo=FALSE}
 ## Engine id:
 engineId  <- "faxe8adyxke" # - Washington Post = 017019937838437061749:faxe8adyxke
@@ -375,6 +379,7 @@ write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/o
 
 # Yelp review and Classification
 Populating Yreview, Yrating, Ypricing
+( code hidden )
 ```{r, eval=FALSE, echo=FALSE}
 # Case and syntax simplification
 standardCase <- function( obj ) {
@@ -464,6 +469,7 @@ write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/o
 
 # Get google rating and neighborhood 
 Populating: Zreview, Zrating, Neighborhood
+( code hidden )
 ```{r, eval=FALSE, echo=FALSE}
 
 url <- "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" 
@@ -527,7 +533,8 @@ write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/o
 
 # Zagat review through google apis
 Populating fields: Fscore, Dscore, Sscore, type, buzz, buzz2, Neighorhood
-```{r, eval=FALSE}
+( code hidden )
+```{r, eval=FALSE, echo=FALSE}
 #name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/usa2016_result.csv")  )
 name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv")  )
 usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE , sep = ",")
@@ -599,8 +606,6 @@ write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/o
 
 ```
 
-# Remove bib gourmand
-Removed the already awarded "Bib gourmand" restaurants.
 
 # Analyse the data
 ## Fields collected are:
@@ -625,7 +630,9 @@ Removed the already awarded "Bib gourmand" restaurants.
 1. Neighborhood: Restaurant Neignborhood
 
 # Create Mode / Plot Linear Regression
-```{r, eval=TRUE}
+( code hidden )
+```{r, echo=FALSE, eval=TRUE}
+par(mfrow=c(1,1)) 
 
 # Training data collected
 training = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_training2.csv")  )
@@ -676,12 +683,15 @@ for(ii in iimin:iimax ) {
   if( done == FALSE ) dfusa$NumericType[ii] <- 0
 }
 
-par(mfrow=c(1,1)) 
-
+# Fitted Element predicting number of stars
 fit <- lm( Etoile ~  artTotalCap *Yreview * Yrating * Ypricing * NumericType , na.action=na.exclude ,data = dfusa )
+#plot( fit$fitted.values , dfusa$Etoile ,pch=19,col="blue")
+#abline(lm( dfusa$Etoile ~ fit$fitted.values ), lwd = 2)
+```
 
-plot( fit$fitted.values , dfusa$Etoile ,pch=19,col="blue")
-abline(lm( dfusa$Etoile ~ fit$fitted.values ), lwd = 2)
+# Storing results
+( code hidden )
+```{r, eval=FALSE, echo=FALSE}
 
 ndf <- subset( dfdc, dfdc$Yreview > 5 )
 mesEtoiles <- predict( fit , ndf, interval="predict" )
@@ -690,15 +700,11 @@ mesEtoiles <- cbind( mesEtoiles, ndf$Yrating )
 mesEtoiles <- cbind( mesEtoiles, ndf$Yreview )
 mesEtoiles <- cbind( mesEtoiles, ndf$Ypricing )
 
-# Ordering the results
 mesEtoiles <- mesEtoiles[order(mesEtoiles[,1], decreasing = TRUE ) ,]
 
 stared <- as.data.frame( read.csv( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_template.csv" , header=TRUE, stringsAsFactors=FALSE ,  sep = ",") )
 
-# Extracting and 
 stared$restaurant <- as.data.frame(mesEtoiles[ 1:23 , 4])[,1]
 stared[,2] <- c(3,3,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 )
 write.csv( stared , file = "/Users/bdolimier/persodev/michelinDC/BertrandDolimier.csv", row.names=TRUE , quote=FALSE )
 ```
-
-Results are stored in file BertrandDolimier.csv
