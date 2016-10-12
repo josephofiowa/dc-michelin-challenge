@@ -7,7 +7,8 @@ Code files:
 4. Zagat-Michelin merge: code used to merge the Zagat and Michelin data
 5. Michelin EDA: exploratory data analysis
 6. Michelin models: modeling, including the final model and submission output
+7. tree21: example regression tree with training data
 
 Other documents:
 submission_lynchkl: csv document with predictions
-Presentation: analysis presentation(WIP) 
+Presentation: analysis presentation
