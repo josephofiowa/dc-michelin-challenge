@@ -1,0 +1,346 @@
+restaurant,location,star,price,rating,cuisine,review_count
+Pleasant+House,1,0,2,4.5,Bakeries,489
+Publican+Quality+Meats,1,0,2,4.5,Butcher,478
+La+Sirena+Clandestina,1,0,2,4.0,Latin American,350
+Arami,1,0,3,4.0,Sushi Bars,522
+Green+Zebra,1,0,3,4.0,Vegetarian,917
+Trenchermen,1,0,3,3.5,American (New),622
+Telegraph,1,0,2,4.0,American (Traditional),342
+Urban+Belly,1,0,2,4.0,Asian Fusion,291
+Jaipur,1,0,2,3.5,Indian,434
+The+Gage,1,0,3,4.0,Gastropubs,2130
+Slurping+Turtle,1,0,2,3.5,Ramen,1159
+L+Patron,1,0,1,4.0,Mexican,898
+Davanti+Enoteca,1,0,2,4.0,Italian,1031
+Perennial+Virant,1,0,3,4.0,American (New),493
+Belly+Q,1,0,3,4.0,Barbeque,620
+Billy+Sunday,1,0,2,4.0,Pubs,4722
+David+Burke's+Primehouse,1,0,4,3.5,Bars,1517
+Katsu,1,0,3,4.0,Japanese,320
+Big+Jones,1,0,2,4.0,Southern,1187
+Everest,1,1,4,4.0,French,247
+Gilt+Bar,1,0,3,4.0,American (New),1289
+Les+Nomades,1,0,4,4.5,French,205
+Mastro's+Steakhouse,1,0,4,4.0,Steakhouses,909
+Lillie's+Q,1,0,2,3.0,Southern,32
+Nomi+Kitchen,1,0,4,4.0,American (New),597
+Kai+Zan,1,0,3,4.5,Asian Fusion,582
+Mexique,1,0,3,4.0,French,634
+Big+Star,1,0,2,3.5,Mexican,2586
+Lula+Cafe,1,0,2,4.0,American (New),1534
+Ada+St,1,0,3,4.5,Bars,400
+Henri,1,0,1,4.0,Fast Food,58
+Hot+Doug's,1,0,1,4.5,Hot Dogs,5
+Carriage+House,1,0,2,4.0,Southern,500
+Piccolo+Sogno,1,0,3,4.0,Italian,892
+Found+Kitchen+and+Social+House,1,0,2,3.5,American (New),372
+Mott+Street,1,0,2,4.0,Asian Fusion,344
+Vera,1,0,3,4.0,Wine Bars,251
+Frontera+Grill,1,0,3,4.0,Mexican,1806
+The+Purple+Pig,1,0,2,4.0,Tapas/Small Plates,4620
+Cafe+Spiaggia,1,0,3,3.5,Italian,305
+Sumi+Robata+Bar,1,0,3,4.0,Japanese,196
+Bavette's,1,0,3,4.5,Steakhouses,1404
+Lao+Sze+Chuan,1,0,2,3.5,Szechuan,444
+Maudes+Liquor+Bar,1,0,3,4.0,Bars,813
+GT+Fish+and+Oyster,1,0,3,4.0,Seafood,1212
+Longman+and+Eagle,1,1,2,4.0,Hotels,2009
+The+Bristol,1,0,3,4.0,American (New),972
+North+Pond,1,1,4,4.0,American (New),431
+Au+Cheval,1,0,2,4.5,American (New),3324
+Brindille,1,0,4,4.5,French,94
+Takashi,1,0,2,3.0,Japanese,142
+Juno,1,0,3,4.0,Sushi Bars,205
+MK,1,0,4,4.5,American (New),825
+Topolobampo,1,1,4,3.5,Mexican,803
+Ruxbin,1,0,3,4.5,American (New),726
+Boka,1,1,3,4.0,American (New),929
+the+Publican,1,0,2,4.5,Butcher,478
+Senza,1,0,4,5.0,American (New),51
+Moto,1,1,4,4.0,American (New),506
+Girl+and+the+Goat,1,0,3,4.5,American (New),5671
+Naha,1,1,4,3.5,American (New),612
+Yusho,1,0,3,3.5,Japanese,432
+Acadia,1,2,4,4.0,American (New),333
+Blackbird,1,1,3,4.0,American (New),1195
+Sepia,1,1,3,4.0,American (New),888
+El+Ideas,1,1,4,4.5,American (New),235
+Elizabeth,1,1,4,4.5,American (New),124
+Goosefoot,1,1,3,5.0,"Beer, Wine & Spirits",10
+Avec,1,0,3,4.5,French,1716
+Nightwood,1,0,3,4.0,American (New),709
+Balena,1,0,3,4.0,Italian,674
+Tru,1,1,4,4.0,American (New),585
+Spiaggia,1,1,4,4.0,Italian,411
+Schwa,1,1,4,4.0,American (New),452
+L20,1,0,4,4.5,Seafood,1785
+Grace,1,3,4,4.5,American (New),234
+Sixteen,1,2,4,3.5,American (New),372
+next,1,0,4,4.0,Chinese,544
+Alinea,1,3,4,4.5,American (New),1538
+42+Grams,1,2,4,4.5,American (New),65
+Dusek's,1,2,2,4.0,Bars,597
+Parachute,1,1,3,4.0,Korean,305
+Eleven+Madison+Park,2,3,4,4.5,American (New),1549
+Le+Bernardin,2,3,4,4.5,French,1859
+Per+Se,2,3,4,4.5,French,1205
+Jean+Georges,2,3,3,4.0,French,904
+Daniel,2,2,4,4.5,French,1236
+Bouley,2,1,4,4.5,French,1034
+Shuko,2,0,4,4.0,Japanese,109
+Gramercy+Tavern,2,1,4,4.5,American (New),2085
+Peter+Luger,2,1,4,4.0,Steakhouses,656
+Gotham+Bar+and+Grill,2,1,4,4.5,American (New),1257
+Estela,2,0,3,4.0,American (New),308
+La+Grenouille,2,0,4,4.0,French,300
+Sushi+Yasuda,2,1,4,4.0,Japanese,1750
+Marea,2,2,4,4.0,Italian,1387
+Gabriel+Kreuther,2,1,4,4.5,Bars,132
+Annisa,2,0,4,4.5,American (New),504
+Del+Posto,2,1,4,4.0,Italian,1118
+Aquavit,2,2,4,4.0,Scandinavian,566
+Di+Fara+Pizza,2,0,2,4.0,Pizza,2453
+Betony,2,1,4,4.0,American (New),339
+Pearl+Oyster+Bar,2,0,3,4.0,Seafood,739
+Cosme,2,0,4,3.5,Mexican,381
+Dovetail,2,1,4,4.0,American (New),631
+Blue+Hill,2,1,4,4.5,American (New),765
+Chef's+Table+at+Brooklyn+Fare,2,3,4,4.5,American (New),323
+Sushi+Nakazawa,2,0,4,4.5,Japanese,765
+Tamarind+Tribeca,2,0,3,4.0,Indian,560
+Keens+Steakhouse,2,0,4,4.0,Steakhouses,1626
+The+NoMad,2,1,3,4.0,Gastropubs,169
+Semilla,2,1,4,4.0,American (Traditional),85
+Brushstroke,2,1,4,4.0,Japanese,291
+Cafe+Boulud,2,1,4,4.0,French,510
+Katz's+Delicatessen,2,0,2,4.0,Delis,7266
+Momofuku+Ko,2,2,4,4.5,American (New),129
+15+East,2,0,4,4.0,Japanese,528
+Russ+&+Daughters,2,0,1,4.0,Pizza,60
+Roberta's,2,0,2,4.0,Pizza,53
+Kang+Ho+Dong+Baekjeong,2,0,3,3.5,Korean,596
+Minetta+Tavern,2,1,3,4.0,French,1716
+Tempura+Matsui,2,1,4,4.5,Japanese,35
+The+Modern,2,2,2,4.0,Chinese,276
+Rubirosa,2,0,2,4.0,Dance Clubs,6
+ABC+Kitchen,2,0,3,4.0,American (New),2293
+Ippudo+NY,2,0,2,4.0,Ramen,8405
+Carbone,2,1,2,4.0,Peruvian,24
+Barney+Greengrass,2,0,2,4.0,Specialty Food,497
+St.+Anselm,2,0,3,4.0,American (New),616
+Uncle+Boons,2,1,3,4.0,Thai,377
+Balthazar,2,0,3,4.0,French,2294
+Charlie+Bird,2,0,3,3.5,Italian,282
+Lucali,2,0,2,4.5,Pizza,875
+The+Spotted+Pig,2,1,3,3.5,Burgers,2511
+il+Buco+Alimentari+&+Vineria,2,0,3,3.5,Italian,405
+Momofuku+Ssam+Bar,2,0,3,4.0,American (New),2031
+Locanda+Verde,2,0,3,4.0,Italian,1277
+Mighty+Quinn's,2,0,2,4.0,Barbeque,1356
+Casa+Enrique,2,1,2,4.0,Mexican,601
+Buttermilk+Channel,2,0,2,4.0,American (New),1445
+Al+Di+La+Trattoria,2,0,3,4.0,Italian,654
+Osteria+Morini,2,0,3,4.0,Italian,812
+Tanoreen,2,0,2,4.0,Middle Eastern,595
+RedFarm,2,0,3,3.5,Dim Sum,344
+Wildair,2,0,3,4.0,American (New),81
+Buvette,2,0,2,4.0,French,1027
+Prime+Meats,2,0,2,3.5,Bars,525
+Pok+Pok+Ny,2,1,2,3.5,Thai,387
+Hearth,2,0,3,4.0,American (New),521
+Kajitsu,2,1,4,4.0,Japanese,131
+Blanca,2,0,2,4.0,Spanish,9
+Junoon,2,1,3,3.5,Indian,954
+Frankies+457+Spuntino,2,0,2,4.0,Italian,610
+Pies-n-Thighs,2,0,2,4.0,Southern,2127
+Franny's,2,0,2,3.0,Pizza,260
+Via+Carota,2,0,3,3.5,Italian,141
+The+Cecil,2,0,3,3.5,African,474
+Lafayette,2,0,3,3.5,French,602
+Batard,2,1,4,4.0,Modern European,171
+Hometown+Bar-b-que,2,0,2,4.0,Barbeque,626
+Mu+Ramen,2,0,2,4.0,Ramen,646
+Upland,2,0,3,4.0,American (New),458
+Momofuku+Noodle+Bar,2,0,2,3.5,Ramen,3431
+Keste,2,0,2,4.0,Pizza,1106
+The+Dutch,2,0,3,3.5,American (New),887
+Marlow+&+Sons,2,0,3,4.0,American (New),476
+Paulie+Gee's,2,0,2,4.5,Pizza,891
+Prune,2,0,3,3.5,American (New),890
+Empellon+Cocina,2,0,3,3.5,Mexican,252
+Emily,2,0,2,4.0,Pizza,395
+The+Commodore,2,0,2,3.5,Restaurants,3
+Xi'an+Famous+Foods,2,0,1,4.0,Chinese,1312
+Mile+End+Deli,2,0,2,3.5,Delis,648
+Narcissa,2,0,3,4.0,American (New),329
+The+Breslin+Bar+&+Dining+Room,2,1,3,3.5,Pubs,1308
+Nom+Wah+Tea+Parlor,2,0,2,3.5,Dim Sum,1143
+Oiji,2,0,3,4.5,Korean,231
+Santina,2,0,3,3.5,Italian,345
+Hide-Chan+Ramen,2,0,2,3.5,Ramen,1106
+Zabb+Elee,2,0,2,4.0,Thai,229
+Mission+Chinese+Food,2,0,2,3.5,Chinese,381
+Brick+Lane+Curry+House,2,0,2,3.5,Indian,209
+Masa,2,3,4,4.0,Japanese,220
+Atera,2,2,4,4.5,American (Traditional),161
+Ichimura,2,2,4,4.5,Sushi Bars,122
+Jungsik,2,2,4,4.5,Korean,328
+Soto,2,2,4,3.5,Sushi Bars,356
+Ai+Fiori,2,1,4,4.0,Italian,847
+Aldea,2,1,3,4.0,Portuguese,489
+Andanada,2,1,3,3.0,Spanish,232
+Aureole,2,1,4,4.0,American (New),646
+Babbo,2,1,4,4.0,Italian,1978
+Cafe+China,2,1,2,3.5,Szechuan,655
+Cagen,2,1,4,4.5,Japanese,110
+Casa+Mono,2,1,3,3.5,Spanish,1023
+Caviar+Russe,2,1,4,4.0,American (New),84
+Delaware+and+Hudson,2,1,2,4.0,American (Traditional),176
+The+Finch,2,1,3,4.0,American (New),100
+Hirohisa,2,1,4,4.5,Japanese,74
+Jewel+Bako,2,1,4,4.0,Sushi Bars,423
+Juni,2,1,4,4.5,American (New),133
+Kyo+Ya,2,1,4,4.5,Japanese,373
+La+Vara,2,1,3,4.0,Spanish,256
+Luksus,2,1,4,4.0,Scandinavian,72
+Meadowsweet,2,1,3,4.0,American (Traditional),189
+The+Musket+Room,2,1,3,4.5,American (New),243
+M.+Wells+Steakhouse,2,1,3,3.5,Steakhouses,278
+Picholine,2,1,4,4.0,French,224
+Piora,2,1,4,4.5,American (New),222
+Public,2,1,2,3.5,Gastropubs,267
+Rebelle,2,1,3,4.0,French,118
+The+River+Cafe,2,1,4,4.0,American (New),723
+Rosanjin,2,1,4,4.5,Japanese,75
+Somtum+Der,2,1,2,4.0,Thai,402
+Sushi+Azabu,2,1,4,4.0,Sushi Bars,352
+Sushi+of+Gari,2,1,4,4.0,Sushi Bars,520
+Take+Root,2,1,4,4.5,American (New),31
+Telepan,2,1,3,4.0,American (New),526
+Tori+Shin,2,1,4,4.0,Japanese,85
+Tulsi,2,1,3,3.5,Indian,265
+Wallse,2,1,3,4.0,German,195
+ZZ's+Clam+Bar,2,1,4,4.5,Seafood,71
+A16,3,0,3,3.5,Italian,1777
+Acquerello,3,2,4,4.5,Italian,886
+Ad+Hoc,3,0,3,4.0,American (New),4337
+Akiko's,3,0,2,4.0,Sushi Bars,1424
+Al's+Place,3,1,3,4.0,Seafood,337
+Atelier+Crenn,3,2,4,4.5,French,536
+Bar+Agricole,3,0,3,3.5,Bars,972
+Belga,3,0,2,3.5,Brasseries,239
+Benu,3,3,4,4.5,American (New),778
+Bistro+Don+Giovanni,3,0,4,4.5,Italian,886
+Bix,3,0,3,4.0,American (Traditional),1548
+Bottega,3,0,3,4.0,Spanish,1281
+Boulevard,3,0,2,3.5,American (Traditional),1275
+Bravas+Bar+de+Tapas,3,0,3,4.0,Spanish,1281
+Bull+Valley+Roadhouse,3,0,2,3.5,American (New),1432
+Cala,3,0,2,4.5,Mexican,8
+Californios,3,1,4,4.5,Mexican,153
+Camino,3,0,3,3.5,American (New),920
+The+Cavalier,3,0,3,4.0,American (New),686
+Chez+Panisse+and+Cafe,3,0,3,4.0,American (New),861
+Ciccio,3,0,3,4.0,Italian,1030
+Coi,3,2,4,4.0,American (New),681
+Comal,3,0,2,3.5,Mexican,864
+Commis,3,2,4,4.5,American (New),785
+The+Commissary,3,0,3,3.5,Spanish,254
+Commonwealth,3,1,3,4.0,American (New),881
+Coqueta,3,0,3,4.0,Spanish,1281
+Cotogna,3,0,3,4.0,Italian,1030
+Delfina,3,0,2,4.0,Pizza,2146
+Del+Popolo,3,0,2,4.0,Pizza,123
+Flour+Water,3,0,3,3.5,Italian,1972
+Foreign+Cinema,3,0,3,4.0,American (New),4053
+Frances,3,0,2,4.5,Food Trucks,28
+French+Laundry,3,3,4,4.5,American (New),4601
+Gary+Danko,3,1,4,4.5,American (New),4601
+Hawker+Fare,3,0,2,3.0,Thai,260
+Hong+Kong+Lounge+II,3,0,2,3.5,Dim Sum,633
+House+of+Prime+Rib,3,0,3,4.0,American (Traditional),5450
+Ichi+Sushi+Ni+Bar,3,0,3,3.5,Japanese,298
+Ippuku,3,0,3,4.0,Japanese,981
+Iyasare,3,0,3,4.0,Japanese,349
+Kokkari+Estiatorio,3,0,3,4.5,Greek,3690
+Kusakabe,3,1,4,4.5,Sushi Bars,480
+La+Ciccia,3,0,3,4.5,Seafood,889
+La+Folie,3,0,4,4.5,French,1340
+Lazy+Bear,3,1,4,4.5,American (New),312
+Liholiho+Yacht+Club,3,0,3,4.5,Asian Fusion,985
+Little+Gem,3,0,2,3.5,American (New),130
+Lord+Stanley,3,1,3,4.0,Modern European,109
+Madrona+Manor,3,1,4,4.5,American (New),293
+Mamacita,3,0,2,3.5,Mexican,1193
+Manresa,3,3,4,4.5,American (New),778
+Marlowe,3,0,2,4.0,American (New),1981
+Mourad,3,1,3,4.0,Moroccan,405
+Nico,3,1,3,4.0,American (New),186
+Ninebark,3,0,3,4.0,American (New),124
+Nopa,3,0,3,4.0,American (New),4337
+Nopalito,3,0,2,4.0,Mexican,1546
+Octavia,3,1,3,4.0,American (New),237
+Oenotri,3,0,3,4.0,Italian,1752
+Old+Bus+Tavern,3,0,2,4.0,Bars,102
+Omakase,3,1,4,4.5,Sushi Bars,158
+Oso,3,0,4,4.0,Lounges,499
+Pabu,3,0,3,4.0,Japanese,535
+Park+Tavern,3,0,3,4.0,American (New),1240
+Perbacco,3,0,3,4.0,Italian,1752
+Petit+Crenn,3,0,4,3.5,French,149
+Piperade,3,0,3,4.0,Spanish,784
+Pizzaiolo,3,0,2,4.0,Italian,1339
+Poggio,3,0,3,3.5,Italian,784
+Press,3,0,2,3.5,Cafes,21
+The+Progress,3,0,4,4.0,American (New),462
+Prospect,3,0,3,4.0,American (New),1343
+Quince,3,2,4,4.0,French,1226
+Ramen+Shop,3,0,2,3.0,Ramen,454
+Range,3,0,3,4.0,American (New),1684
+Rasa,3,1,3,4.0,Indian,2307
+Redd,3,0,3,4.0,American (New),1684
+Redd+Wood,3,0,4,4.5,American (New),4601
+The+Restaurant+at+Meadowood,3,3,4,4.5,American (New),293
+Rich+Table,3,0,3,4.0,American (New),749
+Saison,3,3,4,4.5,American (New),293
+Shed+Cafe,3,0,1,4.0,Sandwiches,685
+Sir+and+Star,3,0,4,4.5,American (New),4601
+Slanted+Door,3,0,3,3.5,Vietnamese,4576
+SPQR,3,1,3,3.5,Italian,1707
+State+Bird+Provisions,3,1,3,4.5,Tapas/Small Plates,1921
+Sushi+Ran,3,0,3,4.0,Sushi Bars,1259
+Swan+Oyster+Depot,3,0,2,4.0,Seafood,2086
+Terra,3,1,2,4.0,Chinese,254
+Tosca+Cafe,3,0,3,3.5,Italian,314
+Trestle,3,0,3,4.5,American (New),371
+Trou+Normand,3,0,2,4.0,Cocktail Bars,423
+Village+Sake,3,0,4,4.5,Sushi Bars,480
+Volta,3,0,3,4.0,Brasseries,141
+Wayfare+Tavern,3,0,3,4.0,American (Traditional),3111
+Yank+Sing,3,0,1,3.0,Dim Sum,247
+Z+and+Y,3,0,2,3.5,Chinese,1008
+Zarzuela,3,0,2,4.0,Spanish,967
+Zuni+Cafe,3,0,3,4.0,American (New),2360
+Baume,3,2,4,4.5,French,536
+Campton+Place,3,2,4,4.0,American (New),612
+All+Spice,3,1,3,4.0,American (New),54
+Ame,3,1,4,4.0,American (New),893
+Aster,3,1,3,4.0,American (New),174
+Auberge+du+Soleil,3,1,4,4.5,American (New),4601
+Bouchon,3,1,3,4.5,French,2420
+Chez+TJ,3,1,3,4.5,French,2420
+Farmhouse+Inn+and+Restaurant,3,1,4,4.5,American (New),4601
+Keiko+a+Nob+Hill,3,1,4,4.5,French,312
+Kin+Khao,3,1,2,4.0,Thai,813
+La+Toque,3,1,3,3.5,American (New),604
+Luce,3,1,3,3.5,American (New),604
+Michael+Mina,3,1,4,4.0,American (New),952
+Plumed+Horse,3,1,4,4.5,American (New),4601
+Solbar,3,1,3,4.0,American (New),777
+Sons+and+Daughters,3,1,4,4.0,American (New),544
+Spruce,3,1,4,4.0,American (Traditional),1590
+Sushi+Yoshizumi,3,1,4,4.5,Sushi Bars,77
+Terrapin+Creek,3,1,4,4.5,French,536
+The+Village+Pub,3,1,4,4.0,American (Traditional),1590
+Wako,3,1,4,4.5,Japanese,289
+Wakuriya,3,1,4,4.5,Sushi Bars,480
