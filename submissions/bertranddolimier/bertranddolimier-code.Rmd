@@ -59,20 +59,21 @@ dfzone <- as.data.frame( zonedata )
 df <- dfzone[ -c(4), ]
 
 # Using a novelty factor - based on Michelin records, new guide seems to have 50% less entries in a specific area in the first year as compare to the 5th year.
-novelFac <- .5
+novelFac <- .6
 
 # We incorporated the average income as a component of our model along with population and number of restaurants.
-# Using a linear regression as to generate our model, we predict 22 total stared restaurants, 2 3-Stars, 3 2-Stars and 16 1-Star. 
-fit <- lm( All_Stars ~ Pop * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+# Using a linear regression as to generate our model, we predict 14 total stared restaurants, 2 3-Stars, 3 2-Stars and 12 1-Star. 
+# Note that Metro Population for DC is limited to city population as Michelin indicated the DC suburbs would not be considered in this version of the guide. 
+fit <- lm( All_Stars ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
 dfzone$All_Stars[4] <- round( predict( fit , dfzone )[4] *novelFac , digits=0 )
 
-fit <- lm( Etoile_3 ~ Pop * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+fit <- lm( Etoile_3 ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
 dfzone$Etoile_3[4] <- round( predict( fit , dfzone )[4] *novelFac , digits=0 )
 
-fit <- lm( Etoile_2 ~ Pop * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+fit <- lm( Etoile_2 ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
 dfzone$Etoile_2[4] <- round( predict( fit , dfzone )[4] *novelFac, digits=0 )
 
-fit <- lm( Etoile_1 ~ Pop * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+fit <- lm( Etoile_1 ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
 dfzone$Etoile_1[4] <- round( predict( fit , dfzone )[4] *novelFac, digits=0 )
 
 # Plot projection
@@ -704,7 +705,7 @@ mesEtoiles <- mesEtoiles[order(mesEtoiles[,1], decreasing = TRUE ) ,]
 
 stared <- as.data.frame( read.csv( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_template.csv" , header=TRUE, stringsAsFactors=FALSE ,  sep = ",") )
 
-stared$restaurant <- as.data.frame(mesEtoiles[ 1:23 , 4])[,1]
-stared[,2] <- c(3,3,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 )
+stared$restaurant <- as.data.frame(mesEtoiles[ 1:14 , 4])[,1]
+stared[,2] <- c(3,3,2,2,1,1,1,1,1,1,1,1,1,1 )
 write.csv( stared , file = "/Users/bdolimier/persodev/michelinDC/BertrandDolimier.csv", row.names=TRUE , quote=FALSE )
 ```
