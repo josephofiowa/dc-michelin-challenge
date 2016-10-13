@@ -60,3 +60,8 @@ for index, x in yelp.iterrows():
 
 # Close Submission File
 result_file.close()
+
+# Minor Edits to final results
+submission = pd.read_csv('EugeneKim-Submission.csv', header = 0)
+submission = submission.drop_duplicates('Name')
+submission.to_csv(''EugeneKim-Submission.csv')
