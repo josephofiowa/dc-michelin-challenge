@@ -1,0 +1,16 @@
+I analyzed the amount of potential michelin star names by looking at NYC, SF, and Chicago star restaurants to page ratios, which was around 10-11%, 
+which would suggest around 11ish restaurants for the DC debut. That being said, LA launchd with 18 restaurants. I looked at Tripadvisor restaurants to
+Median income/michelin star ratios, etc to ballpark the figure. I figure less than LA, but more than 10.
+
+I took data from NYC and took yelp reviews, and zagat ratings, and mapped against whether they had a star or not using regression analysis. Further
+broke down the data wiith cluster analysis (nyc only). Price is strongest indicator, followed by yelp rating, followed by total food rating from zagat.
+the ambience and service didn't matter as much but that is because it is already in the "food" dimension. 
+
+Took Chicago michellin restaurants and used textual analysis to find key identifiers/descriptors from the zagat descriptions. Unique, creative, 
+"one of a kind" and "special occasion" type identifiers were strong indicators of stars.
+
+Backward tested the NYC data with the regression model, 82% accuracy (that being said, data set was big). Applied the same model to DC restos,
+came up with 18, threw out Fogo de Chao, and a couple others because I didn't think they made the cut. Probably overbidding it at 16 starred restaurants
+but if they are coming to DC, maybe they need to lower the benchmark to this city.
+
+Looking at Chicago and NYC, there are a lot of OK restaurants for the cities that wouldn't stack up on a global scale.
