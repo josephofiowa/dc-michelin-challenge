@@ -1,0 +1,711 @@
+---
+title: "Guessing the Washington Michelin stars"
+author: "Bertrand Dolimier"
+date: "September 28, 2016"
+output: pdf_document
+---
+
+# Executive Summary
+**Objective:** Predict the result of the newly created Michelin guide for the Washington, DC area. The outcome will include a) the number of restaurants stared, the name of restaurants with their corresponding stars ( 1, 2 or 3)
+
+**Approach:** Collect data for Restaurants in the other US cities where a Michelin guide already exist, explore for each of them the publicly available information, select the most relevant dataset and come up with a predictive algorithm ( FYI no personal opinion just data science ).
+
+**Tech stack** Used R and Knit Markdown ( Rmd extension) with R libraries (httr, jsonlite & XML) to integrate documentation with code and generate the pdf doc.
+
+
+# The multi-step process is described below:
+
+**Base Geo. Dataset**
+
+1. Enter General area demographic in csv file with the following data point: Number of Restaurants in city, Number of Restaurants in the metro area, City Population, Metro population, Average Income and number of stared restaurants.
+2. Run simple model to predict number of stars to be awared in the Washington DC area.
+
+**Enriching the 2 datasets**
+
+1. Collect the names of currently awarded restaurants along with the number of stars for New-York, Chicago and San-Francisco.
+3. To better predict a sample of non-awarded restaurants are randomly selected. They were labeled as 0 stared restaurants. All restaurants of existing Michelin US areas are saved in a .csv file and will be mentionned as "training" data.
+4. Collect restaurants widely selected that are potential candidates for a Michelin award in the Washington DC area
+5. Collect in the preeminent local press the professional gastronomy reviews. We will collect the number of review along with the year of the review and the number of time the restaurants was mention in the dailies archives. The news organism selected were the New-York Times, the Chicago Tribunes and the San-Francisco Chronicle.
+4. Collect customers reviews and rating from the Yelp web site.
+
+**Polishing the DC dataset**
+
+1. Removing the bib gourmand from the test dataset. 
+2. Removing entries with no reviews
+
+**Analysing the Data**
+
+1. Use linear regression to determine a model based on the data collected above.
+2. Collect restaurants from the Washington area.
+3. Run the model selected and order the restaurants.
+4. Using demographic information and number of restaurant in each collective area weight by the average customer rating estimate the number of 3,2 and 1 stars restaurant to be anticipated.
+5. Give an arbitrary value to the Restaurant type based on occurence in training dataset
+6. Assign a "novelty factor" to the Washington DC area as less restaurant can be expected the first year a guide is publish
+7. Ranked list and determine the "winners"...
+
+# Detail and code
+# Base Geo Dataset
+# The simple plot below, shows the correlation between stared restaurants with the selected multiple criteria that are: City Population, Metro Population, Income and Number of "Quality" restaurants. San Francisco appears at an outlier in several ways ( not for this discussion )
+( code hidden )
+```{r, eval=TRUE, echo=FALSE }
+library(httr)
+library(XML)
+library(jsonlite)
+options(warn=-1)
+
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/input/zone.csv" )  )
+zonedata <- read.csv( name , header=TRUE , stringsAsFactors=FALSE , sep = ",")
+dfzone <- as.data.frame( zonedata )
+df <- dfzone[ -c(4), ]
+
+# Using a novelty factor - based on Michelin records, new guide seems to have 50% less entries in a specific area in the first year as compare to the 5th year.
+novelFac <- .6
+
+# We incorporated the average income as a component of our model along with population and number of restaurants.
+# Using a linear regression as to generate our model, we predict 14 total stared restaurants, 2 3-Stars, 3 2-Stars and 12 1-Star. 
+# Note that Metro Population for DC is limited to city population as Michelin indicated the DC suburbs would not be considered in this version of the guide. 
+fit <- lm( All_Stars ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+dfzone$All_Stars[4] <- round( predict( fit , dfzone )[4] *novelFac , digits=0 )
+
+fit <- lm( Etoile_3 ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+dfzone$Etoile_3[4] <- round( predict( fit , dfzone )[4] *novelFac , digits=0 )
+
+fit <- lm( Etoile_2 ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+dfzone$Etoile_2[4] <- round( predict( fit , dfzone )[4] *novelFac, digits=0 )
+
+fit <- lm( Etoile_1 ~ PopMetro * Income * Nb_Resto * Nb_Resto_3and4 , data = df )
+dfzone$Etoile_1[4] <- round( predict( fit , dfzone )[4] *novelFac, digits=0 )
+
+# Plot projection
+par(mfrow=c(1,1)) 
+
+fit <- lm( All_Stars ~ Pop * Income * Nb_Resto * Nb_Resto_3and4 , data = dfzone )
+plot( dfzone$Pop * dfzone$Income * dfzone$Nb_Resto  ,dfzone$All_Stars ,pch=19,col="blue")
+text (dfzone$Pop * dfzone$Income * dfzone$Nb_Resto  ,dfzone$All_Stars, dfzone[,1])
+```
+
+# Collect other local restaurants in Existing US Michelin guide areas, and save as training dataset
+```{r, eval=FALSE}
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/usa2016_result.csv" )  )
+usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE , sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+myIndex <- length( dfusa[[1]])
+
+# Take zz pages sample...
+for ( zz in 1:4) {
+  if (zz==1) zone <- "New-York"
+  if (zz==2) zone <- "Chicago"
+  if (zz==3) zone <- "San Francisco"
+  if (zz==4) zone <- "Washington"
+  zoneEncode <- URLencode(  toString( zone ) )
+  
+  # Get sorted by rating the 2 price points 4 and 3
+  for ( price in 3:4) {
+    for ( page in 0:15 ) {
+      start <- page * 10 
+      YcacheName <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "YELP_COLLECT_", zone,"_", price , "_" , page , ".html" ) 
+   
+      # Reading the cache 
+      html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+      nbc <- nchar( as( html.raw , "character") )
+      nbc
+      # Not cached let's ask Yelp
+      if ( nbc < 300 ) {
+         query=paste0( "https://www.yelp.com/search?find_desc=Restaurants+&find_loc=",zoneEncode,"&start=", start ,"&sortby=rating&attrs=RestaurantsPriceRange2.", price )
+         download.file( query , destfile = YcacheName , method="curl")
+         html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+      }
+  
+      bizName <- xpathSApply(html.raw , "//span[@class='indexed-biz-name']", xmlValue)
+      bizName <- gsub( "Restaurant" , "" , bizName  )
+      bizName <- gsub( "\n" , "" , bizName  )
+      bizName <- gsub( "\\." , "" , bizName  )
+      bizName <- gsub( "  " , "" , bizName  )
+      nb <- length( bizName )
+      if ( nb > 0 ) {
+        for ( jj in 1:nb) {
+          bizName[jj] <- gsub( paste0(start+jj," ") , "" , bizName[jj]  )
+          myIndex = myIndex + 1
+          dfusa[ myIndex ,] <- c("","","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+          dfusa$Restaurant[myIndex] <- bizName[jj]
+          dfusa$Zone[myIndex] <- zone
+          dfusa$Ypricing[myIndex] <- price
+          print ( bizName[jj] )
+        }
+      }
+    }
+  }
+}
+View( dfusa )
+write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/michelin2016_training.csv", row.names=TRUE , quote=FALSE )
+```
+
+# Collect restaurants in the targetted area Washington DC and save as target dataset
+```{r ,eval=FALSE}
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv" )  )
+usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE , sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+myIndex <- length( dfusa[[1]])
+
+zone <- "Washington"
+zoneEncode <- URLencode(  toString( zone ) )
+
+# Get sorted by rating the 2 price points 4 and 3
+for ( price in 3:4) {
+  for ( page in 0:15 ) {
+    start <- page * 10 
+    YcacheName <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "YELP_COLLECT_", zone,"_", price , "_" , page , ".html" ) 
+ 
+    # Reading the cache 
+    html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+    nbc <- nchar( as( html.raw , "character") )
+    nbc
+    # Not cached let's ask Yelp
+    if ( nbc < 300 ) {
+       query=paste0( "https://www.yelp.com/search?find_desc=Restaurants+&find_loc=",zoneEncode,"&start=", start ,"&sortby=rating&attrs=RestaurantsPriceRange2.", price )
+       download.file( query , destfile = YcacheName , method="curl")
+       html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+    }
+
+    bizName <- xpathSApply(html.raw , "//span[@class='indexed-biz-name']", xmlValue)
+    bizName <- gsub( "Restaurant" , "" , bizName  )
+    bizName <- gsub( "\n" , "" , bizName  )
+    bizName <- gsub( "\\." , "" , bizName  )
+    bizName <- gsub( "  " , "" , bizName  )
+    nb <- length( bizName )
+    if ( nb > 0 ) {
+      for ( jj in 1:nb) {
+        bizName[jj] <- gsub( paste0(start+jj," ") , "" , bizName[jj]  )
+        myIndex = myIndex + 1
+        dfusa[ myIndex ,] <- c("","","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        dfusa$Restaurant[myIndex] <- bizName[jj]
+        dfusa$Zone[myIndex] <- zone
+        dfusa$Ypricing[myIndex] <- price
+        print ( bizName[jj] )
+      }
+    }
+  }
+}
+
+View( dfusa )
+write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv", row.names=TRUE , quote=FALSE )
+```
+
+# Get Restaurant press review from NewYork Times, Chicago Tribunes & SanFrancisco Chronicle
+Using google apis
+Populating the fields: dfusa$art2016, art2015, art2014, artBefore (older than 2014), dateUNKNOWN
+```{r ,eval=FALSE}
+## Engine id:
+dcId  <- "faxe8adyxke" # - Washington Post = 017019937838437061749:faxe8adyxke
+nyId  <- "uspap9gs9vq" # - New York Times = 017019937838437061749:uspap9gs9vq
+chiId <- "duuro39maos" # - Chicago Tribunes = 017019937838437061749:duuro39maos
+sfId  <- "navjubg8x6w" # - San Francisco Chronicle = 017019937838437061749:navjubg8x6w
+
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/usa2016_training.csv")  )
+usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE, sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+
+iimin = 1
+iimax = nrow( dfusa )
+
+for(ii in iimin:iimax ) {
+    resto <- toString(dfusa$Restaurant[ii])
+    restoEncode <- URLencode(  toString( paste("Restaurant",resto ) ) )
+    zone = toString(dfusa[ii,3])
+    if ( zone == "New-York" )      engineId = nyId 
+    if ( zone == "Chicago" )       engineId = chiId 
+    if ( zone == "San Francisco" ) engineId = sfId 
+    print( paste( restoEncode, zone) )
+    ns <- 70 # init to large than we will query for / 7 pages
+    
+    for ( page in 0:6) {
+      cacheName5 <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "C5_", zone,"_", ii , "_" , page , ".df" ) 
+      cacheName6 <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "C6_", zone,"_", ii , "_" , page , ".df" ) 
+      cf <- NULL
+      cf5 <- NULL
+      tryCatch( cf <- fromJSON(file( cacheName6 )) ,  error = function(e) cacheFlg <- FALSE , warning = function(w) cacheFlg <- FALSE ) 
+      tryCatch( cf5 <- fromJSON(file( cacheName5 )) ,  error = function(e) cacheFlg <- FALSE , warning = function(w) cacheFlg <- FALSE ) 
+ 
+      ## If not already cached got ask google
+      if ( is.null(cf) == TRUE || is.null(cf5) == TRUE ) {
+        start = (page*10)+1
+        if ( start < ns) {
+          print( paste("reading a new query", ii, page) )
+          query=paste0("https://www.googleapis.com/customsearch/v1?key=AIzaSyAZBzP3NEFa7Fq76ElQW5PZaIKuu-KEpJY&cx=017019937838437061749:",engineId,"&q=",restoEncode,"&start=",start)
+          res <- GET(query)
+          
+          cf5 <- do.call("rbind", content(res)[5] ) # a dataframe
+          write( toJSON(cf5) , file=cacheName5) # write in cache
+          cf5 <- fromJSON(toJSON(cf5))
+  
+          cf <- do.call("rbind", content(res)[6] ) # a dataframe
+          write( toJSON(cf) , file=cacheName6) # write in cache
+          cf <- fromJSON(toJSON(cf))
+        }
+      }
+      
+      # If still null skip it
+      if ( toString(cf) != "" && ( !is.null(nrow(cf[[1]])) ) ) {
+          nc <- nrow(cf[[1]])
+          if ( is.null(nc) ) nc = 0
+          ns <- as.numeric( cf5[[3]] )
+          if ( length(ns) == 0 ) ns = 0
+          dfusa$artTotal[ii] = ns
+          if ( ns>10000 ) ns = 10000
+          dfusa$artTotalCap[ii] = ns
+          
+          if ( nc > 0 ) {
+            for ( jj in 1:nc ) {
+              titre <- cf[[1]]$title[[jj]]
+              # Date method 1
+              datum <- cf[[1]]$pagemap$metatags[[jj]]$ptime
+              # Date method 2
+              if ( is.null(datum) ) datum <- cf[[1]]$pagemap$metatags[[jj]]$date
+              # Date method 3
+              if ( is.null(datum) ) datum <- cf[[1]]$pagemap$metatags[[jj]]$sailthru.date
+              # Date giving up
+              if ( is.null(datum) ) { 
+                print ( paste("no date for ", ii, page, jj)) 
+                datum = -1
+              }
+              
+              dd <- substr( toString( gsub("-", "", datum) ), 0, 4)
+              print ( paste( ii , page , jj ,datum)  )
+              if ( dd == 2016 ) dfusa[ii,5] <- dfusa$art2016[ii]+1
+              if ( dd == 2015)  dfusa[ii,6] <- dfusa$art2015[ii]+1
+              if ( dd == 2014)  dfusa[ii,7] <- dfusa$art2014[ii]+1
+              if ( dd < 2014 )  dfusa[ii,8] <- dfusa$artBefore[ii]+1 # older than 2014
+              if ( dd == -1  )  dfusa[ii,9] <- dfusa$dateUNKNOWN[ii]+1 # date unknown
+            }
+          }
+      }
+    }
+}
+View( dfusa )
+write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/michelin2016_training.csv", row.names=TRUE , quote=FALSE )
+```
+
+# Get Restaurant press review from the Washington Post.
+Populating the fields: dfusa$art2016, art2015, art2014, artBefore (older than 2014), dateUNKNOWN
+( code hidden )
+```{r ,eval=FALSE, echo=FALSE}
+## Engine id:
+engineId  <- "faxe8adyxke" # - Washington Post = 017019937838437061749:faxe8adyxke
+
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv")  )
+usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE, sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+
+iimin = 1
+iimax = nrow( dfusa )
+iimax=3
+
+for(ii in iimin:iimax ) {
+    resto <- toString(dfusa$Restaurant[ii])
+    restoEncode <- URLencode(  toString( paste("Restaurant",resto ) ) )
+    zone = toString(dfusa[ii,3])
+    print( paste( restoEncode, zone) )
+    ns <- 70 # init to large than we will query for / 7 pages
+    
+    for ( page in 0:6) {
+      cacheName5 <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "C5_", zone,"_", ii , "_" , page , ".df" ) 
+      cacheName6 <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "C6_", zone,"_", ii , "_" , page , ".df" ) 
+      cf <- NULL
+      cf5 <- NULL
+      tryCatch( cf <- fromJSON(file( cacheName6 )) ,  error = function(e) cacheFlg <- FALSE , warning = function(w) cacheFlg <- FALSE ) 
+      tryCatch( cf5 <- fromJSON(file( cacheName5 )) ,  error = function(e) cacheFlg <- FALSE , warning = function(w) cacheFlg <- FALSE ) 
+ 
+      ## If not already cached got ask google
+      if ( is.null(cf) == TRUE || is.null(cf5) == TRUE ) {
+        start = (page*10)+1
+        if ( start < ns) {
+          print( paste("reading a new query", ii, page) )
+          query=paste0("https://www.googleapis.com/customsearch/v1?key=AIzaSyAZBzP3NEFa7Fq76ElQW5PZaIKuu-KEpJY&cx=017019937838437061749:",engineId,"&q=",restoEncode,"&start=",start)
+          res <- GET(query)
+          
+          cf5 <- do.call("rbind", content(res)[5] ) # a dataframe
+          write( toJSON(cf5) , file=cacheName5) # write in cache
+          cf5 <- fromJSON(toJSON(cf5))
+  
+          cf <- do.call("rbind", content(res)[6] ) # a dataframe
+          write( toJSON(cf) , file=cacheName6) # write in cache
+          cf <- fromJSON(toJSON(cf))
+        }
+      }
+      
+      # If still null skip it
+      if ( toString(cf) != "" && ( !is.null(nrow(cf[[1]])) ) ) {
+          nc <- nrow(cf[[1]])
+          if ( is.null(nc) ) nc = 0
+          ns <- as.numeric( cf5[[3]] )
+          if ( length(ns) == 0 ) ns = 0
+          dfusa$artTotal[ii] = ns
+          if ( ns>1000 ) ns = 500
+          dfusa$artTotalCap[ii] = ns
+          
+          if ( nc > 0 ) {
+            for ( jj in 1:nc ) {
+              titre <- cf[[1]]$title[[jj]]
+              # Date method 1
+              datum <- cf[[1]]$pagemap$metatags[[jj]]$ptime
+              # Date method 2
+              if ( is.null(datum) ) datum <- cf[[1]]$pagemap$metatags[[jj]]$date
+              # Date method 3
+              if ( is.null(datum) ) datum <- cf[[1]]$pagemap$metatags[[jj]]$sailthru.date
+              # Date giving up
+              if ( is.null(datum) ) { 
+                print ( paste("no date for ", ii, page, jj)) 
+                datum = -1
+              }
+              
+              dd <- substr( toString( gsub("-", "", datum) ), 0, 4)
+              print ( paste( ii , page , jj ,datum)  )
+              if ( dd == 2016 ) dfusa[ii,5] <- dfusa$art2016[ii]+1
+              if ( dd == 2015)  dfusa[ii,6] <- dfusa$art2015[ii]+1
+              if ( dd == 2014)  dfusa[ii,7] <- dfusa$art2014[ii]+1
+              if ( dd < 2014 )  dfusa[ii,8] <- dfusa$artBefore[ii]+1 # older than 2014
+              if ( dd == -1  )  dfusa[ii,9] <- dfusa$dateUNKNOWN[ii]+1 # date unknown
+            }
+          }
+      }
+    }
+}
+View( dfusa )
+write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv", row.names=TRUE , quote=FALSE )
+```
+
+# Yelp review and Classification
+Populating Yreview, Yrating, Ypricing
+( code hidden )
+```{r, eval=FALSE, echo=FALSE}
+# Case and syntax simplification
+standardCase <- function( obj ) {
+    print(obj)
+    obj <- gsub("\x92\xb1a" , "n"  , obj )
+    obj <- gsub("\x92\xa2" , "a"  , obj )
+    obj <- gsub("\x92\xa9" , "e"  , obj )
+    obj <- gsub("\x92\xa3" , "e"  , obj )
+    obj <- gsub("\x92_" , "u"  , obj )
+    obj <- gsub("’" , ""  , obj )
+    obj <- gsub("'" , ""  , obj )
+    obj <- gsub("é" , "e" , obj )
+    obj <- gsub("è" , "e" , obj )
+    obj <- gsub("ë" , "e" , obj )
+    obj <- gsub("à" , "a" , obj )
+    obj <- gsub("â" , "a" , obj )
+    obj <- tolower( obj )
+    print(obj)
+    return ( obj )
+}
+
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv")  )
+usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE , sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+
+iimin <- 1
+iimax = nrow( dfusa )
+
+for(ii in iimin:iimax ) {
+    resto <- toString(dfusa$Restaurant[ii])
+    zone = toString(dfusa$Zone[ii])
+    zone <- URLencode(  toString( zone ) )
+    YcacheName <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "YELP_", zone,"_", ii , ".html" ) 
+ 
+    # Reading the cache 
+    html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+    nb <- nchar( as( html.raw , "character") )
+    nb
+    # Not cached let's ask Yelp
+    if ( nb < 300 ) {
+       print( " reading a new resto")
+       restoEncode <- URLencode(  toString( paste("Restaurant",resto ) ) )
+       query=paste0( "https://www.yelp.com/search?find_desc=",restoEncode,"&find_loc=",zone,"&ns=1")
+       download.file( query , destfile = YcacheName , method="curl")
+       html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+    }
+
+    bizName <- xpathSApply(html.raw , "//span[@class='indexed-biz-name']", xmlValue)
+
+    bizName <- standardCase( bizName )
+    resto <- standardCase( resto )
+
+    # Need to count the ads...
+    nbAds <- length( xpathSApply(html.raw , "//span[@class='review-count rating-qualifier']", xmlValue) ) - length( bizName )
+    if ( nbAds < 0 ) nbAds = 0
+    
+    dfusa$type[ii] <- "NA"
+    for ( vv in 1:length(bizName) ) {
+      if( length(grep( resto , bizName[vv]))==1 && dfusa$type[ii] == "NA" ) {
+        review <- xpathSApply(html.raw , "//span[@class='review-count rating-qualifier']", xmlValue)[vv+nbAds]
+        if ( is.na(review) == FALSE ) dfusa$Yreview[ii] <- unique(na.omit(as.numeric(unlist(strsplit( review , "[^0-9]+"))))) ## nb review
+        
+        ratings <- xpathSApply(html.raw , "//*[@class='rating-large']/i" , xmlGetAttr , "title")
+        rating <- ratings[vv+nbAds]
+        OneRate <- unique(na.omit(as.numeric(unlist(strsplit( rating , "[^0-9]+")))))
+        dfusa$Yrating[ii] <- as.numeric( paste0( OneRate[1],".", OneRate[2] ) )  ## rating
+        
+        pricings <- xpathSApply(html.raw , "//span[@class='business-attribute price-range']", xmlValue)
+        pricingOffset <- length( pricings ) - length( ratings )
+        if(  pricingOffset < 0)  pricingOffset <- 0
+        pricing <- pricings[vv+nbAds+pricingOffset]
+        dfusa$Ypricing[ii] <- as.numeric( nchar( as( pricing , "character") ) ) ## pricing
+        
+        types <- xpathSApply(html.raw , "//span[@class='category-str-list']", xmlValue)
+        typeOffset <- length( types ) - length( ratings )
+        if(  typeOffset < 0)  typeOffset <- 0
+        dfusa$type[ii] <- types[vv+nbAds+typeOffset] ## type
+
+        print( paste(ii, review,rating,pricing,nbAds,pricingOffset) )
+      }
+    }
+}
+View( dfusa )
+write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv", row.names=TRUE , quote=TRUE )
+```
+
+# Get google rating and neighborhood 
+Populating: Zreview, Zrating, Neighborhood
+( code hidden )
+```{r, eval=FALSE, echo=FALSE}
+
+url <- "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" 
+url2 <- "https://maps.googleapis.com/maps/api/place/details/json?"
+placekey<-"AIzaSyAKwXsjeYHEhuYtzmEo_WhyG0hKkeZOHzc"
+
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv")  )
+#name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/usa2016_result.csv")  )
+usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE , sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+
+iimin = 1
+iimax = nrow( dfusa )
+iimax = 2
+
+for(ii in iimin:iimax ) {
+    
+    resto <- toString(dfusa$Restaurant[ii])
+    restoEncode <- URLencode(  toString( resto ) )
+    zone = toString( dfusa$Zone[ii] )
+    if ( zone == "New-York" ) loc = "40.731368,-73.992582"
+    if ( zone == "Chicago" ) loc = "41.875586,-87.636720"
+    if ( zone == "San Francisco" ) loc = "37.802452,-122.409106"
+    if ( zone == "Washington" ) loc = "38.911885,-77.035511"
+
+    query <- paste0( url , "location=" , loc , "&radius=" , "20000" ,  "&type=restaurant&name=" , restoEncode , "&key=" , placekey )
+    res <- GET( query )
+
+    if (length( content(res)$result )>0) {
+      jj = 1
+      itemInfo <- content(res)$result[[jj]]
+      place_id <- itemInfo$place_id
+      name <- itemInfo$name 
+      if ( length(grep( resto , name )) > 0 ) {
+        if ( is.null(itemInfo$rating ) == FALSE ) dfusa$Zrating[ii] <- itemInfo$rating 
+        if ( is.null(itemInfo$price_level ) == FALSE ) dfusa$Zpricing[ii] <- itemInfo$price_level 
+        
+        query2 <- paste0( url2 ,"placeid=" , place_id , "&key=" , placekey )
+        res2 <- GET( query2 )
+        detailInfo <- content(res2)[2]$result
+        nba <- length( detailInfo$address_components )
+        if ( nba > 0 ) {
+          for ( aa in 1:nba  ) {
+            nbb <- length( detailInfo$address_components[[aa]]$types)
+            for ( bb in 1:nbb ) {
+               if ( detailInfo$address_components[[aa]]$types[bb] == "neighborhood" ) {
+                 dfusa$Neighborhood[ii] <- detailInfo$address_components[[aa]]$short_name
+                 print( paste( ii, resto, name , itemInfo$price_level , itemInfo$rating , dfusa$Neighborhood[ii]  ) )
+               }
+            }
+          }
+        }
+      }
+  }
+}
+View( dfusa )
+#write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/usa2016_result.csv", row.names=TRUE , quote=FALSE )
+write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv", row.names=TRUE , quote=FALSE )
+```
+
+# Zagat review through google apis
+Populating fields: Fscore, Dscore, Sscore, type, buzz, buzz2, Neighorhood
+( code hidden )
+```{r, eval=FALSE, echo=FALSE}
+#name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/usa2016_result.csv")  )
+name = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv")  )
+usadata <- read.csv( name , header=TRUE, stringsAsFactors=FALSE , sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+
+iimin <- 1
+iimax = nrow( dfusa )
+
+for(ii in iimin:iimax ) {
+    print(ii)
+    dfusa$Fscore[ii]   <- 0
+    dfusa$Dscore[ii]   <- 0
+    dfusa$Sscore[ii]   <- 0
+    dfusa$type[ii]     <- " "
+    dfusa$buzz[ii]     <- " "
+    dfusa$buzz2[ii]    <- " "
+    dfusa$Neighborhood[ii] <- " "
+
+    resto <- toString(dfusa[ii,1])
+    zone = toString(dfusa[ii,3])
+    zone <- URLencode(  toString( zone ) )
+
+    # Reading the cache 
+    YcacheName <- paste0( "/Users/bdolimier/persodev/michelinDC/cache/" , "ZAGAT_", zone,"_", ii , ".html" ) 
+    html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+    nb <- nchar( as( html.raw , "character") )
+    print(nb)
+    # Not cached let's ask Zagat
+    if ( nb < 300 ) {
+       restoEncode <- URLencode( toString( resto )  )
+       restoEncode <- URLencode(  paste( "Restaurant+" , toString( resto ) , "+Washington" ) )
+       query <- paste0("https://www.zagat.com/search/place?text=",restoEncode,"&session=62981284&session_id=62981284&_utmc=62981284&city_id=1024&rdr=1")
+       download.file( query , destfile = YcacheName , method="curl")
+       html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+       redirect <- xpathSApply( html.raw , "//a", xmlGetAttr, 'href')
+
+       if ( length( redirect) < 2 ) {
+          download.file( redirect , destfile = YcacheName , method="curl")
+          html.raw<-htmlTreeParse( YcacheName, useInternalNodes=T )
+       }
+    }
+
+    bizName <- xpathSApply(html.raw , "//script", xmlValue)
+    for ( vv in 1: length( bizName ) ) {
+      if ( length(grep( "zga.setCustomVar" , bizName[vv])) > 0 ) {
+        customV <- unlist(strsplit(bizName[vv], split="\n"))
+        customV <- gsub( "zga.setCustomVar" , "" , customV  )
+        customV <- gsub( " " , "" , customV  )
+        customV <- gsub( ";" , "" , customV  )
+        customV <- gsub( ")" , "" , customV  )
+        customV <- gsub( "'" , "" , customV  )
+        for ( zz in 1:length( customV ) ) {
+          typeV <- unlist(strsplit( customV[zz], split=","))
+          if ( length(grep( "FoodScore"        , typeV[1] ) ) ) dfusa$Fscore[ii]       <- as.numeric(unlist(strsplit( typeV[2] , "[^0-9]+") ) )[2]
+          if ( length(grep( "DecorScore"       , typeV[1] ) ) ) dfusa$Dscore[ii]       <- as.numeric(unlist(strsplit( typeV[2] , "[^0-9]+") ) )[2]
+          if ( length(grep( "ServiceScore"     , typeV[1] ) ) ) dfusa$Sscore[ii]       <- as.numeric(unlist(strsplit( typeV[2] , "[^0-9]+") ) )[2]
+          if ( length(grep( "placeType"        , typeV[1] ) ) ) dfusa$type[ii]         <- typeV[2]
+          if ( length(grep( "appearsInBuzz"    , typeV[1] ) ) ) dfusa$buzz[ii]         <- typeV[2]
+          if ( length(grep( "appearsInLists"   , typeV[1] ) ) ) dfusa$buzz2[ii]        <- typeV[2]
+          if ( length(grep( "placeNeighborhood", typeV[1] ) ) ) dfusa$Neighborhood[ii] <- typeV[2]
+          print( typeV[2] )
+        }
+      }
+    }
+}
+View( dfusa )
+write.csv( as.data.frame(dfusa) , file = "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv", row.names=TRUE , quote=FALSE )
+
+```
+
+
+# Analyse the data
+## Fields collected are:
+
+1. Restaurant: Name of the Restaurant
+1. Chef: Name of the Chef (not always present)
+1. Zone: New-York, Chicago, SF and DC
+1. Etoile: 0 to 3 Stars
+1. art2016: Number of mention in select press for the zone in 2016
+1. art2015: Number of mention in select press for the zone in 2015
+1. art2014: Number of mention in select press for the zone in 2014
+1. artBefore: Number of mention in select press for the zone before 2014
+1. dateUNKNOWN: Number of mention in select press for the zone date unknown
+1. artTotal: Number of mention in select press for the zone (all dates)
+1. Yreview: Number of Yelp reviews
+1. Yrating: Aggregated Yelp review
+1. Ypricing: Yelp pricing level ( "\$" to "\$\$\$\$" )
+1. Zrating: Zagat rating
+1. Zpricing: Zagat pricing level
+1. Zbuzz: Zagat buzz indicator
+1. Zbuzz: Zagat buzz indicator 2
+1. Neighborhood: Restaurant Neignborhood
+
+# Create Mode / Plot Linear Regression
+( code hidden )
+```{r, echo=FALSE, eval=TRUE}
+par(mfrow=c(1,1)) 
+
+# Training data collected
+training = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_training2.csv")  )
+usadata <- read.csv( training , header=TRUE, stringsAsFactors=FALSE ,  sep = ",")
+dfusa <- as.data.frame( usadata )
+dfusa <- dfusa[ -c(1) ]
+dfusa["NumericType"] <- 0
+
+# Test data to apply prediction on
+wash = paste( c( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_washington.csv")  )
+dcdata <- read.csv( wash , header=TRUE, stringsAsFactors=FALSE ,  sep = ",")
+dfdc <- as.data.frame( dcdata )
+dfdc <- dfdc[ -c(1) ]
+dfdc["NumericType"] <- 0
+
+
+# Randk passed stared restaurant type
+fit <- lm( Etoile ~  factor(type) , na.action=na.exclude ,data = dfusa )
+ndf <- subset( dfusa, dfusa$Etoile > 0 )
+ndf <- subset( ndf, (ndf$type == "" ) == FALSE , na.action=na.exclude, null.action=null.exclude )
+ndf <- subset( ndf, table(ndf$type) > 0 )
+
+ndf <- table(ndf$type)
+ndf <- ndf[order(-ndf)]
+barplot(ndf,las=2)
+
+# Apply numerical value to restaurant type
+iimin=1
+iimax = nrow( dfdc )
+for(ii in iimin:iimax ) {
+  done <- FALSE 
+  for ( vv in 1:10) {
+    if( done == FALSE & length(grep( "LatinAmerican" , dfdc$type[ii]))==1 ) { dfdc$NumericType[ii] <- 0; done <- TRUE }
+    if( done == FALSE & length(grep( "American(New)" , dfdc$type[ii]))==1 ) { dfdc$NumericType[ii] <- round( (10-vv)/3 , digits=0); done <- TRUE }
+    if( done == FALSE & length(grep( names(ndf[vv]) , dfdc$type[ii]))==1 ) { dfdc$NumericType[ii] <- round( (10-vv)/3 , digits=0); done <- TRUE }
+  }
+  if( done == FALSE ) dfdc$NumericType[ii] <- 0
+}
+iimin=1
+iimax = nrow( dfusa )
+for(ii in iimin:iimax ) {
+  done <- FALSE 
+  for ( vv in 1:10) {
+    if( done == FALSE & length(grep( "LatinAmerican" , dfusa$type[ii]))==1 ) { dfusa$NumericType[ii] <- 0; done <- TRUE }
+    if( done == FALSE & length(grep( "American(New)" , dfusa$type[ii]))==1 ) { dfusa$NumericType[ii] <- round( (10-vv)/3 , digits=0) ; done <- TRUE }
+    if( done == FALSE & length(grep( names(ndf[vv]) , dfusa$type[ii]))==1 ) { dfusa$NumericType[ii] <-  round( (10-vv)/3 , digits=0) ; done <- TRUE }
+  }
+  if( done == FALSE ) dfusa$NumericType[ii] <- 0
+}
+
+# Fitted Element predicting number of stars
+fit <- lm( Etoile ~  artTotalCap *Yreview * Yrating * Ypricing * NumericType , na.action=na.exclude ,data = dfusa )
+#plot( fit$fitted.values , dfusa$Etoile ,pch=19,col="blue")
+#abline(lm( dfusa$Etoile ~ fit$fitted.values ), lwd = 2)
+```
+
+# Storing results
+( code hidden )
+```{r, eval=FALSE, echo=FALSE}
+
+ndf <- subset( dfdc, dfdc$Yreview > 5 )
+mesEtoiles <- predict( fit , ndf, interval="predict" )
+mesEtoiles <- cbind( mesEtoiles, ndf$Restaurant )
+mesEtoiles <- cbind( mesEtoiles, ndf$Yrating )
+mesEtoiles <- cbind( mesEtoiles, ndf$Yreview )
+mesEtoiles <- cbind( mesEtoiles, ndf$Ypricing )
+
+mesEtoiles <- mesEtoiles[order(mesEtoiles[,1], decreasing = TRUE ) ,]
+
+stared <- as.data.frame( read.csv( "/Users/bdolimier/persodev/michelinDC/output/michelin2016_template.csv" , header=TRUE, stringsAsFactors=FALSE ,  sep = ",") )
+
+stared$restaurant <- as.data.frame(mesEtoiles[ 1:14 , 4])[,1]
+stared[,2] <- c(3,3,2,2,1,1,1,1,1,1,1,1,1,1 )
+write.csv( stared , file = "/Users/bdolimier/persodev/michelinDC/BertrandDolimier.csv", row.names=TRUE , quote=FALSE )
+```
