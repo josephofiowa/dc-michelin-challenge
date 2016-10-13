@@ -11,8 +11,6 @@ import os, sys, csv, rauth, math
 import numpy as np
 import pandas as pd
 
-os.chdir('C:\Users\e.a.kim\Documents\Kaggle\Michelin')
-
 # Read Data and set up
 df = pd.read_csv("restaurants.csv", header=0 )
 bad = pd.read_csv("inspections.csv", header=0)
@@ -47,7 +45,7 @@ def yelp_api( business_id ):
     return data;
 
 #%% Open Submission File
-result_file = open("results.csv", "wb")
+result_file = open("EugeneKim-submission.csv", "wb")
 result_file_object = csv.writer(result_file)
 result_file_object.writerow(['Name','Michelin Stars']) #header rows
 
