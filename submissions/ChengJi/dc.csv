@@ -1,0 +1,80 @@
+,restaurant,price,rating,cuisine,review_count,city
+0,Fiola+Mare,3,4.5,Seafood,564,Washington
+1,Komi,4,4.5,Greek,642,Washington
+2,Little+Serow,3,4,Thai,492,Washington
+3,Convivial,2,4,American (New),217,Washington
+4,Rasika+and+Rasika+West+End,3,4,Indian,824,Washington
+5,Plume,4,4,American (Traditional),150,Washington
+6,Bad+Saint,2,4,Filipino,186,Washington
+7,The+Inn+at+Little+Washington,4,4.5,American (New),251,Washington
+8,Casa+Luca,3,4,Italian,274,Washington
+9,Izakaya+Seki,3,4,Japanese,312,Washington
+10,The+Source,3,4,Asian Fusion,591,Washington
+11,Masseria,4,4,Italian,110,Washington
+12,Garrison,3,3.5,American (New),114,Washington
+14,Proof,3,4,American (New),803,Washington
+15,Maketto,2,4,Food Stands,24,Washington
+16,Blue+Duck+Tavern,3,4,American (Traditional),1569,Washington
+17,Bistro+Bis,3,3.5,French,356,Washington
+18,Central+Michel+Richard,3,4,American (New),1040,Washington
+19,Marcel's,4,4.5,French,373,Washington
+20,Rose's+Luxury,3,4.5,American (New),1222,Washington
+21,Minibar,4,4.5,American (New),251,Washington
+22,Fiola,3,4.5,Seafood,564,Washington
+23,Estadio,3,4,Spanish,828,Washington
+24,Sushi+Capitol,2,4.5,Japanese,373,Washington
+26,Preserve,2,3.5,Delis,454,Washington
+27,The+Riggsby,3,4,American (Traditional),133,Washington
+29,Le+Diplomate,3,4,Brasseries,1726,Washington
+30,Bibiana,3,3.5,Italian,385,Washington
+31,2Amys,2,4,Pizza,1378,Washington
+34,Obelisk,4,4,Italian,309,Washington
+35,Kapnos+and+Kapnos+Taverna,3,4,Greek,534,Washington
+36,DBGB+Kitchen+and+Bar,3,3.5,American (New),304,Washington
+37,Mintwood+Place,3,4,American (New),490,Washington
+38,The+Red+Hen,3,4,Italian,446,Washington
+39,Iron+Gate,3,4,American (New),229,Washington
+40,Ray's+the+Steaks,2,3.5,Burgers,58,Washington
+41,Del+Campo,3,3.5,Peruvian,425,Washington
+42,The+Bombay+Club,3,3.5,Indian,542,Washington
+44,Sushi+Sono,4,4,Sushi Bars,972,Washington
+45,Woodberry+Kitchen,3,4,American (New),910,Washington
+46,Thip+Khao,2,4.5,Laotian,455,Washington
+47,The+Ashby+Inn+and+Restaurant,3,4.5,Indian,2215,Washington
+48,Osteria+Morini,3,4,Italian,357,Washington
+50,The+Dabney,3,4,American (New),162,Washington
+51,Momofuku+CCDC,2,3.5,American (New),763,Washington
+52,The+Restaurant+at+Patowmack+Farm,3,4.5,Seafood,564,Washington
+53,Etto,2,4,Bars,186,Washington
+54,Zaytinya,3,4,Greek,3289,Washington
+56,Ghibellina,2,4,Italian,412,Washington
+57,Baby+Wale,2,3,American (New),159,Washington
+58,Nido,2,4.5,Mediterranean,131,Washington
+59,Petit+Louis+Bistro,4,4.5,French,373,Washington
+60,Smokehouse+Live,2,3.5,Barbeque,300,Washington
+61,Graffiato,3,3.5,Pizza,1297,Washington
+64,Hank's+Oyster+Bar,2,4,Seafood,291,Washington
+65,Daikaya+Ramen,2,4,Ramen,1640,Washington
+66,Crane+and+Turtle,3,4.5,Japanese,113,Washington
+67,Johnny's+Half+Shell,3,3,Seafood,152,Washington
+68,Centrolina,3,3.5,Italian,122,Washington
+69,Toki+Underground,2,4,Taiwanese,1577,Washington
+70,China+Chilcano,3,3.5,Peruvian,572,Washington
+71,G+by+Mike+Isabella,2,3.5,Sandwiches,185,Washington
+72,Chez+Billy+and+Chez+Billy+Sud,3,4,French,121,Washington
+75,Equinox,3,3.5,American (New),275,Washington
+76,Et+Voila,3,4,French,173,Washington
+78,Ardeo+and+Bardeo,3,3.5,American (New),393,Washington
+80,L'Auberge+Chez+Francois+and+Jacques'+Brasserie,3,4,Brasseries,1726,Washington
+81,The+Partisan,3,4,American (New),280,Washington
+83,Brasserie+Beck,3,4,Belgian,1202,Washington
+84,Pearl+Dive+Oyster+Palace,2,4,Seafood,613,Washington
+87,Doi+Moi,3,3.5,Vietnamese,385,Washington
+88,Ripple,3,3.5,Wine Bars,352,Washington
+90,BlackSalt,3,4,Seafood,742,Washington
+92,Compass+Rose,2,4,Mediterranean,314,Washington
+99,Lupo+Verde,3,3.5,Italian,351,Washington
+100,Pineapple and Pearls,4,4.5,Cafes,81,Washington
+101,Metier,4,4.5,American (New),6,Washington
+102,Kinship,4,4,American (New),106,Washington
+103,Tail Up Goat,3,4.5,American (New),129,Washington
