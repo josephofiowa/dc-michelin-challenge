@@ -17,7 +17,7 @@ Submit a csv and code or methods description as a pull request by 10/12/16 at 11
 
 ### How to submit:
 
-In order to make a submission, please fork this repository to your own Github. Create a folder (within the [submissions folder](https://github.com/josephofiowa/dc-michelin-challenge/tree/master/submissions)) that is your first and last name, e.g. `josephnelson`. Include your submission materials in this folder. Create a pull request before the deadline.
+In order to make a submission, please fork this repository to your own Github. Create a folder (within the [submissions folder](https://github.com/josephofiowa/dc-michelin-challenge/tree/master/submissions)) that is your first and last name, e.g. `josephnelson`. Include your submission materials in this folder. Create a pull request before the deadline. **In your pull request text, please include your preferred email.**
 
 (If you're not wholly comfortable with pull requests, check out this [resource](http://oss-watch.ac.uk/resources/pullrequest). Still no? Reach out to [me](https://twitter.com/josephofiowa).)
 
@@ -43,6 +43,8 @@ You'll note submissions can be of any length, restaurant, and number of stars fo
 Submissions will be scored using a [normal distribution](http://www.stat.yale.edu/Courses/1997-98/101/normal.htm), where the mean of this distribution is equal to the length of the list of one, two, or three Michelin Star restaurants in DC, and the standard deviation equals the mean. The number of restaurants you submit determines your x-axis placement on the curve. The height of the curve at that given x is the multiplier for every correct restaurant that is on your list.
 
 The points for getting the correct number of stars for each correct restaurant follow a similar convention. You are awarded 0.5 times the height of the normal distribution at the same x-axis point determined above. In other words, a correct restaurant with a correct number of stars is 1.5 times the height of your given x-axis point.
+
+**UPDATE:** In the unlikely event of a tie among scores, whichever submission was first entered is the victor.
 
 ### Scoring Example
 
