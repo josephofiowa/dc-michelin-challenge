@@ -7,7 +7,7 @@ import json
 import pandas as pd
 from watson_developer_cloud import AlchemyLanguageV1
 
-alchemy_language = AlchemyLanguageV1(api_key='903135fd80248bdbf6292749c51f4a87656b511b')
+alchemy_language = AlchemyLanguageV1(api_key='KEY')
 
 
 # In[47]:
@@ -22,7 +22,7 @@ url = 'http://www.opentable.com/kapnos#reviews'
 # operations to perform
 extract = ['keyword', 'emotion', ]
  
-alchemy_language = AlchemyLanguageV1(api_key= '903135fd80248bdbf6292749c51f4a87656b511b')
+alchemy_language = AlchemyLanguageV1(api_key= 'KEY')
 results = alchemy_language.combined(url=url, extract=extract)
  
 # print the results
@@ -31,7 +31,7 @@ print(json.dumps(results, indent=1))
 
 # In[54]:
 
-a1 = AlchemyLanguageV1(api_key='903135fd80248bdbf6292749c51f4a87656b511b')
+a1 = AlchemyLanguageV1(api_key='KEY')
 
 
 data=json.dumps(alchemy_language.keywords(url='http://www.opentable.com/fiola-mare?covers=2&dateTime=2016-10-06%2019%3A00#reviews'),indent=1)
